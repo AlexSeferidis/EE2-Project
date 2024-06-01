@@ -34,13 +34,15 @@ class FractalDB:
         return self.c.fetchone()
     def get_parameters(self):
         return self.get_parameters(self.__select_parameter_id)
-    
+    def get_db(self):
+        self.c.execute('''SELECT * FROM parameters''')
+        return self.c.fetchall()
     def select_parameter_id(self, parameter_id):
         if parameter_id in self.get_parameter_ids():
             self.__select_parameter_id = parameter_id
         else:
             self.__select_parameter_id = 1
-        return self.select_parameter_id
+        return self.__select_parameter_id
     def reset_db(self):
         self.c.execute('''DROP TABLE IF EXISTS parameters''')
         self.conn.commit()

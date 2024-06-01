@@ -15,7 +15,11 @@ db = FractalDB()
 
 @app.get('/')
 async def read_root():
-    return {'Hello': 'World'}
+    try:
+        table = db.get_db()
+        return {**SUCC_MESS, 'table': table}
+    except:
+        return {**FAIL_MESS, 'table': None}
 
 
 @app.get('/parameters/{parameter_id}')
