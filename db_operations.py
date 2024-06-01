@@ -15,6 +15,7 @@ class FractalDB:
         self.conn.commit()
     def add_parameters(self, x_offset, y_offset, zoom, max_iterations):
         self.insert_parameters(x_offset, y_offset, zoom, max_iterations)
+        self.__select_parameter_id = self.c.lastrowid
         return self.c.lastrowid
 
     def import_parameters(self, csv_file):

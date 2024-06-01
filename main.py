@@ -64,7 +64,7 @@ async def options_parameters():
 @app.post('/parameters')
 async def create_parameters(x_offset: float, y_offset: float, zoom: float, max_iterations: int):
     try:
-        new_param_id = db.insert_parameters(x_offset, y_offset, zoom, max_iterations)
+        new_param_id = db.add_parameters(x_offset, y_offset, zoom, max_iterations)
         return {**SUCC_MESS, "parameter_id": new_param_id}
     except:
         return {**FAIL_MESS, "parameter_id": None}
