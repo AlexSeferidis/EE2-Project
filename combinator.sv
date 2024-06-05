@@ -28,7 +28,7 @@ always_ff @(posedge clk) begin
     end
     if(ycount == 0)begin
         ycount <= SCREEN_HEIGHT;
-        xcount <= SCREEN_WIDTH;
+        xcount <= 0;
     end
     if(en)begin
         next_xpixel <= xcount;
