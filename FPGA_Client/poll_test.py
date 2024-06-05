@@ -4,8 +4,6 @@ import websockets
 import requests
 import urllib3
 from time import sleep
-from pynq import Overlay
-from pynq.lib.video import *
 
 # urllib3.disable_warnings() 
 
@@ -30,3 +28,4 @@ while True:
             print(f"Status code: {response.status_code}")
     except Exception as e:
         print(f"Exception occured: {e}")
+    time.sleep(POLL_INTERVAL)
