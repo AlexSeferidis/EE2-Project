@@ -1,4 +1,4 @@
-top_tb.o: ../top_tb.cpp Vtop.h \
+distributor_tb.o: ../distributor_tb.cpp Vdistributor.h \
  /usr/local/share/verilator/include/verilated.h \
  /usr/local/share/verilator/include/verilatedos.h \
  /usr/local/share/verilator/include/verilated_config.h \

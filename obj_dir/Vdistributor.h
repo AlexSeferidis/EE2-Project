@@ -5,20 +5,20 @@
 // The class here is then constructed to instantiate the design.
 // See the Verilator manual for examples.
 
-#ifndef VERILATED_VTOP_H_
-#define VERILATED_VTOP_H_  // guard
+#ifndef VERILATED_VDISTRIBUTOR_H_
+#define VERILATED_VDISTRIBUTOR_H_  // guard
 
 #include "verilated.h"
 
-class Vtop__Syms;
-class Vtop___024root;
+class Vdistributor__Syms;
+class Vdistributor___024root;
 class VerilatedVcdC;
 
 // This class is the main interface to the Verilated model
-class Vtop VL_NOT_FINAL : public VerilatedModel {
+class Vdistributor VL_NOT_FINAL : public VerilatedModel {
   private:
     // Symbol table holding complete model state (owned by this class)
-    Vtop__Syms* const vlSymsp;
+    Vdistributor__Syms* const vlSymsp;
 
   public:
 
@@ -27,17 +27,10 @@ class Vtop VL_NOT_FINAL : public VerilatedModel {
     // propagate new values into/out from the Verilated model.
     VL_IN8(&clk,0,0);
     VL_IN8(&reset,0,0);
-    VL_IN8(&fin_flag,0,0);
-    VL_IN8(&ready,0,0);
-    VL_OUT8(&full_queue,0,0);
-    VL_OUT8(&first,0,0);
-    VL_OUT8(&last_x,0,0);
-    VL_OUT8(&last_y,0,0);
-    VL_OUT8(&valid,0,0);
-    VL_IN(&colour_i,23,0);
-    VL_IN(&xpixel_i,31,0);
-    VL_IN(&ypixel_i,31,0);
-    VL_OUT(&colour_o,23,0);
+    VL_IN8(&fin_bus,1,0);
+    VL_OUT((&xcoord)[2],31,0);
+    VL_OUT((&ycoord)[2],31,0);
+    VL_OUT8((&reset_engines)[2],0,0);
 
     // CELLS
     // Public to allow access to /* verilator public */ items.
@@ -45,19 +38,19 @@ class Vtop VL_NOT_FINAL : public VerilatedModel {
 
     // Root instance pointer to allow access to model internals,
     // including inlined /* verilator public_flat_* */ items.
-    Vtop___024root* const rootp;
+    Vdistributor___024root* const rootp;
 
     // CONSTRUCTORS
     /// Construct the model; called by application code
     /// If contextp is null, then the model will use the default global context
     /// If name is "", then makes a wrapper with a
     /// single model invisible with respect to DPI scope names.
-    explicit Vtop(VerilatedContext* contextp, const char* name = "TOP");
-    explicit Vtop(const char* name = "TOP");
+    explicit Vdistributor(VerilatedContext* contextp, const char* name = "TOP");
+    explicit Vdistributor(const char* name = "TOP");
     /// Destroy the model; called (often implicitly) by application code
-    virtual ~Vtop();
+    virtual ~Vdistributor();
   private:
-    VL_UNCOPYABLE(Vtop);  ///< Copying not allowed
+    VL_UNCOPYABLE(Vdistributor);  ///< Copying not allowed
 
   public:
     // API METHODS

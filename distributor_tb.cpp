@@ -1,4 +1,4 @@
-#include "Vtop.h"
+#include "Vdistributor.h"
 #include "verilated.h"
 #include "verilated_vcd_c.h"
 
@@ -8,26 +8,19 @@ int main(int argc, char **argv, char **env){
 
     Verilated::commandArgs(argc, argv);
 
-    //initiate top (main) verilog instance
-    Vtop *top = new Vtop;
+    //initiate distributor (main) verilog instance
+    Vdistributor *top = new Vdistributor;
 
     //initiate trace dump
     Verilated::traceEverOn(true);
     VerilatedVcdC *tfp = new VerilatedVcdC;
     top->trace(tfp, 99);
-    tfp->open("top.vcd");
+    tfp->open("distributor.vcd");
 
     // Set initial simulation values
     top->clk = 1;
     top->reset = 1;
-    top->ready = 1;
-    top->iterations_max = 50;
-    top->zoom = 1;
-    top->x_offset = 0;
-    top->y_offset = 0;
-
-    int x = 0;
-    int y = 480;
+    top->fin_bus = 3;
 
     for (int i=0; i < 5000; i++){
         
@@ -36,23 +29,6 @@ int main(int argc, char **argv, char **env){
             top->clk = !top->clk;
             top->eval(); // function to read variables. occurs on both edges of clk
         }
-
-        top->reset = 0;
-
-        if(x == 640){
-            x = 0;
-            y -= 1;
-        }
-        if(y == 0){
-            break;
-        }
-
-        top->xpixel_i = x;
-        top->ypixel_i = y;
-        top->colour_i = i;
-
-        x++;
-        
         
         if (Verilated::gotFinish())
             break;
