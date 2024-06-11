@@ -215,8 +215,8 @@ VL_ATTR_COLD void Vtop___024root___ctor_var_reset(Vtop___024root* vlSelf) {
     for (int __Vi0=0; __Vi0<50; ++__Vi0) {
         vlSelf->top__DOT__lut_rom__DOT__lut_array[__Vi0] = VL_RAND_RESET_I(24);
     }
-    vlSelf->top__DOT__combinator_block__DOT__xcount = VL_RAND_RESET_I(32);
-    vlSelf->top__DOT__combinator_block__DOT__ycount = VL_RAND_RESET_I(32);
+    vlSelf->top__DOT__combinator_block__DOT__xpixel = VL_RAND_RESET_I(32);
+    vlSelf->top__DOT__combinator_block__DOT__ypixel = VL_RAND_RESET_I(32);
     vlSelf->top__DOT__genblk1__BRA__0__KET____DOT__engine__DOT__x0_buff = VL_RAND_RESET_I(32);
     vlSelf->top__DOT__genblk1__BRA__0__KET____DOT__engine__DOT__y0_buff = VL_RAND_RESET_I(32);
     vlSelf->top__DOT__genblk1__BRA__0__KET____DOT__engine__DOT__state = 0;

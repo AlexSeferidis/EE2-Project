@@ -96,8 +96,8 @@ VL_ATTR_COLD void Vtop___024root__trace_init_sub__TOP__0(Vtop___024root* vlSelf,
     tracep->declBit(c+170,"last_x", false,-1);
     tracep->declBit(c+171,"last_y", false,-1);
     tracep->declBit(c+172,"valid", false,-1);
-    tracep->declBus(c+25,"xcount", false,-1, 31,0);
-    tracep->declBus(c+26,"ycount", false,-1, 31,0);
+    tracep->declBus(c+25,"xpixel", false,-1, 31,0);
+    tracep->declBus(c+26,"ypixel", false,-1, 31,0);
     tracep->popNamePrefix(1);
     tracep->pushNamePrefix("distributor ");
     tracep->declBus(c+187,"PIXEL_DATA_WIDTH", false,-1, 31,0);
@@ -403,8 +403,8 @@ VL_ATTR_COLD void Vtop___024root__trace_full_sub_0(Vtop___024root* vlSelf, Veril
     bufp->fullIData(oldp+22,(vlSelf->top__DOT__colour_bus[0]),24);
     bufp->fullIData(oldp+23,(vlSelf->top__DOT__colour_bus[1]),24);
     bufp->fullIData(oldp+24,(vlSelf->top__DOT__colour_bus[2]),24);
-    bufp->fullIData(oldp+25,(vlSelf->top__DOT__combinator_block__DOT__xcount),32);
-    bufp->fullIData(oldp+26,(vlSelf->top__DOT__combinator_block__DOT__ycount),32);
+    bufp->fullIData(oldp+25,(vlSelf->top__DOT__combinator_block__DOT__xpixel),32);
+    bufp->fullIData(oldp+26,(vlSelf->top__DOT__combinator_block__DOT__ypixel),32);
     bufp->fullIData(oldp+27,(vlSelf->top__DOT__distributor__DOT__x0),32);
     bufp->fullIData(oldp+28,(VL_MODDIV_III(32, ((IData)(1U) 
                                                 + vlSelf->top__DOT__distributor__DOT__x0), (IData)(0x280U))),32);

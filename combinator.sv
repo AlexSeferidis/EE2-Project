@@ -24,37 +24,67 @@ module combinator #(
 
 initial valid = 0;
 
-logic [DATA_WIDTH-1:0] xcount;
-logic [DATA_WIDTH-1:0] ycount;
+logic [DATA_WIDTH-1:0] xpixel;
+logic [DATA_WIDTH-1:0] ypixel;
 
 always_ff @(posedge clk) begin
+    last_x <= 0;
+    last_y <= 0;
+    first <= 0;
+
     if(reset)begin
-        xcount <= 0;
-        ycount <= 0;
+        first <= 1;
+        xpixel <= 0;
+        ypixel <= 0;
     end
 
-    last_x <= (xcount == SCREEN_WIDTH) ? 1 : 0;
-    last_y <= (ycount == SCREEN_HEIGHT) ? 1 : 0;
-    first <= ((xcount == 0) & (ycount == 0)) ? 1: 0;
+    xpixel <= xpixel + 1;
 
-    if(xcount == SCREEN_WIDTH)begin
+    if(xpixel >= SCREEN_WIDTH)begin
         last_x <= 1;
-        xcount <= 0;
-        ycount <= ycount + 1;
+        xpixel <= 0;
+        ypixel <= ypixel + 1;
     end
 
-    if(ycount == SCREEN_HEIGHT)begin // this might be wrong
-        ycount <= 0;
-        xcount <= 0;
+    if(ypixel >= SCREEN_HEIGHT)begin
+        last_y <= 1;
+        xpixel <= 0;
+        ypixel <= 0;
     end
 
     if((en)&&(ready))begin
-        colour_o <= colour_i;
         valid <= 1;
-        xcount <= xcount + 1;
-        next_xpixel <= xcount;
-        next_ypixel <= ycount;
+        colour_o <= colour_i;
+        next_xpixel <= xpixel;
+        next_ypixel <= ypixel;
     end
+
+
+
+
+
+    // last_x <= (xpixel == SCREEN_WIDTH) ? 1 : 0;
+    // last_y <= (ypixel == SCREEN_HEIGHT) ? 1 : 0;
+    // first <= ((xpixel == 0) & (ypixel == 0)) ? 1: 0;
+
+    // if(xpixel == SCREEN_WIDTH)begin
+    //     last_x <= 1;
+    //     xpixel <= 0;
+    //     ypixel <= ypixel + 1;
+    // end
+
+    // if(ypixel == SCREEN_HEIGHT)begin // this might be wrong
+    //     ypixel <= 0;
+    //     xpixel <= 0;
+    // end
+
+    // if((en)&&(ready))begin
+    //     colour_o <= colour_i;
+    //     valid <= 1;
+    //     xpixel <= xpixel + 1;
+    //     next_xpixel <= xpixel;
+    //     next_ypixel <= ypixel;
+    // end
 end
 
 endmodule

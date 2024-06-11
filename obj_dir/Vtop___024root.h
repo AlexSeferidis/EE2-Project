@@ -58,8 +58,8 @@ class Vtop___024root final : public VerilatedModule {
         IData/*31:0*/ top__DOT____Vcellout__genblk1__BRA__2__KET____DOT__engine__iterations;
         IData/*31:0*/ top__DOT__distributor__DOT__x0;
         IData/*31:0*/ top__DOT__distributor__DOT__y0;
-        IData/*31:0*/ top__DOT__combinator_block__DOT__xcount;
-        IData/*31:0*/ top__DOT__combinator_block__DOT__ycount;
+        IData/*31:0*/ top__DOT__combinator_block__DOT__xpixel;
+        IData/*31:0*/ top__DOT__combinator_block__DOT__ypixel;
         IData/*31:0*/ top__DOT__genblk1__BRA__0__KET____DOT__engine__DOT__x0_buff;
         IData/*31:0*/ top__DOT__genblk1__BRA__0__KET____DOT__engine__DOT__y0_buff;
         IData/*31:0*/ top__DOT__genblk1__BRA__0__KET____DOT__engine__DOT__state;
