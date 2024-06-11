@@ -13,7 +13,7 @@ module top #(
     // output logic [RBG_SIZE-1:0]         colour_o,
     output logic [7:0]                  r, //for verilator test
     output logic [7:0]                  g,
-    output logic [8:0]                  b,
+    output logic [7:0]                  b,
     // flags for pixel generator
     output logic                        first,
     output logic                        last_x,
