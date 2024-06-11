@@ -20,6 +20,7 @@ class Vtop___024root final : public VerilatedModule {
         VL_IN8(ready,0,0);
         VL_OUT8(r,7,0);
         VL_OUT8(g,7,0);
+        VL_OUT8(b,7,0);
         VL_OUT8(first,0,0);
         VL_OUT8(last_x,0,0);
         VL_OUT8(last_y,0,0);
@@ -38,7 +39,6 @@ class Vtop___024root final : public VerilatedModule {
         CData/*2:0*/ top__DOT__genblk1__BRA__1__KET____DOT__queue_block__DOT__counter;
         CData/*2:0*/ top__DOT__genblk1__BRA__2__KET____DOT__queue_block__DOT__counter;
         CData/*0:0*/ __Vclklast__TOP__clk;
-        VL_OUT16(b,8,0);
         VL_IN(iterations_max,31,0);
         VL_IN(zoom,31,0);
         VL_IN(x_offset,31,0);

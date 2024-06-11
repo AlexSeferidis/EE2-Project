@@ -177,18 +177,18 @@ VL_INLINE_OPT void Vtop___024root___sequent__TOP__0(Vtop___024root* vlSelf) {
         = vlSelf->top__DOT__genblk1__BRA__1__KET____DOT__engine__DOT__state;
     __Vdly__top__DOT__genblk1__BRA__0__KET____DOT__engine__DOT__state 
         = vlSelf->top__DOT__genblk1__BRA__0__KET____DOT__engine__DOT__state;
-    __Vdly__top__DOT__ypixel_wire = vlSelf->top__DOT__ypixel_wire;
-    __Vdly__top__DOT__xpixel_wire = vlSelf->top__DOT__xpixel_wire;
-    __Vdly__top__DOT__combinator_block__DOT__ypixel 
-        = vlSelf->top__DOT__combinator_block__DOT__ypixel;
-    __Vdly__top__DOT__combinator_block__DOT__xpixel 
-        = vlSelf->top__DOT__combinator_block__DOT__xpixel;
     __Vdly__top__DOT____Vcellout__genblk1__BRA__2__KET____DOT__engine__iterations 
         = vlSelf->top__DOT____Vcellout__genblk1__BRA__2__KET____DOT__engine__iterations;
     __Vdly__top__DOT____Vcellout__genblk1__BRA__1__KET____DOT__engine__iterations 
         = vlSelf->top__DOT____Vcellout__genblk1__BRA__1__KET____DOT__engine__iterations;
     __Vdly__top__DOT____Vcellout__genblk1__BRA__0__KET____DOT__engine__iterations 
         = vlSelf->top__DOT____Vcellout__genblk1__BRA__0__KET____DOT__engine__iterations;
+    __Vdly__top__DOT__ypixel_wire = vlSelf->top__DOT__ypixel_wire;
+    __Vdly__top__DOT__xpixel_wire = vlSelf->top__DOT__xpixel_wire;
+    __Vdly__top__DOT__combinator_block__DOT__ypixel 
+        = vlSelf->top__DOT__combinator_block__DOT__ypixel;
+    __Vdly__top__DOT__combinator_block__DOT__xpixel 
+        = vlSelf->top__DOT__combinator_block__DOT__xpixel;
     __Vdlyvset__top__DOT__genblk1__BRA__2__KET____DOT__queue_block__DOT__colour_queue__v8 = 0U;
     __Vdlyvset__top__DOT__genblk1__BRA__2__KET____DOT__queue_block__DOT__colour_queue__v9 = 0U;
     __Vdlyvset__top__DOT__genblk1__BRA__2__KET____DOT__queue_block__DOT__colour_queue__v0 = 0U;
@@ -207,12 +207,251 @@ VL_INLINE_OPT void Vtop___024root___sequent__TOP__0(Vtop___024root* vlSelf) {
     __Vdlyvset__top__DOT__genblk1__BRA__0__KET____DOT__queue_block__DOT__colour_queue__v5 = 0U;
     __Vdlyvset__top__DOT__genblk1__BRA__0__KET____DOT__queue_block__DOT__colour_queue__v6 = 0U;
     __Vdlyvset__top__DOT__genblk1__BRA__0__KET____DOT__queue_block__DOT__colour_queue__v7 = 0U;
-    vlSelf->first = 0U;
-    if (((IData)(vlSelf->top__DOT__en_wire) & (IData)(vlSelf->ready))) {
-        vlSelf->valid = 1U;
-        __Vdly__top__DOT__xpixel_wire = vlSelf->top__DOT__combinator_block__DOT__xpixel;
-        __Vdly__top__DOT__ypixel_wire = vlSelf->top__DOT__combinator_block__DOT__ypixel;
-        vlSelf->top__DOT__colour_o_wire = vlSelf->top__DOT__colour_wire;
+    if (vlSelf->top__DOT__reset_engine) {
+        __Vdly__top__DOT__genblk1__BRA__2__KET____DOT__engine__DOT__state = 2U;
+        vlSelf->top__DOT____Vcellout__genblk1__BRA__2__KET____DOT__engine__finished = 0U;
+        __Vdly__top__DOT____Vcellout__genblk1__BRA__2__KET____DOT__engine__iterations = 0U;
+        __Vdly__top__DOT__genblk1__BRA__2__KET____DOT__engine__DOT__x = 0U;
+        __Vdly__top__DOT__genblk1__BRA__2__KET____DOT__engine__DOT__y = 0U;
+        __Vdly__top__DOT__genblk1__BRA__2__KET____DOT__engine__DOT__y_tmp = 0ULL;
+        __Vdly__top__DOT__genblk1__BRA__2__KET____DOT__engine__DOT__x2 = 0ULL;
+        __Vdly__top__DOT__genblk1__BRA__2__KET____DOT__engine__DOT__y2 = 0ULL;
+        __Vdly__top__DOT__genblk1__BRA__1__KET____DOT__engine__DOT__state = 2U;
+        vlSelf->top__DOT____Vcellout__genblk1__BRA__1__KET____DOT__engine__finished = 0U;
+        __Vdly__top__DOT____Vcellout__genblk1__BRA__1__KET____DOT__engine__iterations = 0U;
+        __Vdly__top__DOT__genblk1__BRA__1__KET____DOT__engine__DOT__x = 0U;
+        __Vdly__top__DOT__genblk1__BRA__1__KET____DOT__engine__DOT__y = 0U;
+        __Vdly__top__DOT__genblk1__BRA__1__KET____DOT__engine__DOT__y_tmp = 0ULL;
+        __Vdly__top__DOT__genblk1__BRA__1__KET____DOT__engine__DOT__x2 = 0ULL;
+        __Vdly__top__DOT__genblk1__BRA__1__KET____DOT__engine__DOT__y2 = 0ULL;
+        __Vdly__top__DOT__genblk1__BRA__0__KET____DOT__engine__DOT__state = 2U;
+        vlSelf->top__DOT____Vcellout__genblk1__BRA__0__KET____DOT__engine__finished = 0U;
+        __Vdly__top__DOT____Vcellout__genblk1__BRA__0__KET____DOT__engine__iterations = 0U;
+        __Vdly__top__DOT__genblk1__BRA__0__KET____DOT__engine__DOT__x = 0U;
+        __Vdly__top__DOT__genblk1__BRA__0__KET____DOT__engine__DOT__y = 0U;
+        __Vdly__top__DOT__genblk1__BRA__0__KET____DOT__engine__DOT__y_tmp = 0ULL;
+        __Vdly__top__DOT__genblk1__BRA__0__KET____DOT__engine__DOT__x2 = 0ULL;
+        __Vdly__top__DOT__genblk1__BRA__0__KET____DOT__engine__DOT__y2 = 0ULL;
+    } else {
+        if ((2U == vlSelf->top__DOT__genblk1__BRA__2__KET____DOT__engine__DOT__state)) {
+            vlSelf->top__DOT__genblk1__BRA__2__KET____DOT__engine__DOT__x0_buff 
+                = vlSelf->top__DOT__x[2U];
+            vlSelf->top__DOT__genblk1__BRA__2__KET____DOT__engine__DOT__y0_buff 
+                = vlSelf->top__DOT__y[2U];
+            __Vdly__top__DOT__genblk1__BRA__2__KET____DOT__engine__DOT__state = 0U;
+        } else if ((0U == vlSelf->top__DOT__genblk1__BRA__2__KET____DOT__engine__DOT__state)) {
+            __Vdly__top__DOT__genblk1__BRA__2__KET____DOT__engine__DOT__x 
+                = (((IData)((vlSelf->top__DOT__genblk1__BRA__2__KET____DOT__engine__DOT__x2 
+                             >> 0x18U)) - (IData)((vlSelf->top__DOT__genblk1__BRA__2__KET____DOT__engine__DOT__y2 
+                                                   >> 0x18U))) 
+                   + (VL_RTOIROUND_I_D(((1.67772160000000000e+07 
+                                         * (-320.0 
+                                            + VL_ISTOR_D_I(32, vlSelf->x_offset))) 
+                                        / VL_ISTOR_D_I(32, 
+                                                       ((IData)(0x64U) 
+                                                        * vlSelf->zoom)))) 
+                      + VL_MULS_III(32, VL_DIVS_III(32, (IData)(0x1000000U), 
+                                                    VL_MULS_III(32, (IData)(0x64U), vlSelf->zoom)), 
+                                    vlSelf->top__DOT__x
+                                    [2U])));
+            if (((vlSelf->top__DOT____Vcellout__genblk1__BRA__2__KET____DOT__engine__iterations 
+                  >= vlSelf->iterations_max) | (0x4000000U 
+                                                <= 
+                                                ((IData)(
+                                                         (vlSelf->top__DOT__genblk1__BRA__2__KET____DOT__engine__DOT__x2 
+                                                          >> 0x18U)) 
+                                                 + (IData)(
+                                                           (vlSelf->top__DOT__genblk1__BRA__2__KET____DOT__engine__DOT__y2 
+                                                            >> 0x18U)))))) {
+                __Vdly__top__DOT__genblk1__BRA__2__KET____DOT__engine__DOT__state = 1U;
+            } else {
+                __Vdly__top__DOT____Vcellout__genblk1__BRA__2__KET____DOT__engine__iterations 
+                    = ((IData)(1U) + vlSelf->top__DOT____Vcellout__genblk1__BRA__2__KET____DOT__engine__iterations);
+                __Vdly__top__DOT__genblk1__BRA__2__KET____DOT__engine__DOT__state = 0U;
+            }
+            __Vdly__top__DOT__genblk1__BRA__2__KET____DOT__engine__DOT__x2 
+                = VL_MULS_QQQ(64, VL_EXTENDS_QI(64,32, vlSelf->top__DOT__genblk1__BRA__2__KET____DOT__engine__DOT__x), 
+                              VL_EXTENDS_QI(64,32, vlSelf->top__DOT__genblk1__BRA__2__KET____DOT__engine__DOT__x));
+            __Vdly__top__DOT__genblk1__BRA__2__KET____DOT__engine__DOT__y2 
+                = VL_MULS_QQQ(64, VL_EXTENDS_QI(64,32, vlSelf->top__DOT__genblk1__BRA__2__KET____DOT__engine__DOT__y), 
+                              VL_EXTENDS_QI(64,32, vlSelf->top__DOT__genblk1__BRA__2__KET____DOT__engine__DOT__y));
+            __Vdly__top__DOT__genblk1__BRA__2__KET____DOT__engine__DOT__y 
+                = ((IData)((vlSelf->top__DOT__genblk1__BRA__2__KET____DOT__engine__DOT__y_tmp 
+                            >> 0x18U)) + (VL_RTOIROUND_I_D(
+                                                           ((1.67772160000000000e+07 
+                                                             * 
+                                                             (-240.0 
+                                                              + 
+                                                              VL_ISTOR_D_I(32, vlSelf->y_offset))) 
+                                                            / 
+                                                            VL_ISTOR_D_I(32, 
+                                                                         ((IData)(0x64U) 
+                                                                          * vlSelf->zoom)))) 
+                                          + VL_MULS_III(32, 
+                                                        VL_DIVS_III(32, (IData)(0x1000000U), 
+                                                                    VL_MULS_III(32, (IData)(0x64U), vlSelf->zoom)), 
+                                                        vlSelf->top__DOT__y
+                                                        [2U])));
+            __Vdly__top__DOT__genblk1__BRA__2__KET____DOT__engine__DOT__y_tmp 
+                = ((1ULL & __Vdly__top__DOT__genblk1__BRA__2__KET____DOT__engine__DOT__y_tmp) 
+                   | (VL_MULS_QQQ(63, (0x7fffffffffffffffULL 
+                                       & VL_EXTENDS_QI(63,32, vlSelf->top__DOT__genblk1__BRA__2__KET____DOT__engine__DOT__x)), 
+                                  (0x7fffffffffffffffULL 
+                                   & VL_EXTENDS_QI(63,32, vlSelf->top__DOT__genblk1__BRA__2__KET____DOT__engine__DOT__y))) 
+                      << 1U));
+        } else if ((1U == vlSelf->top__DOT__genblk1__BRA__2__KET____DOT__engine__DOT__state)) {
+            vlSelf->top__DOT____Vcellout__genblk1__BRA__2__KET____DOT__engine__finished = 1U;
+            vlSelf->top__DOT____Vcellout__genblk1__BRA__2__KET____DOT__engine__xpixel 
+                = vlSelf->top__DOT__x[2U];
+            vlSelf->top__DOT____Vcellout__genblk1__BRA__2__KET____DOT__engine__ypixel 
+                = vlSelf->top__DOT__y[2U];
+        }
+        if ((2U == vlSelf->top__DOT__genblk1__BRA__1__KET____DOT__engine__DOT__state)) {
+            vlSelf->top__DOT__genblk1__BRA__1__KET____DOT__engine__DOT__x0_buff 
+                = vlSelf->top__DOT__x[1U];
+            vlSelf->top__DOT__genblk1__BRA__1__KET____DOT__engine__DOT__y0_buff 
+                = vlSelf->top__DOT__y[1U];
+            __Vdly__top__DOT__genblk1__BRA__1__KET____DOT__engine__DOT__state = 0U;
+        } else if ((0U == vlSelf->top__DOT__genblk1__BRA__1__KET____DOT__engine__DOT__state)) {
+            __Vdly__top__DOT__genblk1__BRA__1__KET____DOT__engine__DOT__x 
+                = (((IData)((vlSelf->top__DOT__genblk1__BRA__1__KET____DOT__engine__DOT__x2 
+                             >> 0x18U)) - (IData)((vlSelf->top__DOT__genblk1__BRA__1__KET____DOT__engine__DOT__y2 
+                                                   >> 0x18U))) 
+                   + (VL_RTOIROUND_I_D(((1.67772160000000000e+07 
+                                         * (-320.0 
+                                            + VL_ISTOR_D_I(32, vlSelf->x_offset))) 
+                                        / VL_ISTOR_D_I(32, 
+                                                       ((IData)(0x64U) 
+                                                        * vlSelf->zoom)))) 
+                      + VL_MULS_III(32, VL_DIVS_III(32, (IData)(0x1000000U), 
+                                                    VL_MULS_III(32, (IData)(0x64U), vlSelf->zoom)), 
+                                    vlSelf->top__DOT__x
+                                    [1U])));
+            if (((vlSelf->top__DOT____Vcellout__genblk1__BRA__1__KET____DOT__engine__iterations 
+                  >= vlSelf->iterations_max) | (0x4000000U 
+                                                <= 
+                                                ((IData)(
+                                                         (vlSelf->top__DOT__genblk1__BRA__1__KET____DOT__engine__DOT__x2 
+                                                          >> 0x18U)) 
+                                                 + (IData)(
+                                                           (vlSelf->top__DOT__genblk1__BRA__1__KET____DOT__engine__DOT__y2 
+                                                            >> 0x18U)))))) {
+                __Vdly__top__DOT__genblk1__BRA__1__KET____DOT__engine__DOT__state = 1U;
+            } else {
+                __Vdly__top__DOT____Vcellout__genblk1__BRA__1__KET____DOT__engine__iterations 
+                    = ((IData)(1U) + vlSelf->top__DOT____Vcellout__genblk1__BRA__1__KET____DOT__engine__iterations);
+                __Vdly__top__DOT__genblk1__BRA__1__KET____DOT__engine__DOT__state = 0U;
+            }
+            __Vdly__top__DOT__genblk1__BRA__1__KET____DOT__engine__DOT__x2 
+                = VL_MULS_QQQ(64, VL_EXTENDS_QI(64,32, vlSelf->top__DOT__genblk1__BRA__1__KET____DOT__engine__DOT__x), 
+                              VL_EXTENDS_QI(64,32, vlSelf->top__DOT__genblk1__BRA__1__KET____DOT__engine__DOT__x));
+            __Vdly__top__DOT__genblk1__BRA__1__KET____DOT__engine__DOT__y2 
+                = VL_MULS_QQQ(64, VL_EXTENDS_QI(64,32, vlSelf->top__DOT__genblk1__BRA__1__KET____DOT__engine__DOT__y), 
+                              VL_EXTENDS_QI(64,32, vlSelf->top__DOT__genblk1__BRA__1__KET____DOT__engine__DOT__y));
+            __Vdly__top__DOT__genblk1__BRA__1__KET____DOT__engine__DOT__y 
+                = ((IData)((vlSelf->top__DOT__genblk1__BRA__1__KET____DOT__engine__DOT__y_tmp 
+                            >> 0x18U)) + (VL_RTOIROUND_I_D(
+                                                           ((1.67772160000000000e+07 
+                                                             * 
+                                                             (-240.0 
+                                                              + 
+                                                              VL_ISTOR_D_I(32, vlSelf->y_offset))) 
+                                                            / 
+                                                            VL_ISTOR_D_I(32, 
+                                                                         ((IData)(0x64U) 
+                                                                          * vlSelf->zoom)))) 
+                                          + VL_MULS_III(32, 
+                                                        VL_DIVS_III(32, (IData)(0x1000000U), 
+                                                                    VL_MULS_III(32, (IData)(0x64U), vlSelf->zoom)), 
+                                                        vlSelf->top__DOT__y
+                                                        [1U])));
+            __Vdly__top__DOT__genblk1__BRA__1__KET____DOT__engine__DOT__y_tmp 
+                = ((1ULL & __Vdly__top__DOT__genblk1__BRA__1__KET____DOT__engine__DOT__y_tmp) 
+                   | (VL_MULS_QQQ(63, (0x7fffffffffffffffULL 
+                                       & VL_EXTENDS_QI(63,32, vlSelf->top__DOT__genblk1__BRA__1__KET____DOT__engine__DOT__x)), 
+                                  (0x7fffffffffffffffULL 
+                                   & VL_EXTENDS_QI(63,32, vlSelf->top__DOT__genblk1__BRA__1__KET____DOT__engine__DOT__y))) 
+                      << 1U));
+        } else if ((1U == vlSelf->top__DOT__genblk1__BRA__1__KET____DOT__engine__DOT__state)) {
+            vlSelf->top__DOT____Vcellout__genblk1__BRA__1__KET____DOT__engine__finished = 1U;
+            vlSelf->top__DOT____Vcellout__genblk1__BRA__1__KET____DOT__engine__xpixel 
+                = vlSelf->top__DOT__x[1U];
+            vlSelf->top__DOT____Vcellout__genblk1__BRA__1__KET____DOT__engine__ypixel 
+                = vlSelf->top__DOT__y[1U];
+        }
+        if ((2U == vlSelf->top__DOT__genblk1__BRA__0__KET____DOT__engine__DOT__state)) {
+            vlSelf->top__DOT__genblk1__BRA__0__KET____DOT__engine__DOT__x0_buff 
+                = vlSelf->top__DOT__x[0U];
+            vlSelf->top__DOT__genblk1__BRA__0__KET____DOT__engine__DOT__y0_buff 
+                = vlSelf->top__DOT__y[0U];
+            __Vdly__top__DOT__genblk1__BRA__0__KET____DOT__engine__DOT__state = 0U;
+        } else if ((0U == vlSelf->top__DOT__genblk1__BRA__0__KET____DOT__engine__DOT__state)) {
+            __Vdly__top__DOT__genblk1__BRA__0__KET____DOT__engine__DOT__x 
+                = (((IData)((vlSelf->top__DOT__genblk1__BRA__0__KET____DOT__engine__DOT__x2 
+                             >> 0x18U)) - (IData)((vlSelf->top__DOT__genblk1__BRA__0__KET____DOT__engine__DOT__y2 
+                                                   >> 0x18U))) 
+                   + (VL_RTOIROUND_I_D(((1.67772160000000000e+07 
+                                         * (-320.0 
+                                            + VL_ISTOR_D_I(32, vlSelf->x_offset))) 
+                                        / VL_ISTOR_D_I(32, 
+                                                       ((IData)(0x64U) 
+                                                        * vlSelf->zoom)))) 
+                      + VL_MULS_III(32, VL_DIVS_III(32, (IData)(0x1000000U), 
+                                                    VL_MULS_III(32, (IData)(0x64U), vlSelf->zoom)), 
+                                    vlSelf->top__DOT__x
+                                    [0U])));
+            if (((vlSelf->top__DOT____Vcellout__genblk1__BRA__0__KET____DOT__engine__iterations 
+                  >= vlSelf->iterations_max) | (0x4000000U 
+                                                <= 
+                                                ((IData)(
+                                                         (vlSelf->top__DOT__genblk1__BRA__0__KET____DOT__engine__DOT__x2 
+                                                          >> 0x18U)) 
+                                                 + (IData)(
+                                                           (vlSelf->top__DOT__genblk1__BRA__0__KET____DOT__engine__DOT__y2 
+                                                            >> 0x18U)))))) {
+                __Vdly__top__DOT__genblk1__BRA__0__KET____DOT__engine__DOT__state = 1U;
+            } else {
+                __Vdly__top__DOT____Vcellout__genblk1__BRA__0__KET____DOT__engine__iterations 
+                    = ((IData)(1U) + vlSelf->top__DOT____Vcellout__genblk1__BRA__0__KET____DOT__engine__iterations);
+                __Vdly__top__DOT__genblk1__BRA__0__KET____DOT__engine__DOT__state = 0U;
+            }
+            __Vdly__top__DOT__genblk1__BRA__0__KET____DOT__engine__DOT__x2 
+                = VL_MULS_QQQ(64, VL_EXTENDS_QI(64,32, vlSelf->top__DOT__genblk1__BRA__0__KET____DOT__engine__DOT__x), 
+                              VL_EXTENDS_QI(64,32, vlSelf->top__DOT__genblk1__BRA__0__KET____DOT__engine__DOT__x));
+            __Vdly__top__DOT__genblk1__BRA__0__KET____DOT__engine__DOT__y2 
+                = VL_MULS_QQQ(64, VL_EXTENDS_QI(64,32, vlSelf->top__DOT__genblk1__BRA__0__KET____DOT__engine__DOT__y), 
+                              VL_EXTENDS_QI(64,32, vlSelf->top__DOT__genblk1__BRA__0__KET____DOT__engine__DOT__y));
+            __Vdly__top__DOT__genblk1__BRA__0__KET____DOT__engine__DOT__y 
+                = ((IData)((vlSelf->top__DOT__genblk1__BRA__0__KET____DOT__engine__DOT__y_tmp 
+                            >> 0x18U)) + (VL_RTOIROUND_I_D(
+                                                           ((1.67772160000000000e+07 
+                                                             * 
+                                                             (-240.0 
+                                                              + 
+                                                              VL_ISTOR_D_I(32, vlSelf->y_offset))) 
+                                                            / 
+                                                            VL_ISTOR_D_I(32, 
+                                                                         ((IData)(0x64U) 
+                                                                          * vlSelf->zoom)))) 
+                                          + VL_MULS_III(32, 
+                                                        VL_DIVS_III(32, (IData)(0x1000000U), 
+                                                                    VL_MULS_III(32, (IData)(0x64U), vlSelf->zoom)), 
+                                                        vlSelf->top__DOT__y
+                                                        [0U])));
+            __Vdly__top__DOT__genblk1__BRA__0__KET____DOT__engine__DOT__y_tmp 
+                = ((1ULL & __Vdly__top__DOT__genblk1__BRA__0__KET____DOT__engine__DOT__y_tmp) 
+                   | (VL_MULS_QQQ(63, (0x7fffffffffffffffULL 
+                                       & VL_EXTENDS_QI(63,32, vlSelf->top__DOT__genblk1__BRA__0__KET____DOT__engine__DOT__x)), 
+                                  (0x7fffffffffffffffULL 
+                                   & VL_EXTENDS_QI(63,32, vlSelf->top__DOT__genblk1__BRA__0__KET____DOT__engine__DOT__y))) 
+                      << 1U));
+        } else if ((1U == vlSelf->top__DOT__genblk1__BRA__0__KET____DOT__engine__DOT__state)) {
+            vlSelf->top__DOT____Vcellout__genblk1__BRA__0__KET____DOT__engine__finished = 1U;
+            vlSelf->top__DOT____Vcellout__genblk1__BRA__0__KET____DOT__engine__xpixel 
+                = vlSelf->top__DOT__x[0U];
+            vlSelf->top__DOT____Vcellout__genblk1__BRA__0__KET____DOT__engine__ypixel 
+                = vlSelf->top__DOT__y[0U];
+        }
     }
     if (vlSelf->reset) {
         vlSelf->top__DOT__genblk1__BRA__0__KET____DOT__queue_block__DOT__unnamedblk1__DOT__i = 5U;
@@ -223,6 +462,43 @@ VL_INLINE_OPT void Vtop___024root___sequent__TOP__0(Vtop___024root* vlSelf) {
         __Vdly__top__DOT__distributor__DOT__y0 = 0U;
         __Vdly__top__DOT__combinator_block__DOT__xpixel = 0U;
         __Vdly__top__DOT__combinator_block__DOT__ypixel = 0U;
+    } else if (vlSelf->top__DOT__fin_wire) {
+        __Vdly__top__DOT__distributor__DOT__x0 = VL_MODDIV_III(32, 
+                                                               ((IData)(3U) 
+                                                                + vlSelf->top__DOT__distributor__DOT__x0), (IData)(0x280U));
+        __Vdly__top__DOT__distributor__DOT__y0 = VL_MODDIV_III(32, 
+                                                               (vlSelf->top__DOT__distributor__DOT__y0 
+                                                                + 
+                                                                VL_DIV_III(32, 
+                                                                           ((IData)(3U) 
+                                                                            + vlSelf->top__DOT__distributor__DOT__x0), (IData)(0x280U))), (IData)(0x1e0U));
+    }
+    if ((0x1dfU <= vlSelf->top__DOT__combinator_block__DOT__ypixel)) {
+        vlSelf->last_y = 1U;
+        __Vdly__top__DOT__combinator_block__DOT__xpixel = 0U;
+        __Vdly__top__DOT__combinator_block__DOT__ypixel = 0U;
+    }
+    if ((0x27fU == vlSelf->top__DOT__combinator_block__DOT__xpixel)) {
+        vlSelf->valid = 1U;
+        vlSelf->top__DOT__colour_o_wire = vlSelf->top__DOT__colour_wire;
+        __Vdly__top__DOT__xpixel_wire = vlSelf->top__DOT__combinator_block__DOT__xpixel;
+        __Vdly__top__DOT__ypixel_wire = vlSelf->top__DOT__combinator_block__DOT__ypixel;
+        vlSelf->last_x = 1U;
+        __Vdly__top__DOT__combinator_block__DOT__ypixel 
+            = ((IData)(1U) + vlSelf->top__DOT__combinator_block__DOT__ypixel);
+        __Vdly__top__DOT__combinator_block__DOT__xpixel = 0U;
+    } else if (((IData)(vlSelf->top__DOT__en_wire) 
+                & (IData)(vlSelf->ready))) {
+        __Vdly__top__DOT__combinator_block__DOT__xpixel 
+            = ((IData)(1U) + vlSelf->top__DOT__combinator_block__DOT__xpixel);
+        vlSelf->valid = 1U;
+        vlSelf->top__DOT__colour_o_wire = vlSelf->top__DOT__colour_wire;
+        __Vdly__top__DOT__xpixel_wire = vlSelf->top__DOT__combinator_block__DOT__xpixel;
+        __Vdly__top__DOT__ypixel_wire = vlSelf->top__DOT__combinator_block__DOT__ypixel;
+    } else {
+        vlSelf->valid = 0U;
+    }
+    if (vlSelf->reset) {
         vlSelf->top__DOT__en_wire = 0U;
         __Vdly__top__DOT__genblk1__BRA__0__KET____DOT__queue_block__DOT__counter = 0U;
         __Vdlyvset__top__DOT__genblk1__BRA__0__KET____DOT__queue_block__DOT__colour_queue__v0 = 1U;
@@ -233,15 +509,6 @@ VL_INLINE_OPT void Vtop___024root___sequent__TOP__0(Vtop___024root* vlSelf) {
         __Vdly__top__DOT__genblk1__BRA__2__KET____DOT__queue_block__DOT__counter = 0U;
         __Vdlyvset__top__DOT__genblk1__BRA__2__KET____DOT__queue_block__DOT__colour_queue__v0 = 1U;
     } else {
-        if (vlSelf->top__DOT__fin_wire) {
-            __Vdly__top__DOT__distributor__DOT__x0 
-                = VL_MODDIV_III(32, ((IData)(3U) + vlSelf->top__DOT__distributor__DOT__x0), (IData)(0x280U));
-            __Vdly__top__DOT__distributor__DOT__y0 
-                = VL_MODDIV_III(32, (vlSelf->top__DOT__distributor__DOT__y0 
-                                     + VL_DIV_III(32, 
-                                                  ((IData)(3U) 
-                                                   + vlSelf->top__DOT__distributor__DOT__x0), (IData)(0x280U))), (IData)(0x1e0U));
-        }
         if ((4U == (IData)(vlSelf->top__DOT__genblk1__BRA__0__KET____DOT__queue_block__DOT__counter))) {
             vlSelf->top__DOT____Vcellout__genblk1__BRA__0__KET____DOT__queue_block__full_queue = 1U;
         } else if ((0U == (IData)(vlSelf->top__DOT__genblk1__BRA__0__KET____DOT__queue_block__DOT__counter))) {
@@ -582,273 +849,8 @@ VL_INLINE_OPT void Vtop___024root___sequent__TOP__0(Vtop___024root* vlSelf) {
                 = (7U & ((IData)(1U) + (IData)(vlSelf->top__DOT__genblk1__BRA__2__KET____DOT__queue_block__DOT__counter)));
         }
     }
-    vlSelf->last_x = 0U;
-    vlSelf->last_y = 0U;
-    __Vdly__top__DOT__combinator_block__DOT__xpixel 
-        = ((IData)(1U) + vlSelf->top__DOT__combinator_block__DOT__xpixel);
-    if ((0x280U <= vlSelf->top__DOT__combinator_block__DOT__xpixel)) {
-        __Vdly__top__DOT__combinator_block__DOT__ypixel 
-            = ((IData)(1U) + vlSelf->top__DOT__combinator_block__DOT__ypixel);
-        vlSelf->last_x = 1U;
-        __Vdly__top__DOT__combinator_block__DOT__xpixel = 0U;
-    }
-    if ((0x1e0U <= vlSelf->top__DOT__combinator_block__DOT__ypixel)) {
-        vlSelf->last_y = 1U;
-        __Vdly__top__DOT__combinator_block__DOT__xpixel = 0U;
-        __Vdly__top__DOT__combinator_block__DOT__ypixel = 0U;
-    }
-    if (vlSelf->top__DOT__reset_engine) {
-        __Vdly__top__DOT__genblk1__BRA__2__KET____DOT__engine__DOT__state = 2U;
-        vlSelf->top__DOT____Vcellout__genblk1__BRA__2__KET____DOT__engine__finished = 0U;
-        __Vdly__top__DOT____Vcellout__genblk1__BRA__2__KET____DOT__engine__iterations = 0U;
-        __Vdly__top__DOT__genblk1__BRA__2__KET____DOT__engine__DOT__x = 0U;
-        __Vdly__top__DOT__genblk1__BRA__2__KET____DOT__engine__DOT__y = 0U;
-        __Vdly__top__DOT__genblk1__BRA__2__KET____DOT__engine__DOT__y_tmp = 0ULL;
-        __Vdly__top__DOT__genblk1__BRA__2__KET____DOT__engine__DOT__x2 = 0ULL;
-        __Vdly__top__DOT__genblk1__BRA__2__KET____DOT__engine__DOT__y2 = 0ULL;
-        __Vdly__top__DOT__genblk1__BRA__1__KET____DOT__engine__DOT__state = 2U;
-        vlSelf->top__DOT____Vcellout__genblk1__BRA__1__KET____DOT__engine__finished = 0U;
-        __Vdly__top__DOT____Vcellout__genblk1__BRA__1__KET____DOT__engine__iterations = 0U;
-        __Vdly__top__DOT__genblk1__BRA__1__KET____DOT__engine__DOT__x = 0U;
-        __Vdly__top__DOT__genblk1__BRA__1__KET____DOT__engine__DOT__y = 0U;
-        __Vdly__top__DOT__genblk1__BRA__1__KET____DOT__engine__DOT__y_tmp = 0ULL;
-        __Vdly__top__DOT__genblk1__BRA__1__KET____DOT__engine__DOT__x2 = 0ULL;
-        __Vdly__top__DOT__genblk1__BRA__1__KET____DOT__engine__DOT__y2 = 0ULL;
-        __Vdly__top__DOT__genblk1__BRA__0__KET____DOT__engine__DOT__state = 2U;
-        vlSelf->top__DOT____Vcellout__genblk1__BRA__0__KET____DOT__engine__finished = 0U;
-        __Vdly__top__DOT____Vcellout__genblk1__BRA__0__KET____DOT__engine__iterations = 0U;
-        __Vdly__top__DOT__genblk1__BRA__0__KET____DOT__engine__DOT__x = 0U;
-        __Vdly__top__DOT__genblk1__BRA__0__KET____DOT__engine__DOT__y = 0U;
-        __Vdly__top__DOT__genblk1__BRA__0__KET____DOT__engine__DOT__y_tmp = 0ULL;
-        __Vdly__top__DOT__genblk1__BRA__0__KET____DOT__engine__DOT__x2 = 0ULL;
-        __Vdly__top__DOT__genblk1__BRA__0__KET____DOT__engine__DOT__y2 = 0ULL;
-    } else {
-        if ((2U == vlSelf->top__DOT__genblk1__BRA__2__KET____DOT__engine__DOT__state)) {
-            vlSelf->top__DOT__genblk1__BRA__2__KET____DOT__engine__DOT__x0_buff 
-                = vlSelf->top__DOT__x[2U];
-            vlSelf->top__DOT__genblk1__BRA__2__KET____DOT__engine__DOT__y0_buff 
-                = vlSelf->top__DOT__y[2U];
-            __Vdly__top__DOT__genblk1__BRA__2__KET____DOT__engine__DOT__state = 0U;
-        } else if ((0U == vlSelf->top__DOT__genblk1__BRA__2__KET____DOT__engine__DOT__state)) {
-            __Vdly__top__DOT__genblk1__BRA__2__KET____DOT__engine__DOT__x 
-                = (((IData)((vlSelf->top__DOT__genblk1__BRA__2__KET____DOT__engine__DOT__x2 
-                             >> 0x18U)) - (IData)((vlSelf->top__DOT__genblk1__BRA__2__KET____DOT__engine__DOT__y2 
-                                                   >> 0x18U))) 
-                   + (VL_RTOIROUND_I_D(((1.67772160000000000e+07 
-                                         * (-320.0 
-                                            + VL_ISTOR_D_I(32, vlSelf->x_offset))) 
-                                        / VL_ISTOR_D_I(32, 
-                                                       ((IData)(0x64U) 
-                                                        * vlSelf->zoom)))) 
-                      + VL_MULS_III(32, VL_DIVS_III(32, (IData)(0x1000000U), 
-                                                    VL_MULS_III(32, (IData)(0x64U), vlSelf->zoom)), 
-                                    vlSelf->top__DOT__x
-                                    [2U])));
-            if (((vlSelf->top__DOT____Vcellout__genblk1__BRA__2__KET____DOT__engine__iterations 
-                  >= vlSelf->iterations_max) | (0x4000000U 
-                                                <= 
-                                                ((IData)(
-                                                         (vlSelf->top__DOT__genblk1__BRA__2__KET____DOT__engine__DOT__x2 
-                                                          >> 0x18U)) 
-                                                 + (IData)(
-                                                           (vlSelf->top__DOT__genblk1__BRA__2__KET____DOT__engine__DOT__y2 
-                                                            >> 0x18U)))))) {
-                __Vdly__top__DOT__genblk1__BRA__2__KET____DOT__engine__DOT__state = 1U;
-            } else {
-                __Vdly__top__DOT____Vcellout__genblk1__BRA__2__KET____DOT__engine__iterations 
-                    = ((IData)(1U) + vlSelf->top__DOT____Vcellout__genblk1__BRA__2__KET____DOT__engine__iterations);
-                __Vdly__top__DOT__genblk1__BRA__2__KET____DOT__engine__DOT__state = 0U;
-            }
-            __Vdly__top__DOT__genblk1__BRA__2__KET____DOT__engine__DOT__x2 
-                = VL_MULS_QQQ(64, VL_EXTENDS_QI(64,32, vlSelf->top__DOT__genblk1__BRA__2__KET____DOT__engine__DOT__x), 
-                              VL_EXTENDS_QI(64,32, vlSelf->top__DOT__genblk1__BRA__2__KET____DOT__engine__DOT__x));
-            __Vdly__top__DOT__genblk1__BRA__2__KET____DOT__engine__DOT__y2 
-                = VL_MULS_QQQ(64, VL_EXTENDS_QI(64,32, vlSelf->top__DOT__genblk1__BRA__2__KET____DOT__engine__DOT__y), 
-                              VL_EXTENDS_QI(64,32, vlSelf->top__DOT__genblk1__BRA__2__KET____DOT__engine__DOT__y));
-            __Vdly__top__DOT__genblk1__BRA__2__KET____DOT__engine__DOT__y 
-                = ((IData)((vlSelf->top__DOT__genblk1__BRA__2__KET____DOT__engine__DOT__y_tmp 
-                            >> 0x18U)) + (VL_RTOIROUND_I_D(
-                                                           ((1.67772160000000000e+07 
-                                                             * 
-                                                             (-240.0 
-                                                              + 
-                                                              VL_ISTOR_D_I(32, vlSelf->y_offset))) 
-                                                            / 
-                                                            VL_ISTOR_D_I(32, 
-                                                                         ((IData)(0x64U) 
-                                                                          * vlSelf->zoom)))) 
-                                          + VL_MULS_III(32, 
-                                                        VL_DIVS_III(32, (IData)(0x1000000U), 
-                                                                    VL_MULS_III(32, (IData)(0x64U), vlSelf->zoom)), 
-                                                        vlSelf->top__DOT__y
-                                                        [2U])));
-            __Vdly__top__DOT__genblk1__BRA__2__KET____DOT__engine__DOT__y_tmp 
-                = ((1ULL & __Vdly__top__DOT__genblk1__BRA__2__KET____DOT__engine__DOT__y_tmp) 
-                   | (VL_MULS_QQQ(63, (0x7fffffffffffffffULL 
-                                       & VL_EXTENDS_QI(63,32, vlSelf->top__DOT__genblk1__BRA__2__KET____DOT__engine__DOT__x)), 
-                                  (0x7fffffffffffffffULL 
-                                   & VL_EXTENDS_QI(63,32, vlSelf->top__DOT__genblk1__BRA__2__KET____DOT__engine__DOT__y))) 
-                      << 1U));
-        } else if ((1U == vlSelf->top__DOT__genblk1__BRA__2__KET____DOT__engine__DOT__state)) {
-            vlSelf->top__DOT____Vcellout__genblk1__BRA__2__KET____DOT__engine__finished = 1U;
-            vlSelf->top__DOT____Vcellout__genblk1__BRA__2__KET____DOT__engine__xpixel 
-                = vlSelf->top__DOT__x[2U];
-            vlSelf->top__DOT____Vcellout__genblk1__BRA__2__KET____DOT__engine__ypixel 
-                = vlSelf->top__DOT__y[2U];
-        }
-        if ((2U == vlSelf->top__DOT__genblk1__BRA__1__KET____DOT__engine__DOT__state)) {
-            vlSelf->top__DOT__genblk1__BRA__1__KET____DOT__engine__DOT__x0_buff 
-                = vlSelf->top__DOT__x[1U];
-            vlSelf->top__DOT__genblk1__BRA__1__KET____DOT__engine__DOT__y0_buff 
-                = vlSelf->top__DOT__y[1U];
-            __Vdly__top__DOT__genblk1__BRA__1__KET____DOT__engine__DOT__state = 0U;
-        } else if ((0U == vlSelf->top__DOT__genblk1__BRA__1__KET____DOT__engine__DOT__state)) {
-            __Vdly__top__DOT__genblk1__BRA__1__KET____DOT__engine__DOT__x 
-                = (((IData)((vlSelf->top__DOT__genblk1__BRA__1__KET____DOT__engine__DOT__x2 
-                             >> 0x18U)) - (IData)((vlSelf->top__DOT__genblk1__BRA__1__KET____DOT__engine__DOT__y2 
-                                                   >> 0x18U))) 
-                   + (VL_RTOIROUND_I_D(((1.67772160000000000e+07 
-                                         * (-320.0 
-                                            + VL_ISTOR_D_I(32, vlSelf->x_offset))) 
-                                        / VL_ISTOR_D_I(32, 
-                                                       ((IData)(0x64U) 
-                                                        * vlSelf->zoom)))) 
-                      + VL_MULS_III(32, VL_DIVS_III(32, (IData)(0x1000000U), 
-                                                    VL_MULS_III(32, (IData)(0x64U), vlSelf->zoom)), 
-                                    vlSelf->top__DOT__x
-                                    [1U])));
-            if (((vlSelf->top__DOT____Vcellout__genblk1__BRA__1__KET____DOT__engine__iterations 
-                  >= vlSelf->iterations_max) | (0x4000000U 
-                                                <= 
-                                                ((IData)(
-                                                         (vlSelf->top__DOT__genblk1__BRA__1__KET____DOT__engine__DOT__x2 
-                                                          >> 0x18U)) 
-                                                 + (IData)(
-                                                           (vlSelf->top__DOT__genblk1__BRA__1__KET____DOT__engine__DOT__y2 
-                                                            >> 0x18U)))))) {
-                __Vdly__top__DOT__genblk1__BRA__1__KET____DOT__engine__DOT__state = 1U;
-            } else {
-                __Vdly__top__DOT____Vcellout__genblk1__BRA__1__KET____DOT__engine__iterations 
-                    = ((IData)(1U) + vlSelf->top__DOT____Vcellout__genblk1__BRA__1__KET____DOT__engine__iterations);
-                __Vdly__top__DOT__genblk1__BRA__1__KET____DOT__engine__DOT__state = 0U;
-            }
-            __Vdly__top__DOT__genblk1__BRA__1__KET____DOT__engine__DOT__x2 
-                = VL_MULS_QQQ(64, VL_EXTENDS_QI(64,32, vlSelf->top__DOT__genblk1__BRA__1__KET____DOT__engine__DOT__x), 
-                              VL_EXTENDS_QI(64,32, vlSelf->top__DOT__genblk1__BRA__1__KET____DOT__engine__DOT__x));
-            __Vdly__top__DOT__genblk1__BRA__1__KET____DOT__engine__DOT__y2 
-                = VL_MULS_QQQ(64, VL_EXTENDS_QI(64,32, vlSelf->top__DOT__genblk1__BRA__1__KET____DOT__engine__DOT__y), 
-                              VL_EXTENDS_QI(64,32, vlSelf->top__DOT__genblk1__BRA__1__KET____DOT__engine__DOT__y));
-            __Vdly__top__DOT__genblk1__BRA__1__KET____DOT__engine__DOT__y 
-                = ((IData)((vlSelf->top__DOT__genblk1__BRA__1__KET____DOT__engine__DOT__y_tmp 
-                            >> 0x18U)) + (VL_RTOIROUND_I_D(
-                                                           ((1.67772160000000000e+07 
-                                                             * 
-                                                             (-240.0 
-                                                              + 
-                                                              VL_ISTOR_D_I(32, vlSelf->y_offset))) 
-                                                            / 
-                                                            VL_ISTOR_D_I(32, 
-                                                                         ((IData)(0x64U) 
-                                                                          * vlSelf->zoom)))) 
-                                          + VL_MULS_III(32, 
-                                                        VL_DIVS_III(32, (IData)(0x1000000U), 
-                                                                    VL_MULS_III(32, (IData)(0x64U), vlSelf->zoom)), 
-                                                        vlSelf->top__DOT__y
-                                                        [1U])));
-            __Vdly__top__DOT__genblk1__BRA__1__KET____DOT__engine__DOT__y_tmp 
-                = ((1ULL & __Vdly__top__DOT__genblk1__BRA__1__KET____DOT__engine__DOT__y_tmp) 
-                   | (VL_MULS_QQQ(63, (0x7fffffffffffffffULL 
-                                       & VL_EXTENDS_QI(63,32, vlSelf->top__DOT__genblk1__BRA__1__KET____DOT__engine__DOT__x)), 
-                                  (0x7fffffffffffffffULL 
-                                   & VL_EXTENDS_QI(63,32, vlSelf->top__DOT__genblk1__BRA__1__KET____DOT__engine__DOT__y))) 
-                      << 1U));
-        } else if ((1U == vlSelf->top__DOT__genblk1__BRA__1__KET____DOT__engine__DOT__state)) {
-            vlSelf->top__DOT____Vcellout__genblk1__BRA__1__KET____DOT__engine__finished = 1U;
-            vlSelf->top__DOT____Vcellout__genblk1__BRA__1__KET____DOT__engine__xpixel 
-                = vlSelf->top__DOT__x[1U];
-            vlSelf->top__DOT____Vcellout__genblk1__BRA__1__KET____DOT__engine__ypixel 
-                = vlSelf->top__DOT__y[1U];
-        }
-        if ((2U == vlSelf->top__DOT__genblk1__BRA__0__KET____DOT__engine__DOT__state)) {
-            vlSelf->top__DOT__genblk1__BRA__0__KET____DOT__engine__DOT__x0_buff 
-                = vlSelf->top__DOT__x[0U];
-            vlSelf->top__DOT__genblk1__BRA__0__KET____DOT__engine__DOT__y0_buff 
-                = vlSelf->top__DOT__y[0U];
-            __Vdly__top__DOT__genblk1__BRA__0__KET____DOT__engine__DOT__state = 0U;
-        } else if ((0U == vlSelf->top__DOT__genblk1__BRA__0__KET____DOT__engine__DOT__state)) {
-            __Vdly__top__DOT__genblk1__BRA__0__KET____DOT__engine__DOT__x 
-                = (((IData)((vlSelf->top__DOT__genblk1__BRA__0__KET____DOT__engine__DOT__x2 
-                             >> 0x18U)) - (IData)((vlSelf->top__DOT__genblk1__BRA__0__KET____DOT__engine__DOT__y2 
-                                                   >> 0x18U))) 
-                   + (VL_RTOIROUND_I_D(((1.67772160000000000e+07 
-                                         * (-320.0 
-                                            + VL_ISTOR_D_I(32, vlSelf->x_offset))) 
-                                        / VL_ISTOR_D_I(32, 
-                                                       ((IData)(0x64U) 
-                                                        * vlSelf->zoom)))) 
-                      + VL_MULS_III(32, VL_DIVS_III(32, (IData)(0x1000000U), 
-                                                    VL_MULS_III(32, (IData)(0x64U), vlSelf->zoom)), 
-                                    vlSelf->top__DOT__x
-                                    [0U])));
-            if (((vlSelf->top__DOT____Vcellout__genblk1__BRA__0__KET____DOT__engine__iterations 
-                  >= vlSelf->iterations_max) | (0x4000000U 
-                                                <= 
-                                                ((IData)(
-                                                         (vlSelf->top__DOT__genblk1__BRA__0__KET____DOT__engine__DOT__x2 
-                                                          >> 0x18U)) 
-                                                 + (IData)(
-                                                           (vlSelf->top__DOT__genblk1__BRA__0__KET____DOT__engine__DOT__y2 
-                                                            >> 0x18U)))))) {
-                __Vdly__top__DOT__genblk1__BRA__0__KET____DOT__engine__DOT__state = 1U;
-            } else {
-                __Vdly__top__DOT____Vcellout__genblk1__BRA__0__KET____DOT__engine__iterations 
-                    = ((IData)(1U) + vlSelf->top__DOT____Vcellout__genblk1__BRA__0__KET____DOT__engine__iterations);
-                __Vdly__top__DOT__genblk1__BRA__0__KET____DOT__engine__DOT__state = 0U;
-            }
-            __Vdly__top__DOT__genblk1__BRA__0__KET____DOT__engine__DOT__x2 
-                = VL_MULS_QQQ(64, VL_EXTENDS_QI(64,32, vlSelf->top__DOT__genblk1__BRA__0__KET____DOT__engine__DOT__x), 
-                              VL_EXTENDS_QI(64,32, vlSelf->top__DOT__genblk1__BRA__0__KET____DOT__engine__DOT__x));
-            __Vdly__top__DOT__genblk1__BRA__0__KET____DOT__engine__DOT__y2 
-                = VL_MULS_QQQ(64, VL_EXTENDS_QI(64,32, vlSelf->top__DOT__genblk1__BRA__0__KET____DOT__engine__DOT__y), 
-                              VL_EXTENDS_QI(64,32, vlSelf->top__DOT__genblk1__BRA__0__KET____DOT__engine__DOT__y));
-            __Vdly__top__DOT__genblk1__BRA__0__KET____DOT__engine__DOT__y 
-                = ((IData)((vlSelf->top__DOT__genblk1__BRA__0__KET____DOT__engine__DOT__y_tmp 
-                            >> 0x18U)) + (VL_RTOIROUND_I_D(
-                                                           ((1.67772160000000000e+07 
-                                                             * 
-                                                             (-240.0 
-                                                              + 
-                                                              VL_ISTOR_D_I(32, vlSelf->y_offset))) 
-                                                            / 
-                                                            VL_ISTOR_D_I(32, 
-                                                                         ((IData)(0x64U) 
-                                                                          * vlSelf->zoom)))) 
-                                          + VL_MULS_III(32, 
-                                                        VL_DIVS_III(32, (IData)(0x1000000U), 
-                                                                    VL_MULS_III(32, (IData)(0x64U), vlSelf->zoom)), 
-                                                        vlSelf->top__DOT__y
-                                                        [0U])));
-            __Vdly__top__DOT__genblk1__BRA__0__KET____DOT__engine__DOT__y_tmp 
-                = ((1ULL & __Vdly__top__DOT__genblk1__BRA__0__KET____DOT__engine__DOT__y_tmp) 
-                   | (VL_MULS_QQQ(63, (0x7fffffffffffffffULL 
-                                       & VL_EXTENDS_QI(63,32, vlSelf->top__DOT__genblk1__BRA__0__KET____DOT__engine__DOT__x)), 
-                                  (0x7fffffffffffffffULL 
-                                   & VL_EXTENDS_QI(63,32, vlSelf->top__DOT__genblk1__BRA__0__KET____DOT__engine__DOT__y))) 
-                      << 1U));
-        } else if ((1U == vlSelf->top__DOT__genblk1__BRA__0__KET____DOT__engine__DOT__state)) {
-            vlSelf->top__DOT____Vcellout__genblk1__BRA__0__KET____DOT__engine__finished = 1U;
-            vlSelf->top__DOT____Vcellout__genblk1__BRA__0__KET____DOT__engine__xpixel 
-                = vlSelf->top__DOT__x[0U];
-            vlSelf->top__DOT____Vcellout__genblk1__BRA__0__KET____DOT__engine__ypixel 
-                = vlSelf->top__DOT__y[0U];
-        }
-    }
     vlSelf->top__DOT__distributor__DOT__y0 = __Vdly__top__DOT__distributor__DOT__y0;
     vlSelf->top__DOT__distributor__DOT__x0 = __Vdly__top__DOT__distributor__DOT__x0;
-    vlSelf->top__DOT__combinator_block__DOT__xpixel 
-        = __Vdly__top__DOT__combinator_block__DOT__xpixel;
-    vlSelf->top__DOT__combinator_block__DOT__ypixel 
-        = __Vdly__top__DOT__combinator_block__DOT__ypixel;
     vlSelf->top__DOT__genblk1__BRA__2__KET____DOT__engine__DOT__x 
         = __Vdly__top__DOT__genblk1__BRA__2__KET____DOT__engine__DOT__x;
     vlSelf->top__DOT__genblk1__BRA__2__KET____DOT__engine__DOT__y 
@@ -891,6 +893,10 @@ VL_INLINE_OPT void Vtop___024root___sequent__TOP__0(Vtop___024root* vlSelf) {
         = __Vdly__top__DOT__genblk1__BRA__0__KET____DOT__engine__DOT__state;
     vlSelf->top__DOT____Vcellout__genblk1__BRA__0__KET____DOT__engine__iterations 
         = __Vdly__top__DOT____Vcellout__genblk1__BRA__0__KET____DOT__engine__iterations;
+    vlSelf->top__DOT__combinator_block__DOT__xpixel 
+        = __Vdly__top__DOT__combinator_block__DOT__xpixel;
+    vlSelf->top__DOT__combinator_block__DOT__ypixel 
+        = __Vdly__top__DOT__combinator_block__DOT__ypixel;
     vlSelf->top__DOT__y[0U] = vlSelf->top__DOT__distributor__DOT__y0;
     vlSelf->top__DOT__x[2U] = VL_MODDIV_III(32, ((IData)(2U) 
                                                  + vlSelf->top__DOT__distributor__DOT__x0), (IData)(0x280U));

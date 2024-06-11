@@ -152,7 +152,7 @@ VL_ATTR_COLD void Vtop___024root___ctor_var_reset(Vtop___024root* vlSelf) {
     vlSelf->y_offset = VL_RAND_RESET_I(32);
     vlSelf->r = VL_RAND_RESET_I(8);
     vlSelf->g = VL_RAND_RESET_I(8);
-    vlSelf->b = VL_RAND_RESET_I(9);
+    vlSelf->b = VL_RAND_RESET_I(8);
     vlSelf->first = VL_RAND_RESET_I(1);
     vlSelf->last_x = VL_RAND_RESET_I(1);
     vlSelf->last_y = VL_RAND_RESET_I(1);

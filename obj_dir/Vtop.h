@@ -30,11 +30,11 @@ class Vtop VL_NOT_FINAL : public VerilatedModel {
     VL_IN8(&ready,0,0);
     VL_OUT8(&r,7,0);
     VL_OUT8(&g,7,0);
+    VL_OUT8(&b,7,0);
     VL_OUT8(&first,0,0);
     VL_OUT8(&last_x,0,0);
     VL_OUT8(&last_y,0,0);
     VL_OUT8(&valid,0,0);
-    VL_OUT16(&b,8,0);
     VL_IN(&iterations_max,31,0);
     VL_IN(&zoom,31,0);
     VL_IN(&x_offset,31,0);

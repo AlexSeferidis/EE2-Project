@@ -210,7 +210,7 @@ void Vtop___024root__trace_chg_sub_0(Vtop___024root* vlSelf, VerilatedVcd::Buffe
     bufp->chgIData(oldp+164,(vlSelf->y_offset),32);
     bufp->chgCData(oldp+165,(vlSelf->r),8);
     bufp->chgCData(oldp+166,(vlSelf->g),8);
-    bufp->chgSData(oldp+167,(vlSelf->b),9);
+    bufp->chgCData(oldp+167,(vlSelf->b),8);
     bufp->chgBit(oldp+168,(vlSelf->first));
     bufp->chgBit(oldp+169,(vlSelf->last_x));
     bufp->chgBit(oldp+170,(vlSelf->last_y));

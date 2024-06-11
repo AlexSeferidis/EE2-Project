@@ -16,11 +16,11 @@ Vtop::Vtop(VerilatedContext* _vcontextp__, const char* _vcname__)
     , ready{vlSymsp->TOP.ready}
     , r{vlSymsp->TOP.r}
     , g{vlSymsp->TOP.g}
+    , b{vlSymsp->TOP.b}
     , first{vlSymsp->TOP.first}
     , last_x{vlSymsp->TOP.last_x}
     , last_y{vlSymsp->TOP.last_y}
     , valid{vlSymsp->TOP.valid}
-    , b{vlSymsp->TOP.b}
     , iterations_max{vlSymsp->TOP.iterations_max}
     , zoom{vlSymsp->TOP.zoom}
     , x_offset{vlSymsp->TOP.x_offset}

@@ -28,9 +28,6 @@ logic [DATA_WIDTH-1:0] xpixel;
 logic [DATA_WIDTH-1:0] ypixel;
 
 always_ff @(posedge clk) begin
-    last_x <= 0;
-    last_y <= 0;
-    first <= 0;
 
     if(reset)begin
         first <= 1;
@@ -38,53 +35,39 @@ always_ff @(posedge clk) begin
         ypixel <= 0;
     end
 
-    xpixel <= xpixel + 1;
-
-    if(xpixel >= SCREEN_WIDTH)begin
-        last_x <= 1;
-        xpixel <= 0;
-        ypixel <= ypixel + 1;
-    end
-
-    if(ypixel >= SCREEN_HEIGHT)begin
+    if(ypixel >= SCREEN_HEIGHT - 1)begin
         last_y <= 1;
         xpixel <= 0;
         ypixel <= 0;
     end
 
-    if((en)&&(ready))begin
+    if((xpixel == SCREEN_WIDTH - 1))begin
         valid <= 1;
         colour_o <= colour_i;
         next_xpixel <= xpixel;
         next_ypixel <= ypixel;
+        last_x <= 1;
+        xpixel <= 0;
+        ypixel <= ypixel + 1;
     end
 
 
-
-
-
-    // last_x <= (xpixel == SCREEN_WIDTH) ? 1 : 0;
-    // last_y <= (ypixel == SCREEN_HEIGHT) ? 1 : 0;
-    // first <= ((xpixel == 0) & (ypixel == 0)) ? 1: 0;
-
-    // if(xpixel == SCREEN_WIDTH)begin
+    //  else if(xpixel >= SCREEN_WIDTH)begin
     //     last_x <= 1;
     //     xpixel <= 0;
     //     ypixel <= ypixel + 1;
     // end
 
-    // if(ypixel == SCREEN_HEIGHT)begin // this might be wrong
-    //     ypixel <= 0;
-    //     xpixel <= 0;
-    // end
-
-    // if((en)&&(ready))begin
-    //     colour_o <= colour_i;
-    //     valid <= 1;
-    //     xpixel <= xpixel + 1;
-    //     next_xpixel <= xpixel;
-    //     next_ypixel <= ypixel;
-    // end
+    else if((en)&&(ready))begin
+        valid <= 1;
+        colour_o <= colour_i;
+        xpixel <= xpixel + 1;
+        next_xpixel <= xpixel;
+        next_ypixel <= ypixel;
+    end
+    else begin
+        valid <= 0;
+    end
 end
 
 endmodule

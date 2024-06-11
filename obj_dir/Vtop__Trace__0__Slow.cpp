@@ -20,7 +20,7 @@ VL_ATTR_COLD void Vtop___024root__trace_init_sub__TOP__0(Vtop___024root* vlSelf,
     tracep->declBus(c+165,"y_offset", false,-1, 31,0);
     tracep->declBus(c+166,"r", false,-1, 7,0);
     tracep->declBus(c+167,"g", false,-1, 7,0);
-    tracep->declBus(c+168,"b", false,-1, 8,0);
+    tracep->declBus(c+168,"b", false,-1, 7,0);
     tracep->declBit(c+169,"first", false,-1);
     tracep->declBit(c+170,"last_x", false,-1);
     tracep->declBit(c+171,"last_y", false,-1);
@@ -42,7 +42,7 @@ VL_ATTR_COLD void Vtop___024root__trace_init_sub__TOP__0(Vtop___024root* vlSelf,
     tracep->declBus(c+165,"y_offset", false,-1, 31,0);
     tracep->declBus(c+166,"r", false,-1, 7,0);
     tracep->declBus(c+167,"g", false,-1, 7,0);
-    tracep->declBus(c+168,"b", false,-1, 8,0);
+    tracep->declBus(c+168,"b", false,-1, 7,0);
     tracep->declBit(c+169,"first", false,-1);
     tracep->declBit(c+170,"last_x", false,-1);
     tracep->declBit(c+171,"last_y", false,-1);
@@ -556,7 +556,7 @@ VL_ATTR_COLD void Vtop___024root__trace_full_sub_0(Vtop___024root* vlSelf, Veril
     bufp->fullIData(oldp+165,(vlSelf->y_offset),32);
     bufp->fullCData(oldp+166,(vlSelf->r),8);
     bufp->fullCData(oldp+167,(vlSelf->g),8);
-    bufp->fullSData(oldp+168,(vlSelf->b),9);
+    bufp->fullCData(oldp+168,(vlSelf->b),8);
     bufp->fullBit(oldp+169,(vlSelf->first));
     bufp->fullBit(oldp+170,(vlSelf->last_x));
     bufp->fullBit(oldp+171,(vlSelf->last_y));

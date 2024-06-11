@@ -70,6 +70,9 @@ always_ff@(posedge clk)begin
             yqueue[counter] <= ypixel_i;
             counter <= counter + 1;
         end
+        // else begin
+        //     en <= 0;
+        // end
     end    
 end
 
