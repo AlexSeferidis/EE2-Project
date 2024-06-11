@@ -214,9 +214,9 @@ VL_INLINE_OPT void Vtop___024root___sequent__TOP__0(Vtop___024root* vlSelf) {
         vlSelf->top__DOT__genblk1__BRA__1__KET____DOT__queue_block__DOT__unnamedblk1__DOT__i = 5U;
         vlSelf->top__DOT__genblk1__BRA__2__KET____DOT__queue_block__DOT__unnamedblk1__DOT__i = 5U;
         __Vdly__top__DOT__distributor__DOT__x0 = 0U;
-        __Vdly__top__DOT__distributor__DOT__y0 = 0x1dfU;
+        __Vdly__top__DOT__distributor__DOT__y0 = 0U;
         __Vdly__top__DOT__combinator_block__DOT__xcount = 0U;
-        __Vdly__top__DOT__combinator_block__DOT__ycount = 0x1dfU;
+        __Vdly__top__DOT__combinator_block__DOT__ycount = 0U;
     } else if (vlSelf->top__DOT__fin_wire) {
         __Vdly__top__DOT__distributor__DOT__x0 = VL_MODDIV_III(32, 
                                                                ((IData)(3U) 
@@ -230,14 +230,13 @@ VL_INLINE_OPT void Vtop___024root___sequent__TOP__0(Vtop___024root* vlSelf) {
     }
     if ((0x280U == vlSelf->top__DOT__combinator_block__DOT__xcount)) {
         __Vdly__top__DOT__combinator_block__DOT__ycount 
-            = (vlSelf->top__DOT__combinator_block__DOT__ycount 
-               - (IData)(1U));
+            = ((IData)(1U) + vlSelf->top__DOT__combinator_block__DOT__ycount);
         vlSelf->last_x = 1U;
         __Vdly__top__DOT__combinator_block__DOT__xcount = 0U;
     }
-    if ((0U == vlSelf->top__DOT__combinator_block__DOT__ycount)) {
+    if ((0x1e0U == vlSelf->top__DOT__combinator_block__DOT__ycount)) {
         vlSelf->last_y = 1U;
-        __Vdly__top__DOT__combinator_block__DOT__ycount = 0x1dfU;
+        __Vdly__top__DOT__combinator_block__DOT__ycount = 0U;
         __Vdly__top__DOT__combinator_block__DOT__xcount = 0U;
     } else {
         vlSelf->last_y = 0U;
@@ -602,7 +601,7 @@ VL_INLINE_OPT void Vtop___024root___sequent__TOP__0(Vtop___024root* vlSelf) {
         }
     }
     vlSelf->first = (((0U == vlSelf->top__DOT__combinator_block__DOT__xcount) 
-                      & (0x1dfU == vlSelf->top__DOT__combinator_block__DOT__ycount))
+                      & (0U == vlSelf->top__DOT__combinator_block__DOT__ycount))
                       ? 1U : 0U);
     if (vlSelf->top__DOT__reset_engine) {
         __Vdly__top__DOT__genblk1__BRA__2__KET____DOT__engine__DOT__state = 2U;
@@ -917,6 +916,11 @@ VL_INLINE_OPT void Vtop___024root___sequent__TOP__0(Vtop___024root* vlSelf) {
     vlSelf->top__DOT__iterations_bus[2U] = vlSelf->top__DOT____Vcellout__genblk1__BRA__2__KET____DOT__engine__iterations;
     vlSelf->top__DOT__iterations_bus[1U] = vlSelf->top__DOT____Vcellout__genblk1__BRA__1__KET____DOT__engine__iterations;
     vlSelf->top__DOT__iterations_bus[0U] = vlSelf->top__DOT____Vcellout__genblk1__BRA__0__KET____DOT__engine__iterations;
+    vlSelf->r = (0xffU & vlSelf->top__DOT__colour_o_wire);
+    vlSelf->g = (0xffU & (vlSelf->top__DOT__colour_o_wire 
+                          >> 8U));
+    vlSelf->b = (0xffU & (vlSelf->top__DOT__colour_o_wire 
+                          >> 0x10U));
     vlSelf->top__DOT____Vcellinp__lut_rom__iterations[2U] 
         = vlSelf->top__DOT__iterations_bus[2U];
     vlSelf->top__DOT____Vcellinp__lut_rom__iterations[1U] 

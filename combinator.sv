@@ -30,21 +30,21 @@ logic [DATA_WIDTH-1:0] ycount;
 always_ff @(posedge clk) begin
     if(reset)begin
         xcount <= 0;
-        ycount <= SCREEN_HEIGHT - 1;
+        ycount <= 0;
     end
 
     last_x <= (xcount == SCREEN_WIDTH) ? 1 : 0;
-    last_y <= (ycount == 0) ? 1 : 0;
-    first <= ((xcount == 0) & (ycount == SCREEN_HEIGHT-1)) ? 1: 0;
+    last_y <= (ycount == SCREEN_HEIGHT) ? 1 : 0;
+    first <= ((xcount == 0) & (ycount == 0)) ? 1: 0;
 
     if(xcount == SCREEN_WIDTH)begin
         last_x <= 1;
         xcount <= 0;
-        ycount <= ycount -1;
+        ycount <= ycount + 1;
     end
 
-    if(ycount == 0)begin // this might be wrong
-        ycount <= SCREEN_HEIGHT-1;
+    if(ycount == SCREEN_HEIGHT)begin // this might be wrong
+        ycount <= 0;
         xcount <= 0;
     end
 

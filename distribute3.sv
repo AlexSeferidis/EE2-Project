@@ -25,8 +25,6 @@ assign x3 = (x0 + 2) % SCREEN_WIDTH;
 assign y1 = y0;
 assign y2 = ( (y0 + (x0+1)/SCREEN_WIDTH) % SCREEN_HEIGHT );
 assign y3 = ( (y0 + (x0+2)/SCREEN_WIDTH) % SCREEN_HEIGHT );
-// assign y2 = (y0 == {PIXEL_DATA_WIDTH{1'b0}}) ? (((x0+1)/SCREEN_WIDTH == 0) ? y0  : (SCREEN_HEIGHT-1) - ((x0+1)/SCREEN_WIDTH)): y0 - (x0+1)/ SCREEN_WIDTH; 
-// assign y3 = (y0 == {PIXEL_DATA_WIDTH{1'b0}}) ? (((x0+2)/SCREEN_WIDTH == 0) ? y0  : (SCREEN_HEIGHT-1) - ((x0+2)/SCREEN_WIDTH)): y0 - (x0+2)/ SCREEN_WIDTH; 
 
 
 
@@ -34,7 +32,7 @@ always_ff @(posedge clk) begin
     
     if (reset) begin
         x0 <= 0;
-        y0 <= SCREEN_HEIGHT-1;
+        y0 <= 0;
     end
 
     else if (fin_flag) begin

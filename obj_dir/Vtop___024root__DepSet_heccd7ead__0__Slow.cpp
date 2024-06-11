@@ -35,6 +35,11 @@ VL_ATTR_COLD void Vtop___024root___settle__TOP__0(Vtop___024root* vlSelf) {
     // Init
     IData/*23:0*/ top__DOT__lut_rom__DOT____Vlvbound_h2aad094a__0;
     // Body
+    vlSelf->r = (0xffU & vlSelf->top__DOT__colour_o_wire);
+    vlSelf->g = (0xffU & (vlSelf->top__DOT__colour_o_wire 
+                          >> 8U));
+    vlSelf->b = (0xffU & (vlSelf->top__DOT__colour_o_wire 
+                          >> 0x10U));
     vlSelf->top__DOT__iterations_bus[0U] = vlSelf->top__DOT____Vcellout__genblk1__BRA__0__KET____DOT__engine__iterations;
     vlSelf->top__DOT__iterations_bus[1U] = vlSelf->top__DOT____Vcellout__genblk1__BRA__1__KET____DOT__engine__iterations;
     vlSelf->top__DOT__iterations_bus[2U] = vlSelf->top__DOT____Vcellout__genblk1__BRA__2__KET____DOT__engine__iterations;

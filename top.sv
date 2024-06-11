@@ -107,6 +107,10 @@ combinator combinator_block(
 );
 
 always_comb begin
+    r = colour_o_wire[7:0];
+    g = colour_o_wire[15:8];
+    b = colour_o_wire[23:16];
+    
     if(fin_bus == {NUM_ENGINES{1'b1}})begin
         fin_wire = 1;
         reset_engine = 1;
