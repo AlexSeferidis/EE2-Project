@@ -1,8 +1,8 @@
 module top #(
     parameter   DATA_WIDTH = 32,
                 RBG_SIZE = 24,
-                NUM_ENGINES = 3
-                ITERATIONS_WIDTH = 6
+                NUM_ENGINES = 3,
+                ITERATIONS_WIDTH = 32
 )(
     input logic                         clk,
     input logic                         reset,
@@ -10,7 +10,10 @@ module top #(
     input logic [ITERATIONS_WIDTH-1:0]  iterations_max,
     input logic [DATA_WIDTH-1:0]        zoom, x_offset, y_offset,
 
-    output logic [RBG_SIZE-1:0]         colour_o,
+    // output logic [RBG_SIZE-1:0]         colour_o,
+    output logic [7:0]                  r, //for verilator test
+    output logic [7:0]                  g,
+    output logic [8:0]                  b,
     // flags for pixel generator
     output logic                        first,
     output logic                        last_x,
@@ -19,6 +22,8 @@ module top #(
     output logic                        full_queue [NUM_ENGINES-1:0]
 
 );
+
+logic [RBG_SIZE-1:0]            colour_o_wire;
 
 logic [DATA_WIDTH-1:0]          xpixel_wire;
 logic [DATA_WIDTH-1:0]          ypixel_wire;
@@ -30,15 +35,15 @@ logic [NUM_ENGINES-1:0]         fin_bus;
 logic [DATA_WIDTH-1:0]          x               [NUM_ENGINES-1:0];
 logic [DATA_WIDTH-1:0]          y               [NUM_ENGINES-1:0];
 logic [ITERATIONS_WIDTH-1:0]    iterations_bus  [NUM_ENGINES-1:0];
-logic [PIXEL_DATA_WIDTH-1:0]    xpixel_bus      [NUM_ENGINES-1:0];
-logic [PIXEL_DATA_WIDTH-1:0]    ypixel_bus      [NUM_ENGINES-1:0];
+logic [DATA_WIDTH-1:0]          xpixel_bus      [NUM_ENGINES-1:0];
+logic [DATA_WIDTH-1:0]          ypixel_bus      [NUM_ENGINES-1:0];
 logic                           en_bus          [NUM_ENGINES-1:0];
-logic [PIXEL_DATA_WIDTH-1:0]    colour_bus      [NUM_ENGINES-1:0];
+logic [RBG_SIZE-1:0]            colour_bus      [NUM_ENGINES-1:0];
 
 distribute3 distributor(
     .clk(clk),
     .reset(reset),
-    .fin_flag(),
+    .fin_flag(fin_wire),
     .x1(x[0]),
     .x2(x[1]),
     .x3(x[2]),
@@ -47,7 +52,7 @@ distribute3 distributor(
     .y3(y[2])
 );
 
-genvar i
+genvar i;
 generate
     for(i = 0; i < NUM_ENGINES; i++)begin
         mandelbrot_engine engine(
@@ -76,12 +81,12 @@ generate
             .ypixel_check(ypixel_wire),
             .colour_o(colour_wire),
             .full_queue(full_queue[i]),
-            .en(en_bus[i]) 
+            .en(en_wire) 
             );
     end
 endgenerate
 
-lut color(
+lut lut_rom(
     .iterations(iterations_bus),
     .rgb_val(colour_bus)
 );
@@ -94,7 +99,7 @@ combinator combinator_block(
     .ready(ready),
     .next_xpixel(xpixel_wire),
     .next_ypixel(ypixel_wire),
-    .colour_o(colour_o),
+    .colour_o(colour_o_wire),
     .first(first),
     .last_x(last_x),
     .last_y(last_y),
@@ -103,12 +108,16 @@ combinator combinator_block(
 
 always_comb begin
     if(fin_bus == {NUM_ENGINES{1'b1}})begin
-        fin_flag = 1;
+        fin_wire = 1;
         reset_engine = 1;
     end
     else if (reset) begin
         reset_engine = 1;
-        fin_flag = 1;
+        fin_wire = 1;
+    end
+    else begin
+        fin_wire = 0;
+        reset_engine = 0;
     end
 end
 

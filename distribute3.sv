@@ -37,7 +37,7 @@ always_ff @(posedge clk) begin
         y0 <= SCREEN_HEIGHT-1;
     end
 
-    if (fin_flag) begin
+    else if (fin_flag) begin
         x0 <= (x0 + NUM_ENGINES) % SCREEN_WIDTH;
         y0 <= ( (y0 + (x0+NUM_ENGINES)/SCREEN_WIDTH) % SCREEN_HEIGHT ) ;
     end

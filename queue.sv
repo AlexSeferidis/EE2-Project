@@ -11,7 +11,7 @@ module queue #(
     input logic [RBG_SIZE-1:0]      colour_i,
     input logic [DATA_WIDTH-1:0]    xpixel_i,
     input logic [DATA_WIDTH-1:0]    ypixel_i,
-    
+
     //received from the comibinator to check if front of queue is the next coord
     input logic [DATA_WIDTH-1:0]    xpixel_check,
     input logic [DATA_WIDTH-1:0]    ypixel_check,
@@ -26,22 +26,27 @@ logic [DATA_WIDTH-1:0] xqueue [QUEUE_SIZE-1:0];
 logic [DATA_WIDTH-1:0] yqueue [QUEUE_SIZE-1:0];
 logic [COUNTER_SIZE-1:0] counter;
 
-always_comb begin
-    if((xpixel_check == xqueue[0])&&(ypixel_check == yqueue[0]))begin
-        en = 1;
-    end
-end
+initial en = 0;
 
-always_ff @(posedge clk) begin
+always_ff@(posedge clk)begin
+
     if(reset)begin
+        en <= 0;
         counter <= 0;
         for(int i = 0; i < QUEUE_SIZE; i++)begin
             colour_queue[i] <= 0;
+            xqueue[i] <= -1;
+            yqueue[i] <= -1;
         end
     end
+
     else begin
         if(counter == QUEUE_SIZE - 1)begin
             full_queue <= 1;
+        end
+        else if (counter == 0) begin
+            en <= 0;
+            full_queue <= 0;
         end
         else begin
             full_queue <= 0;
@@ -59,12 +64,13 @@ always_ff @(posedge clk) begin
         end
 
         if(fin_flag)begin
+            en <= 1;
             colour_queue[counter] <=  colour_i;
             xqueue[counter] <= xpixel_i;
             yqueue[counter] <= ypixel_i;
             counter <= counter + 1;
         end
-    end
+    end    
 end
 
 endmodule

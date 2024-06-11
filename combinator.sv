@@ -22,27 +22,29 @@ module combinator #(
 
 );
 
+initial valid = 0;
+
 logic [DATA_WIDTH-1:0] xcount;
 logic [DATA_WIDTH-1:0] ycount;
 
 always_ff @(posedge clk) begin
     if(reset)begin
         xcount <= 0;
-        ycount <= SCREEN_HEIGHT;
+        ycount <= SCREEN_HEIGHT - 1;
     end
 
     last_x <= (xcount == SCREEN_WIDTH) ? 1 : 0;
-    last_y <= (ycount == 1) ? 1 : 0;
-    first <= ((xcount == 0) & (ycount == SCREEN_HEIGHT)) ? 1: 0;
+    last_y <= (ycount == 0) ? 1 : 0;
+    first <= ((xcount == 0) & (ycount == SCREEN_HEIGHT-1)) ? 1: 0;
 
     if(xcount == SCREEN_WIDTH)begin
         last_x <= 1;
         xcount <= 0;
-        ycount <= ycount - 1;
+        ycount <= ycount -1;
     end
 
     if(ycount == 0)begin // this might be wrong
-        ycount <= SCREEN_HEIGHT;
+        ycount <= SCREEN_HEIGHT-1;
         xcount <= 0;
     end
 
@@ -50,9 +52,9 @@ always_ff @(posedge clk) begin
         colour_o <= colour_i;
         valid <= 1;
         xcount <= xcount + 1;
+        next_xpixel <= xcount;
+        next_ypixel <= ycount;
     end
-    next_xpixel <= xcount;
-    next_ypixel <= ycount;
 end
 
 endmodule

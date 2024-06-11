@@ -12,4 +12,4 @@ make -j -C obj_dir/ -f Vtop.mk Vtop
 obj_dir/Vtop
 
 # convert to image
-# python3 img_gen.py
+python3 img_gen.py
