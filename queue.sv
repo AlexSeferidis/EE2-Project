@@ -26,7 +26,14 @@ logic [DATA_WIDTH-1:0] xqueue [QUEUE_SIZE-1:0];
 logic [DATA_WIDTH-1:0] yqueue [QUEUE_SIZE-1:0];
 logic [COUNTER_SIZE-1:0] counter;
 
-initial en = 0;
+initial begin
+    en = 0;
+    for(int i = 0; i < QUEUE_SIZE; i++)begin
+        colour_queue[i] = 0;
+        xqueue[i] = -1;
+        yqueue[i] = -1;
+    end
+end
 
 always_ff@(posedge clk)begin
 

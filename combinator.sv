@@ -9,6 +9,7 @@ module combinator #(
     input logic [RBG_SIZE-1:0]      colour_i,
     input logic                     en,
     input logic                     ready,
+    input logic                     fin_flag,
 
     output logic [DATA_WIDTH-1:0]   next_xpixel,
     output logic [DATA_WIDTH-1:0]   next_ypixel,
