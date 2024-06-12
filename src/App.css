@@ -1,0 +1,113 @@
+:root {
+  --mode-swap: 0.5s ease;
+  --primary: #ff6f3c;
+  --secondary: #ff9a3c;
+  --accent: #ffc93c;
+  --neutral: #155263;
+  --base100: #111827;
+  --info: #fcd34d;
+  --success: #a3e635;
+  --warning: #fb923c;
+  --error: #f87171;
+  --text: lightgrey;
+}
+
+.App {
+  min-height: 100vh;
+  text-align: left;
+  color: var(--text);
+  background-color: var(--base100);
+}
+
+.App-logo {
+  height: 40vmin;
+  pointer-events: none;
+}
+
+@media (prefers-reduced-motion: no-preference) {
+  .App-logo {
+    animation: App-logo-spin infinite 20s linear;
+  }
+}
+
+.App-header {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  font-size: calc(3vmin);
+  color: var(--primary);
+  padding-left: 20px;
+  padding-right: 20px;
+}
+
+.Param-area {
+  display: flex;
+  flex-direction: row;
+  flex-wrap: nowrap;
+  align-items: start;
+  justify-content: space-evenly;
+
+  padding-bottom: 20px;
+  max-height: 640px;
+  max-width: 100vw;
+  overflow:visible;
+}
+
+.Param-inputs {
+  flex: 1 1 auto;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-evenly;
+  padding: 10px;
+  padding-left: 20px;
+  max-width: 50%;
+  box-sizing: border-box;
+}
+
+.MandelbrotViewport {
+  flex: 1 1 auto;
+  padding: 10px;
+  max-width: 50%;
+  max-height: width;
+  box-sizing: border-box;
+  
+}
+
+.Param-entries {
+  color: var(--accent);
+}
+
+.Num-box {
+  color: var(--secondary);
+  font-size: calc(6px + 2vmin);
+  font-weight: bold;
+  display: flex;
+  justify-content: space-between;
+  width: 100%;
+  padding: 10px;
+}
+
+.Num-box-label {
+}
+
+.Num-box-input {
+  font-size: calc(2vmin);
+}
+
+.dbButtonContainer{
+  display: flex;
+  flex-direction: row;
+  
+}
+.dbButton{
+  padding: 10px;
+}
+
+.successMessage{
+  background-color: 'lightgreen';
+  padding: 10;
+  margin-top: 10;
+  border-radius: 4;
+  border-width: 1;
+  border-color: '#7fff00';
+}
