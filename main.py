@@ -26,7 +26,7 @@ async def read_root():
 async def read_parameters(parameter_id: int):
     try:
         fetch_parameters = db.get_parameters_by_id(parameter_id)
-        return {**SUCC_MESS, 'x_offset': fetch_parameters}
+        return {**SUCC_MESS, 'x_offset': fetch_parameters[0], 'y_offset': fetch_parameters[1], 'zoom': fetch_parameters[2], 'max_iterations': fetch_parameters[3]}
     except:
         return {**FAIL_MESS, 'x_offset': 'lol',}
         return {**FAIL_MESS, 'x_offset': None,
@@ -39,7 +39,7 @@ async def read_parameters(parameter_id: int):
 async def read_selected_parameters():
     try:
         parameters = db.get_parameters()
-        return {**SUCC_MESS, 'x_offset': parameters}
+        return {**SUCC_MESS, 'x_offset': parameters[0], 'y_offset': parameters[1], 'zoom': parameters[2], 'max_iterations': parameters[3]}
     except:
         return {**FAIL_MESS, 'x_offset': None,
                 'y_offset': None,
