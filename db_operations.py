@@ -29,6 +29,7 @@ class FractalDB:
         return self.c.fetchall()
     
     def get_parameters(self, parameter_id):
+        return "lol"
         self.c.execute('''SELECT x_offset, y_offset, zoom, max_iterations
                           FROM parameters
                           WHERE parameter_id = ?''', (parameter_id,))
