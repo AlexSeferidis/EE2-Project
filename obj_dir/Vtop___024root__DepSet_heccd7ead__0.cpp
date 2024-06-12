@@ -234,7 +234,6 @@ VL_INLINE_OPT void Vtop___024root___sequent__TOP__0(Vtop___024root* vlSelf) {
     }
     if ((0x27fU == vlSelf->top__DOT__combinator_block__DOT__xpixel)) {
         vlSelf->valid = 1U;
-        vlSelf->top__DOT__colour_o_wire = vlSelf->top__DOT__colour_wire;
         __Vdly__top__DOT__xpixel_wire = vlSelf->top__DOT__combinator_block__DOT__xpixel;
         __Vdly__top__DOT__ypixel_wire = vlSelf->top__DOT__combinator_block__DOT__ypixel;
         vlSelf->last_x = 1U;
@@ -243,12 +242,12 @@ VL_INLINE_OPT void Vtop___024root___sequent__TOP__0(Vtop___024root* vlSelf) {
         __Vdly__top__DOT__combinator_block__DOT__xpixel = 0U;
     } else if (((7U == (IData)(vlSelf->top__DOT__en_bus)) 
                 & (IData)(vlSelf->ready))) {
-        __Vdly__top__DOT__combinator_block__DOT__xpixel 
-            = ((IData)(1U) + vlSelf->top__DOT__combinator_block__DOT__xpixel);
         vlSelf->valid = 1U;
         vlSelf->top__DOT__colour_o_wire = vlSelf->top__DOT__colour_wire;
         __Vdly__top__DOT__xpixel_wire = vlSelf->top__DOT__combinator_block__DOT__xpixel;
         __Vdly__top__DOT__ypixel_wire = vlSelf->top__DOT__combinator_block__DOT__ypixel;
+        __Vdly__top__DOT__combinator_block__DOT__xpixel 
+            = ((IData)(1U) + vlSelf->top__DOT__combinator_block__DOT__xpixel);
     } else {
         vlSelf->valid = 0U;
     }
@@ -348,7 +347,12 @@ VL_INLINE_OPT void Vtop___024root___sequent__TOP__0(Vtop___024root* vlSelf) {
                 = vlSelf->top__DOT__genblk1__BRA__0__KET____DOT__queue_block__DOT____Vlvbound_ha6176070__0;
             __Vdlyvset__top__DOT__genblk1__BRA__0__KET____DOT__queue_block__DOT__colour_queue__v8 = 1U;
         }
-        if ((1U & (IData)(vlSelf->top__DOT__fin_bus))) {
+        if (((IData)(vlSelf->top__DOT__fin_bus) & (
+                                                   vlSelf->top__DOT__genblk1__BRA__0__KET____DOT__queue_block__DOT__xqueue
+                                                   [0U] 
+                                                   != 
+                                                   vlSelf->top__DOT__xpixel_bus
+                                                   [0U]))) {
             vlSelf->top__DOT__genblk1__BRA__0__KET____DOT__queue_block__DOT____Vlvbound_h9942c0e0__0 
                 = vlSelf->top__DOT__colour_bus[0U];
             vlSelf->top__DOT____Vcellout__genblk1__BRA__0__KET____DOT__queue_block__en = 1U;
@@ -461,7 +465,10 @@ VL_INLINE_OPT void Vtop___024root___sequent__TOP__0(Vtop___024root* vlSelf) {
                 = vlSelf->top__DOT__genblk1__BRA__1__KET____DOT__queue_block__DOT____Vlvbound_ha6176070__0;
             __Vdlyvset__top__DOT__genblk1__BRA__1__KET____DOT__queue_block__DOT__colour_queue__v8 = 1U;
         }
-        if ((2U & (IData)(vlSelf->top__DOT__fin_bus))) {
+        if ((((IData)(vlSelf->top__DOT__fin_bus) >> 1U) 
+             & (vlSelf->top__DOT__genblk1__BRA__1__KET____DOT__queue_block__DOT__xqueue
+                [0U] != vlSelf->top__DOT__xpixel_bus
+                [1U]))) {
             vlSelf->top__DOT__genblk1__BRA__1__KET____DOT__queue_block__DOT____Vlvbound_h9942c0e0__0 
                 = vlSelf->top__DOT__colour_bus[1U];
             vlSelf->top__DOT____Vcellout__genblk1__BRA__1__KET____DOT__queue_block__en = 1U;
@@ -574,7 +581,10 @@ VL_INLINE_OPT void Vtop___024root___sequent__TOP__0(Vtop___024root* vlSelf) {
                 = vlSelf->top__DOT__genblk1__BRA__2__KET____DOT__queue_block__DOT____Vlvbound_ha6176070__0;
             __Vdlyvset__top__DOT__genblk1__BRA__2__KET____DOT__queue_block__DOT__colour_queue__v8 = 1U;
         }
-        if ((4U & (IData)(vlSelf->top__DOT__fin_bus))) {
+        if ((((IData)(vlSelf->top__DOT__fin_bus) >> 2U) 
+             & (vlSelf->top__DOT__genblk1__BRA__2__KET____DOT__queue_block__DOT__xqueue
+                [0U] != vlSelf->top__DOT__xpixel_bus
+                [2U]))) {
             vlSelf->top__DOT__genblk1__BRA__2__KET____DOT__queue_block__DOT____Vlvbound_h9942c0e0__0 
                 = vlSelf->top__DOT__colour_bus[2U];
             vlSelf->top__DOT____Vcellout__genblk1__BRA__2__KET____DOT__queue_block__en = 1U;

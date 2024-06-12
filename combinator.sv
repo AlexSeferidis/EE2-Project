@@ -44,7 +44,6 @@ always_ff @(posedge clk) begin
 
     if((xpixel == SCREEN_WIDTH - 1))begin
         valid <= 1;
-        colour_o <= colour_i;
         next_xpixel <= xpixel;
         next_ypixel <= ypixel;
         last_x <= 1;
@@ -62,8 +61,8 @@ always_ff @(posedge clk) begin
     else if((en)&&(ready))begin
         valid <= 1;
         colour_o <= colour_i;
-        xpixel <= xpixel + 1;
         next_xpixel <= xpixel;
+        xpixel <= xpixel + 1;
         next_ypixel <= ypixel;
     end
     else begin

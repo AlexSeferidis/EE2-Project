@@ -70,16 +70,13 @@ always_ff@(posedge clk)begin
             counter <= counter - 1;
         end
 
-        if(fin_flag)begin
+        if((fin_flag)&&(xqueue[0] != xpixel_i))begin
             en <= 1;
             colour_queue[counter] <=  colour_i;
             xqueue[counter] <= xpixel_i;
             yqueue[counter] <= ypixel_i;
             counter <= counter + 1;
         end
-        // else begin
-        //     en <= 0;
-        // end
     end    
 end
 
