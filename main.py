@@ -25,8 +25,8 @@ async def read_root():
 @app.get('/parameters/{parameter_id}')
 async def read_parameters(parameter_id: int):
     try:
-        return {**SUCC_MESS, 'x_offset': 'lololol'}
         parameters = db.get_parameters(int(parameter_id))
+        return {**SUCC_MESS, 'x_offset': 'lololol'}
         return {**SUCC_MESS, 'x_offset': parameters}
     except:
         return {**FAIL_MESS, 'x_offset': 'lol',}
