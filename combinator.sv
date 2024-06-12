@@ -51,13 +51,6 @@ always_ff @(posedge clk) begin
         ypixel <= ypixel + 1;
     end
 
-
-    //  else if(xpixel >= SCREEN_WIDTH)begin
-    //     last_x <= 1;
-    //     xpixel <= 0;
-    //     ypixel <= ypixel + 1;
-    // end
-
     else if((en)&&(ready))begin
         valid <= 1;
         colour_o <= colour_i;

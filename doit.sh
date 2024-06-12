@@ -13,3 +13,6 @@ obj_dir/Vtop
 
 # convert to image
 python3 img_gen.py
+
+# gtkwave
+# gtkwave top.vcd

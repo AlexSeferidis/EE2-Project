@@ -1,7 +1,7 @@
 module top #(
     parameter   DATA_WIDTH = 32,
                 RBG_SIZE = 24,
-                NUM_ENGINES = 3,
+                NUM_ENGINES = 6,
                 ITERATIONS_WIDTH = 32
 )(
     input logic                         clk,
@@ -42,16 +42,12 @@ logic [RBG_SIZE-1:0]            colour_bus      [NUM_ENGINES-1:0];
 
 assign en_wire = &en_bus;
 
-distribute3 distributor(
+distributorN distributor(
     .clk(clk),
     .reset(reset),
     .fin_flag(fin_wire),
-    .x1(x[0]),
-    .x2(x[1]),
-    .x3(x[2]),
-    .y1(y[0]),
-    .y2(y[1]),
-    .y3(y[2])
+    .x(x),
+    .y(y)
 );
 
 genvar i;
