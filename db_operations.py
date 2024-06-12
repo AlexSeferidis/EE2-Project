@@ -28,11 +28,11 @@ class FractalDB:
         self.c.execute('''SELECT parameter_id FROM parameters ORDER BY parameter_id''')
         return self.c.fetchall()
     
-    def get_parameters(self, parameter_id):
-        return "lol"
-        """self.c.execute('''SELECT x_offset, y_offset, zoom, max_iterations
+    def get_parameters_by_id(self, parameter_id):
+        self.c.execute('''SELECT x_offset, y_offset, zoom, max_iterations
                           FROM parameters
-                          WHERE parameter_id = ?''', (parameter_id,))"""
+                          WHERE parameter_id = ?''', (parameter_id,))
+        return self.c.fetchone()
     def get_parameters(self):
         return self.get_parameters(self.__select_parameter_id)
     def get_db(self):
