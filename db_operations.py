@@ -32,7 +32,7 @@ class FractalDB:
         self.c.execute('''SELECT x_offset, y_offset, zoom, max_iterations
                           FROM parameters
                           WHERE parameter_id = ?''', (parameter_id,))
-        return self.c.fetchone()
+        return "lol"
     def get_parameters(self):
         return self.get_parameters(self.__select_parameter_id)
     def get_db(self):
