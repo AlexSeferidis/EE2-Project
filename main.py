@@ -26,11 +26,7 @@ async def read_root():
 async def read_parameters(parameter_id: int):
     try:
         parameters = db.get_parameters(parameter_id)
-        return {**SUCC_MESS, 'x_offset': parameters[0],
-                'y_offset': parameters[1],
-                'zoom': parameters[2],
-                'max_iterations': parameters[3]
-                }
+        return {**SUCC_MESS, 'x_offset': parameters}
     except:
         return {**FAIL_MESS, 'x_offset': None,
                 'y_offset': None,
