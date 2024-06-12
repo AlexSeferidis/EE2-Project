@@ -29,6 +29,7 @@ async def read_parameters(parameter_id: int):
         return {**SUCC_MESS, 'x_offset': parameters
                 }
     except:
+        return {**FAIL_MESS, 'x_offset': 'lol',}
         return {**FAIL_MESS, 'x_offset': None,
                 'y_offset': None,
                 'zoom': None,
