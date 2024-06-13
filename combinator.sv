@@ -35,32 +35,31 @@ always_ff @(posedge clk) begin
         xpixel <= 0;
         ypixel <= 0;
     end
+    
+    if((en)&&(ready))begin
+        if(ypixel >= SCREEN_HEIGHT - 1)begin
+            last_y <= 1;
+            xpixel <= 0;
+            ypixel <= 0;
+        end
 
-    if(ypixel >= SCREEN_HEIGHT - 1)begin
-        last_y <= 1;
-        xpixel <= 0;
-        ypixel <= 0;
-    end
-
-    if((xpixel == SCREEN_WIDTH - 1))begin
-        valid <= 1;
-        next_xpixel <= xpixel;
-        next_ypixel <= ypixel;
-        last_x <= 1;
-        xpixel <= 0;
-        ypixel <= ypixel + 1;
-    end
-
-    else if((en)&&(ready))begin
+        else if((xpixel == SCREEN_WIDTH - 1))begin
+            last_x <= 1;
+            xpixel <= 0;
+            ypixel <= ypixel + 1;
+        end
+        else begin
+            xpixel <= xpixel + 1;
+        end
         valid <= 1;
         colour_o <= colour_i;
         next_xpixel <= xpixel;
-        xpixel <= xpixel + 1;
         next_ypixel <= ypixel;
     end
+
     else begin
         valid <= 0;
-    end
+    end   
 end
 
 endmodule
