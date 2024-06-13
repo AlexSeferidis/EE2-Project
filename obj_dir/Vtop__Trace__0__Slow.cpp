@@ -1083,7 +1083,7 @@ VL_ATTR_COLD void Vtop___024root__trace_full_sub_0(Vtop___024root* vlSelf, Veril
     bufp->fullBit(oldp+453,(vlSelf->top__DOT__fin_wire));
     bufp->fullIData(oldp+454,((VL_RTOIROUND_I_D(((1.67772160000000000e+07 
                                                   * 
-                                                  (-320.0 
+                                                  (-640.0 
                                                    + 
                                                    VL_ISTOR_D_I(32, vlSelf->x_offset))) 
                                                  / 
@@ -1096,7 +1096,7 @@ VL_ATTR_COLD void Vtop___024root__trace_full_sub_0(Vtop___024root* vlSelf, Veril
                                              [0U]))),32);
     bufp->fullIData(oldp+455,((VL_RTOIROUND_I_D(((1.67772160000000000e+07 
                                                   * 
-                                                  (-240.0 
+                                                  (-360.0 
                                                    + 
                                                    VL_ISTOR_D_I(32, vlSelf->y_offset))) 
                                                  / 
@@ -1109,7 +1109,7 @@ VL_ATTR_COLD void Vtop___024root__trace_full_sub_0(Vtop___024root* vlSelf, Veril
                                              [0U]))),32);
     bufp->fullIData(oldp+456,(VL_RTOIROUND_I_D(((1.67772160000000000e+07 
                                                  * 
-                                                 (-320.0 
+                                                 (-640.0 
                                                   + 
                                                   VL_ISTOR_D_I(32, vlSelf->x_offset))) 
                                                 / VL_ISTOR_D_I(32, 
@@ -1117,7 +1117,7 @@ VL_ATTR_COLD void Vtop___024root__trace_full_sub_0(Vtop___024root* vlSelf, Veril
                                                                 * vlSelf->zoom))))),32);
     bufp->fullIData(oldp+457,(VL_RTOIROUND_I_D(((1.67772160000000000e+07 
                                                  * 
-                                                 (-240.0 
+                                                 (-360.0 
                                                   + 
                                                   VL_ISTOR_D_I(32, vlSelf->y_offset))) 
                                                 / VL_ISTOR_D_I(32, 
@@ -1127,7 +1127,7 @@ VL_ATTR_COLD void Vtop___024root__trace_full_sub_0(Vtop___024root* vlSelf, Veril
                                           VL_MULS_III(32, (IData)(0x64U), vlSelf->zoom))),32);
     bufp->fullIData(oldp+459,((VL_RTOIROUND_I_D(((1.67772160000000000e+07 
                                                   * 
-                                                  (-320.0 
+                                                  (-640.0 
                                                    + 
                                                    VL_ISTOR_D_I(32, vlSelf->x_offset))) 
                                                  / 
@@ -1140,7 +1140,7 @@ VL_ATTR_COLD void Vtop___024root__trace_full_sub_0(Vtop___024root* vlSelf, Veril
                                              [1U]))),32);
     bufp->fullIData(oldp+460,((VL_RTOIROUND_I_D(((1.67772160000000000e+07 
                                                   * 
-                                                  (-240.0 
+                                                  (-360.0 
                                                    + 
                                                    VL_ISTOR_D_I(32, vlSelf->y_offset))) 
                                                  / 
@@ -1153,7 +1153,7 @@ VL_ATTR_COLD void Vtop___024root__trace_full_sub_0(Vtop___024root* vlSelf, Veril
                                              [1U]))),32);
     bufp->fullIData(oldp+461,((VL_RTOIROUND_I_D(((1.67772160000000000e+07 
                                                   * 
-                                                  (-320.0 
+                                                  (-640.0 
                                                    + 
                                                    VL_ISTOR_D_I(32, vlSelf->x_offset))) 
                                                  / 
@@ -1166,7 +1166,7 @@ VL_ATTR_COLD void Vtop___024root__trace_full_sub_0(Vtop___024root* vlSelf, Veril
                                              [2U]))),32);
     bufp->fullIData(oldp+462,((VL_RTOIROUND_I_D(((1.67772160000000000e+07 
                                                   * 
-                                                  (-240.0 
+                                                  (-360.0 
                                                    + 
                                                    VL_ISTOR_D_I(32, vlSelf->y_offset))) 
                                                  / 
@@ -1179,7 +1179,7 @@ VL_ATTR_COLD void Vtop___024root__trace_full_sub_0(Vtop___024root* vlSelf, Veril
                                              [2U]))),32);
     bufp->fullIData(oldp+463,((VL_RTOIROUND_I_D(((1.67772160000000000e+07 
                                                   * 
-                                                  (-320.0 
+                                                  (-640.0 
                                                    + 
                                                    VL_ISTOR_D_I(32, vlSelf->x_offset))) 
                                                  / 
@@ -1192,7 +1192,7 @@ VL_ATTR_COLD void Vtop___024root__trace_full_sub_0(Vtop___024root* vlSelf, Veril
                                              [3U]))),32);
     bufp->fullIData(oldp+464,((VL_RTOIROUND_I_D(((1.67772160000000000e+07 
                                                   * 
-                                                  (-240.0 
+                                                  (-360.0 
                                                    + 
                                                    VL_ISTOR_D_I(32, vlSelf->y_offset))) 
                                                  / 
@@ -1205,7 +1205,7 @@ VL_ATTR_COLD void Vtop___024root__trace_full_sub_0(Vtop___024root* vlSelf, Veril
                                              [3U]))),32);
     bufp->fullIData(oldp+465,((VL_RTOIROUND_I_D(((1.67772160000000000e+07 
                                                   * 
-                                                  (-320.0 
+                                                  (-640.0 
                                                    + 
                                                    VL_ISTOR_D_I(32, vlSelf->x_offset))) 
                                                  / 
@@ -1218,7 +1218,7 @@ VL_ATTR_COLD void Vtop___024root__trace_full_sub_0(Vtop___024root* vlSelf, Veril
                                              [4U]))),32);
     bufp->fullIData(oldp+466,((VL_RTOIROUND_I_D(((1.67772160000000000e+07 
                                                   * 
-                                                  (-240.0 
+                                                  (-360.0 
                                                    + 
                                                    VL_ISTOR_D_I(32, vlSelf->y_offset))) 
                                                  / 
@@ -1231,7 +1231,7 @@ VL_ATTR_COLD void Vtop___024root__trace_full_sub_0(Vtop___024root* vlSelf, Veril
                                              [4U]))),32);
     bufp->fullIData(oldp+467,((VL_RTOIROUND_I_D(((1.67772160000000000e+07 
                                                   * 
-                                                  (-320.0 
+                                                  (-640.0 
                                                    + 
                                                    VL_ISTOR_D_I(32, vlSelf->x_offset))) 
                                                  / 
@@ -1244,7 +1244,7 @@ VL_ATTR_COLD void Vtop___024root__trace_full_sub_0(Vtop___024root* vlSelf, Veril
                                              [5U]))),32);
     bufp->fullIData(oldp+468,((VL_RTOIROUND_I_D(((1.67772160000000000e+07 
                                                   * 
-                                                  (-240.0 
+                                                  (-360.0 
                                                    + 
                                                    VL_ISTOR_D_I(32, vlSelf->y_offset))) 
                                                  / 
@@ -1258,8 +1258,8 @@ VL_ATTR_COLD void Vtop___024root__trace_full_sub_0(Vtop___024root* vlSelf, Veril
     bufp->fullIData(oldp+469,(0x20U),32);
     bufp->fullIData(oldp+470,(0x18U),32);
     bufp->fullIData(oldp+471,(6U),32);
-    bufp->fullIData(oldp+472,(0x280U),32);
-    bufp->fullIData(oldp+473,(0x1e0U),32);
+    bufp->fullIData(oldp+472,(0x500U),32);
+    bufp->fullIData(oldp+473,(0x2d0U),32);
     bufp->fullIData(oldp+474,(6U),32);
     bufp->fullIData(oldp+475,(0x1000000U),32);
     bufp->fullIData(oldp+476,(8U),32);
