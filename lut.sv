@@ -5,6 +5,7 @@ module lut #(
                 NUM_ENGINES = 6
 )(
     input logic [DATA_WIDTH-1:0]    iterations [NUM_ENGINES-1:0],
+    // input logic                     clk,
     
     output logic [RBG_SIZE-1:0]     rgb_val [NUM_ENGINES-1:0]
 );
@@ -17,6 +18,7 @@ initial begin
     $display("rom Loaded");
 end
 always_comb begin
+// always_ff @(posedge clk)begin
     for(int i = 0; i < NUM_ENGINES; i++)begin
         rgb_val[i] = lut_array[iterations[i]];
     end
