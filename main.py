@@ -34,6 +34,15 @@ async def read_parameters(parameter_id: int):
                 'zoom': None,
                 'max_iterations': None
                 }
+
+@app.delete('/parameters/{parameter_id}')
+async def delete_parameters(parameter_id: int):
+    try:
+        db.delete_parameters(parameter_id)
+        return SUCC_MESS
+    except:
+        return FAIL_MESS
+
     
 @app.get('/parameters')
 async def read_selected_parameters():

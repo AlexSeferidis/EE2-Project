@@ -35,6 +35,9 @@ class FractalDB:
         return self.c.fetchone()
     def get_parameters(self):
         return self.get_parameters(self.__select_parameter_id)
+    def delete_parameters(self, parameter_id):
+        self.c.execute('''DELETE FROM parameters WHERE parameter_id = ?''', (parameter_id,))
+        self.conn.commit()
     def get_db(self):
         self.c.execute('''SELECT * FROM parameters''')
         return self.c.fetchall()
