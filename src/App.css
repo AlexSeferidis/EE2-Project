@@ -6,7 +6,7 @@
   --neutral: #155263;
   --base100: #111827;
   --info: #fcd34d;
-  --success: #a3e635;
+  --success: #7fff00;
   --warning: #fb923c;
   --error: #f87171;
   --text: lightgrey;
@@ -97,17 +97,59 @@
 .dbButtonContainer{
   display: flex;
   flex-direction: row;
+  align-items: center;
+  justify-content: center;
   
 }
 .dbButton{
+  align-items: "center";
+  justify-content: "center";
   padding: 10px;
+  margin: 5px;
+  border-radius: 8px;
+  background-color: var(--neutral);
 }
 
+.errorMessage{
+  background-color: 'lightgreen';
+  padding: 10px;
+  margin: 5px;
+  border-radius: 8px;
+  color: var(--base100);
+  background-color: var(--error);
+}
 .successMessage{
   background-color: 'lightgreen';
-  padding: 10;
-  margin-top: 10;
-  border-radius: 4;
-  border-width: 1;
-  border-color: '#7fff00';
+  padding: 10px;
+  margin: 5px;
+  border-radius: 8px;
+  color: var(--base100);
+  background-color: var(--success);
+}
+
+table {
+  background-color: var(--text);
+  color: var(--base100);
+  border: 1px solid;
+  border-color: var(--base100);
+  border-radius: 4px;
+  padding: 2px;
+  max-width: 50vw;
+  
+  margin: 10px;
+  
+}
+th, td{
+  color: var(--base100);
+  border-color: var(--base100);
+  border: 1px solid;
+  padding: 3px;
+}
+.deleterCell{
+  background-color: var(--error);
+}
+
+.scrollBox{
+  max-height: 40vh;
+  overflow: scroll;
 }

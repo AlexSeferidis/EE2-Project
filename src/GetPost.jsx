@@ -1,14 +1,20 @@
-import React, { useState } from 'react';
-import { Pressable, Text, View, StyleSheet } from 'react-native';
+import React, { useState, useEffect } from 'react';
+import { Pressable } from 'react-native-web';
 
-const GetPost = ({ x, y, zoom, maxItr }) => {
-  const [data, setData] = useState(null);
+const GetPost = ({ x, y, zoom, maxItr, updateParameters }) => {
+  const [data, setData] = useState([]);
   const [loading, setLoading] = useState(false);
   const [error, setError] = useState(null);
   const [successMessage, setSuccessMessage] = useState(null);
   const [parameterIds, setParameterIds] = useState([]);
 
-  // Fetch data function (GET request)
+  const refreshDelay = 100; // 0.1 seconds
+  const messageDuration = 4000; // 3 seconds
+
+  useEffect(() => {
+    fetchData();
+  }, []);
+
   const fetchData = () => {
     setLoading(true);
     setError(null);
@@ -21,10 +27,8 @@ const GetPost = ({ x, y, zoom, maxItr }) => {
         return response.json();
       })
       .then(data => {
-        // Assuming data is { "status": "success", "parameter_id": [] }
         if (data && Array.isArray(data.parameter_id)) {
-          setParameterIds(data.parameter_id); // Set parameter_id array to state
-          // Iterate through each parameter_id and fetch details
+          setParameterIds(data.parameter_id);
           const fetchPromises = data.parameter_id.map(id => {
             return fetch(`http://ec2-18-130-114-167.eu-west-2.compute.amazonaws.com:8080/parameters/${id}`)
               .then(response => {
@@ -34,25 +38,23 @@ const GetPost = ({ x, y, zoom, maxItr }) => {
                 return response.json();
               });
           });
-
-          // Wait for all fetch requests to complete
           return Promise.all(fetchPromises);
         } else {
           throw new Error('No parameter IDs found');
         }
       })
       .then(responses => {
-        // responses is an array of JSON objects from each fetch request
         setData(responses);
         setLoading(false);
+        hideMessageAfterDelay();
       })
       .catch(error => {
         setError(error);
         setLoading(false);
+        hideMessageAfterDelay();
       });
   };
 
-  // Post data function (POST request)
   const postData = () => {
     setLoading(true);
     setError(null);
@@ -71,155 +73,138 @@ const GetPost = ({ x, y, zoom, maxItr }) => {
       })
       .then(data => {
         setLoading(false);
-        setSuccessMessage(JSON.stringify(data.parameter_id, null, 2));
+        setSuccessMessage(`Successfully stored at index ${data.parameter_id}`);
+        hideMessageAfterDelay();
         console.log('Post response data:', data);
       })
       .catch(error => {
         setError(error);
         setLoading(false);
+        hideMessageAfterDelay();
       });
-      fetchData();
+    
+    setTimeout(fetchData, refreshDelay);
   };
 
   const deleteAll = () => {
     setLoading(true);
     setError(null);
 
-    fetch(`http://ec2-18-130-114-167.eu-west-2.compute.amazonaws.com:8080/parameters`,
-      {method: 'DELETE'}
-    )
-      
+    fetch(`http://ec2-18-130-114-167.eu-west-2.compute.amazonaws.com:8080/parameters`, { method: 'DELETE' })
       .then(response => {
         if (!response.ok) {
           throw new Error('Network response was not ok');
         }
       })
-      .then(responses => {
+      .then(() => {
         setLoading(false);
+        setSuccessMessage('All parameters deleted successfully');
+        hideMessageAfterDelay();
       })
       .catch(error => {
         setError(error);
         setLoading(false);
+        hideMessageAfterDelay();
       });
-  }
+    
+    setTimeout(fetchData, refreshDelay);
+  };
+
+  const deleteId = () => {
+    setLoading(true);
+    setError(null);
+
+    fetch(`http://ec2-18-130-114-167.eu-west-2.compute.amazonaws.com:8080/parameters`, { method: 'DELETE' })
+      .then(response => {
+        if (!response.ok) {
+          throw new Error('Network response was not ok');
+        }
+      })
+      .then(() => {
+        setLoading(false);
+        setSuccessMessage('All parameters deleted successfully');
+        hideMessageAfterDelay();
+      })
+      .catch(error => {
+        setError(error);
+        setLoading(false);
+        hideMessageAfterDelay();
+      });
+    
+    setTimeout(fetchData, refreshDelay);
+  };
+
+  const hideMessageAfterDelay = () => {
+    setTimeout(() => {
+      setError(null);
+      setSuccessMessage(null);
+    }, messageDuration);
+  };
+
+  const handleClick = (params) => {
+    updateParameters(params);
+  };
 
   return (
-    <View style={styles.container}>
+    <div>
       <div className="dbButtonContainer">
         <div className="dbButton">
-          <Pressable onPress={fetchData} style={styles.button}>
-            <Text style={styles.buttonText}>FETCH</Text>
-          </Pressable>
+          <Pressable onPress={fetchData}>REFRESH</Pressable>
         </div>
         <div className="dbButton">
-          <Pressable onPress={postData} style={styles.button}>
-            <Text style={styles.buttonText}>POST</Text>
-          </Pressable>
+          <Pressable onPress={postData}>SAVE</Pressable>
         </div>
         <div className="dbButton">
-          <Pressable onPress={deleteAll} style={styles.button}>
-            <Text style={styles.buttonText}>DELETE ALL</Text>
-          </Pressable>
+          <Pressable onPress={deleteAll}>DELETE ALL</Pressable>
         </div>
       </div>
-
-      {loading && <Text>Loading...</Text>}
-      {error && <Text>Error: {error.message}</Text>}
-      {successMessage && (
-        <div className="successMessage">
-          Successfully stored at index {successMessage}
-        </div>
-      )}
-      {parameterIds.length > 0 && (
-        <View style={styles.parameterIds}>
-          <Text style={styles.successText}>Parameter IDs:</Text>
-          <View style={styles.tableContainer}>
-            <View style={styles.tableRow}>
-              <Text style={[styles.tableHeader, styles.cell]}>ID</Text>
-              <Text style={[styles.tableHeader, styles.cell]}>x_offset</Text>
-              <Text style={[styles.tableHeader, styles.cell]}>y_offset</Text>
-              <Text style={[styles.tableHeader, styles.cell]}>zoom</Text>
-              <Text style={[styles.tableHeader, styles.cell]}>max_iterations</Text>
-            </View>
-            {parameterIds.map((id, index) => (
-              <View key={index} style={styles.tableRow}>
-                <Text style={[styles.tableData, styles.cell]}>{id}</Text>
-                {data && data[index] && (
-                  <>
-                    <Text style={[styles.tableData, styles.cell]}>{data[index].x_offset}</Text>
-                    <Text style={[styles.tableData, styles.cell]}>{data[index].y_offset}</Text>
-                    <Text style={[styles.tableData, styles.cell]}>{data[index].zoom}</Text>
-                    <Text style={[styles.tableData, styles.cell]}>{data[index].max_iterations}</Text>
-                  </>
-                )}
-              </View>
-            ))}
-          </View>
-        </View>
-      )}
-    </View>
+      <div>
+        {/* {loading && <p>Loading...</p>} */}
+        {error && (
+          <div className="errorMessage">
+            Error: {error.message}
+          </div>
+        )}
+        {successMessage && (
+          <div className="successMessage">
+            {successMessage}
+          </div>
+        )}
+        {parameterIds.length > 0 && (
+          <div className="scrollBox">
+            <table>
+              <thead>
+                <tr>
+                  <th>ID</th>
+                  <th>x-Offset</th>
+                  <th>y-Offset</th>
+                  <th>Zoom</th>
+                  <th>Max Iterations</th>
+                  <th className="deleterCell">DELETE</th>
+                </tr>
+              </thead>
+              <tbody>
+                {parameterIds.map((id, index) => (
+                  <tr key={index} onClick={() => handleClick(data[index])} style={{ cursor: 'pointer' }}>
+                    <td>{id}</td>
+                    {data && data[index] && (
+                      <>
+                        <td>{data[index].x_offset}</td>
+                        <td>{data[index].y_offset}</td>
+                        <td>{data[index].zoom}</td>
+                        <td>{data[index].max_iterations}</td>
+                        <td className="deleterCell">X</td>
+                      </>
+                    )}
+                  </tr>
+                ))}
+              </tbody>
+            </table>
+          </div>
+        )}
+      </div>
+    </div>
   );
 };
-
-const styles = StyleSheet.create({
-  container: {
-    flex: 1,
-    alignItems: 'center',
-    justifyContent: 'center',
-    padding: 20,
-  },
-  button: {
-    alignItems: 'center',
-    justifyContent: 'center',
-    paddingVertical: 12,
-    paddingHorizontal: 32,
-    borderRadius: 4,
-    backgroundColor: '#007bff',
-    marginBottom: 10,
-  },
-  buttonText: {
-    fontSize: 16,
-    color: 'white',
-  },
-  successText: {
-    fontWeight: 'bold',
-    marginBottom: 5,
-  },
-  successData: {
-    fontFamily: 'monospace',
-    fontSize: 12,
-  },
-  parameterIds: {
-    marginTop: 10,
-  },
-  tableContainer: {
-    backgroundColor: 'white',
-    borderRadius: 4,
-    borderWidth: 1,
-    borderColor: 'black',
-    padding: 10,
-  },
-  tableRow: {
-    flexDirection: 'row',
-    alignItems: 'center',
-    justifyContent: 'space-around',
-    marginBottom: 5,
-  },
-  tableHeader: {
-    fontWeight: 'bold',
-    flex: 1,
-    textAlign: 'center',
-  },
-  tableData: {
-    flex: 1,
-    textAlign: 'center',
-    fontFamily: 'monospace',
-  },
-  cell: {
-    padding: 10,
-    borderRightWidth: 1,
-    borderRightColor: 'black',
-  },
-});
 
 export default GetPost;

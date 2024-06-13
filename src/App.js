@@ -10,6 +10,13 @@ const App = () => {
   const [zoom, setZoom] = useState('3');
   const [maxItr, setMaxItr] = useState('50');
 
+  const updateParameters = (newParams) => {
+    setX(newParams.x_offset);
+    setY(newParams.y_offset);
+    setZoom(newParams.zoom);
+    setMaxItr(newParams.max_iterations);
+  };
+
   return (
     <div className="App">
       <header className="App-header">
@@ -39,14 +46,13 @@ const App = () => {
             onChange={e => setMaxItr(e.target.value)}
           />
           <div>
-            <GetPost x={x} y={y} zoom={zoom} maxItr={maxItr} />
+            <GetPost x={x} y={y} zoom={zoom} maxItr={maxItr} updateParameters={updateParameters} />
           </div>
         </div>
         <div className="MandelbrotViewport">
           <MandelbrotViewer x={x} y={y} zoom={zoom} maxItr={maxItr} />
         </div>
       </main>
-      
     </div>
   );
 };
