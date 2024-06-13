@@ -12,6 +12,11 @@
   --text: lightgrey;
 }
 
+/* Scrollbar styles */
+::-webkit-scrollbar {
+  width: 0px;
+  }
+
 .App {
   min-height: 100vh;
   text-align: left;
@@ -87,8 +92,8 @@
   padding: 10px;
 }
 
-.Num-box-label {
-}
+/* .Num-box-label {
+} */
 
 .Num-box-input {
   font-size: calc(2vmin);
@@ -151,5 +156,5 @@ th, td{
 
 .scrollBox{
   max-height: 40vh;
-  overflow: scroll;
+  overflow-y: scroll;
 }

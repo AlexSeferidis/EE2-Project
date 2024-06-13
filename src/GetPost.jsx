@@ -1,4 +1,4 @@
-import React, { useState, useEffect } from 'react';
+import React, { useState, useEffect, useRef } from 'react';
 import { Pressable } from 'react-native-web';
 
 const GetPost = ({ x, y, zoom, maxItr, updateParameters }) => {
@@ -7,9 +7,10 @@ const GetPost = ({ x, y, zoom, maxItr, updateParameters }) => {
   const [error, setError] = useState(null);
   const [successMessage, setSuccessMessage] = useState(null);
   const [parameterIds, setParameterIds] = useState([]);
+  const timeoutRef = useRef(null); // Ref to store the timeout ID
 
-  const refreshDelay = 100; // 0.1 seconds
-  const messageDuration = 4000; // 3 seconds
+  const refreshDelay = 20; // 0.02 seconds
+  const messageDuration = 3000; // 3 seconds
 
   useEffect(() => {
     fetchData();
@@ -46,12 +47,10 @@ const GetPost = ({ x, y, zoom, maxItr, updateParameters }) => {
       .then(responses => {
         setData(responses);
         setLoading(false);
-        hideMessageAfterDelay();
       })
       .catch(error => {
         setError(error);
         setLoading(false);
-        hideMessageAfterDelay();
       });
   };
 
@@ -74,15 +73,17 @@ const GetPost = ({ x, y, zoom, maxItr, updateParameters }) => {
       .then(data => {
         setLoading(false);
         setSuccessMessage(`Successfully stored at index ${data.parameter_id}`);
+        clearHideMessageTimeout();
         hideMessageAfterDelay();
         console.log('Post response data:', data);
       })
       .catch(error => {
         setError(error);
         setLoading(false);
+        clearHideMessageTimeout();
         hideMessageAfterDelay();
       });
-    
+
     setTimeout(fetchData, refreshDelay);
   };
 
@@ -99,14 +100,16 @@ const GetPost = ({ x, y, zoom, maxItr, updateParameters }) => {
       .then(() => {
         setLoading(false);
         setSuccessMessage('All parameters deleted successfully');
+        clearHideMessageTimeout();
         hideMessageAfterDelay();
       })
       .catch(error => {
         setError(error);
         setLoading(false);
+        clearHideMessageTimeout();
         hideMessageAfterDelay();
       });
-    
+
     setTimeout(fetchData, refreshDelay);
   };
 
@@ -123,22 +126,30 @@ const GetPost = ({ x, y, zoom, maxItr, updateParameters }) => {
       .then(() => {
         setLoading(false);
         setSuccessMessage('All parameters deleted successfully');
+        clearHideMessageTimeout();
         hideMessageAfterDelay();
       })
       .catch(error => {
         setError(error);
         setLoading(false);
+        clearHideMessageTimeout();
         hideMessageAfterDelay();
       });
-    
+
     setTimeout(fetchData, refreshDelay);
   };
 
   const hideMessageAfterDelay = () => {
-    setTimeout(() => {
+    timeoutRef.current = setTimeout(() => {
       setError(null);
       setSuccessMessage(null);
     }, messageDuration);
+  };
+
+  const clearHideMessageTimeout = () => {
+    if (timeoutRef.current) {
+      clearTimeout(timeoutRef.current);
+    }
   };
 
   const handleClick = (params) => {
@@ -148,9 +159,9 @@ const GetPost = ({ x, y, zoom, maxItr, updateParameters }) => {
   return (
     <div>
       <div className="dbButtonContainer">
-        <div className="dbButton">
+        {/* <div className="dbButton">
           <Pressable onPress={fetchData}>REFRESH</Pressable>
-        </div>
+        </div> */}
         <div className="dbButton">
           <Pressable onPress={postData}>SAVE</Pressable>
         </div>
