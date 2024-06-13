@@ -1,7 +1,7 @@
 module top #(
     parameter   DATA_WIDTH = 32,
                 RBG_SIZE = 24,
-                NUM_ENGINES = 6,
+                NUM_ENGINES = 11,
                 ITERATIONS_WIDTH = 32
 )(
     input logic                         clk,
@@ -18,8 +18,7 @@ module top #(
     output logic                        first,
     output logic                        last_x,
     output logic                        last_y,
-    output logic                        valid,
-    output logic                        full_queue [NUM_ENGINES-1:0]
+    output logic                        valid
 
 );
 
@@ -39,6 +38,7 @@ logic [DATA_WIDTH-1:0]          xpixel_bus      [NUM_ENGINES-1:0];
 logic [DATA_WIDTH-1:0]          ypixel_bus      [NUM_ENGINES-1:0];
 logic [NUM_ENGINES-1:0]         en_bus;
 logic [RBG_SIZE-1:0]            colour_bus      [NUM_ENGINES-1:0];
+logic [NUM_ENGINES-1:0]         full_queue_bus;
 
 assign en_wire = &en_bus;
 
@@ -62,6 +62,7 @@ generate
             .zoom(zoom),
             .x_offset(x_offset),
             .y_offset(y_offset),
+            .full_queue(full_queue_bus[i]),
             .finished(fin_bus[i]),
             .iterations(iterations_bus[i]),
             .xpixel(xpixel_bus[i]),
@@ -78,7 +79,7 @@ generate
             .xpixel_check(xpixel_wire),
             .ypixel_check(ypixel_wire),
             .colour_o(colour_wire),
-            .full_queue(full_queue[i]),
+            .full_queue(full_queue_bus[i]),
             .en(en_bus[i])
             );
     end

@@ -16,6 +16,7 @@ module mandelbrot_engine #(
     input logic signed  [PIXEL_DATA_WIDTH - 1:0]    y0_,
     input logic signed [fp_bits-1:0]                zoom,
     input logic signed [fp_bits-1:0]                x_offset, y_offset,
+    input logic                                     full_queue,
 
     output logic                                    finished,
     output logic [ITERATIONS_WIDTH-1:0]             iterations,
@@ -46,7 +47,7 @@ assign step = SCALE_FACTOR/(zoom * 100);
 assign x0 = x_min + step*x0_;
 assign y0 = y_min + step*y0_; // ymax - step*y0_
 
-  enum {calc, finished_s, read_input} state;
+  enum {calc, finished_s, read_input, wait_} state;
 
 
   logic signed [fp_bits - 1:0] x;
@@ -64,9 +65,10 @@ assign y0 = y_min + step*y0_; // ymax - step*y0_
   // always logic [PIXEL_DATA_WIDTH-1:0] delayy1, delayy2, delayx1, delayx2;
   always @ (posedge clk)
   begin
-    if (reset == 1)
+    if ((reset)||(full_queue))
     begin
-      state <= read_input;
+      // state <= read_input;
+      state <= wait_;
       finished <= 0;
       iterations <= 0;
 
@@ -79,6 +81,16 @@ assign y0 = y_min + step*y0_; // ymax - step*y0_
     else
 
     case (state)
+      wait_:
+      begin
+        if(!full_queue)begin
+          state <= read_input;
+        end
+        else begin
+          state <= wait_;
+        end
+      end
+
       read_input:
       begin
         x0_buff <= x0_;

@@ -66,6 +66,8 @@ always_ff@(posedge clk)begin
                 xqueue[i] <= xqueue[i+1];
                 yqueue[i] <= yqueue[i+1]; 
             end
+            xqueue[QUEUE_SIZE-1] <= -1;
+            yqueue[QUEUE_SIZE-1] <= -1;
             // full_queue <= 0;
             counter <= counter - 1;
         end

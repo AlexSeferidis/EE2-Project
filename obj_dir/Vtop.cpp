@@ -25,7 +25,6 @@ Vtop::Vtop(VerilatedContext* _vcontextp__, const char* _vcname__)
     , zoom{vlSymsp->TOP.zoom}
     , x_offset{vlSymsp->TOP.x_offset}
     , y_offset{vlSymsp->TOP.y_offset}
-    , full_queue{vlSymsp->TOP.full_queue}
     , rootp{&(vlSymsp->TOP)}
 {
     // Register model with the context

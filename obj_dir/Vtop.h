@@ -39,7 +39,6 @@ class Vtop VL_NOT_FINAL : public VerilatedModel {
     VL_IN(&zoom,31,0);
     VL_IN(&x_offset,31,0);
     VL_IN(&y_offset,31,0);
-    VL_OUT8((&full_queue)[6],0,0);
 
     // CELLS
     // Public to allow access to /* verilator public */ items.

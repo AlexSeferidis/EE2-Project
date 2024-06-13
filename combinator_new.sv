@@ -1,8 +1,8 @@
 module combinator_new #(
     parameter   DATA_WIDTH = 32,
                 RBG_SIZE = 24,
-                SCREEN_WIDTH = 640,
-                SCREEN_HEIGHT = 480,
+                SCREEN_WIDTH = 1280,
+                SCREEN_HEIGHT = 720,
                 NUM_ENGINES = 6,
                 ENGINE_BITS = 3
 )(

@@ -28,16 +28,16 @@ int main(int argc, char **argv, char **env){
     top->reset = 1;
     top->ready = 1;
     top->iterations_max = 50;
-    top->zoom = 40;
-    top->x_offset = 1500;
-    top->y_offset = 1500;
+    top->zoom = 3;
+    top->x_offset = 0;
+    top->y_offset = 0;
 
     std::vector<unsigned char> arr(3 * SCREEN_HEIGHT * SCREEN_WIDTH);
 
     int i = 0;
     int index = 0;
 
-    for (i=0; i < 14000000; i++){
+    for (i=0; i < 3500000; i++){
         
         for(clk = 0; clk < 2; clk++){
             tfp->dump(2 * i + clk);

@@ -2,7 +2,7 @@ module distributorN#(
     parameter   PIXEL_DATA_WIDTH = 32,
                 SCREEN_WIDTH = 1280,
                 SCREEN_HEIGHT = 720,
-                NUM_ENGINES = 6
+                NUM_ENGINES = 11
 )(
     input logic                         clk,
     input logic                         reset,

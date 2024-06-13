@@ -56,7 +56,6 @@ always_ff @(posedge clk) begin
         next_xpixel <= xpixel;
         next_ypixel <= ypixel;
     end
-
     else begin
         valid <= 0;
     end   
