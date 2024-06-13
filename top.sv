@@ -27,10 +27,10 @@ logic [RBG_SIZE-1:0]            colour_o_wire;
 
 logic [DATA_WIDTH-1:0]          xpixel_wire;
 logic [DATA_WIDTH-1:0]          ypixel_wire;
-logic [RBG_SIZE-1:0]            colour_wire;
+logic [RBG_SIZE-1:0]            colour_bus      [NUM_ENGINES-1:0];
 logic                           reset_engine;
 logic                           fin_wire;
-logic                           en_wire;
+// logic                           en_wire;
 logic [NUM_ENGINES-1:0]         fin_bus;
 logic [DATA_WIDTH-1:0]          x               [NUM_ENGINES-1:0];
 logic [DATA_WIDTH-1:0]          y               [NUM_ENGINES-1:0];
@@ -38,9 +38,12 @@ logic [ITERATIONS_WIDTH-1:0]    iterations_bus  [NUM_ENGINES-1:0];
 logic [DATA_WIDTH-1:0]          xpixel_bus      [NUM_ENGINES-1:0];
 logic [DATA_WIDTH-1:0]          ypixel_bus      [NUM_ENGINES-1:0];
 logic [NUM_ENGINES-1:0]         en_bus;
-logic [RBG_SIZE-1:0]            colour_bus      [NUM_ENGINES-1:0];
+logic [NUM_ENGINES-1:0]         taken_bus;
+logic [RBG_SIZE-1:0]            queue_colour    [NUM_ENGINES-1:0];
+logic [DATA_WIDTH-1:0]          queue_x         [NUM_ENGINES-1:0];
+logic [DATA_WIDTH-1:0]          queue_y         [NUM_ENGINES-1:0];
 
-assign en_wire = &en_bus;
+// assign en_wire = &en_bus;
 
 distributorN distributor(
     .clk(clk),
@@ -75,11 +78,12 @@ generate
             .colour_i(colour_bus[i]),
             .xpixel_i(xpixel_bus[i]),
             .ypixel_i(ypixel_bus[i]),
-            .xpixel_check(xpixel_wire),
-            .ypixel_check(ypixel_wire),
-            .colour_o(colour_wire),
-            .full_queue(full_queue[i]),
-            .en(en_bus[i]) 
+            .taken(taken_bus[i]),
+            // .identity(i),
+            .colour_o(queue_colour[i]),
+            .xpixel_o(queue_x[i]),
+            .ypixel_o(queue_y[i]),
+            .full_queue(full_queue[i])
             );
     end
 endgenerate
@@ -92,12 +96,12 @@ lut lut_rom(
 combinator combinator_block(
     .clk(clk),
     .reset(reset),
-    .colour_i(colour_wire),
-    .en(en_wire),
-    .fin_flag(fin_wire),
+    .colour_i(queue_colour),
+    .xpixel_i(queue_x),
+    .ypixel_i(queue_y),
+    // .en(en_wire),
     .ready(ready),
-    .next_xpixel(xpixel_wire),
-    .next_ypixel(ypixel_wire),
+    .taken(taken_bus),
     .colour_o(colour_o_wire),
     .first(first),
     .last_x(last_x),

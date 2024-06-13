@@ -11,12 +11,13 @@ VL_ATTR_COLD void Vtop___024root___initial__TOP__0(Vtop___024root* vlSelf) {
     Vtop__Syms* const __restrict vlSymsp VL_ATTR_UNUSED = vlSelf->vlSymsp;
     VL_DEBUG_IF(VL_DBG_MSGF("+    Vtop___024root___initial__TOP__0\n"); );
     // Body
-    vlSelf->valid = 0U;
     VL_WRITEF("Loading rom.\n");
     VL_READMEM_N(true, 24, 50, 0, std::string{"lut.hex"}
                  ,  &(vlSelf->top__DOT__lut_rom__DOT__lut_array)
                  , 0, ~0ULL);
     VL_WRITEF("rom Loaded\n");
+    vlSelf->valid = 0U;
+    vlSelf->top__DOT__taken_bus = 0U;
     vlSelf->top__DOT__genblk1__BRA__0__KET____DOT__engine__DOT__state = 2U;
     vlSelf->top__DOT____Vcellout__genblk1__BRA__0__KET____DOT__engine__finished = 1U;
     vlSelf->top__DOT__genblk1__BRA__1__KET____DOT__engine__DOT__state = 2U;
@@ -32,7 +33,8 @@ VL_ATTR_COLD void Vtop___024root___initial__TOP__0(Vtop___024root* vlSelf) {
     vlSelf->top__DOT__distributor__DOT__y0 = 0U;
     vlSelf->top__DOT__distributor__DOT__x0 = 0U;
     vlSelf->top__DOT__genblk1__BRA__0__KET____DOT__queue_block__DOT__prev_xpixel = 0xffffffffU;
-    vlSelf->top__DOT____Vcellout__genblk1__BRA__0__KET____DOT__queue_block__en = 0U;
+    vlSelf->top__DOT____Vcellout__genblk1__BRA__0__KET____DOT__queue_block__xpixel_o = 0xffffffffU;
+    vlSelf->top__DOT____Vcellout__genblk1__BRA__0__KET____DOT__queue_block__ypixel_o = 0xffffffffU;
     vlSelf->top__DOT__genblk1__BRA__0__KET____DOT__queue_block__DOT__colour_queue[0U] = 0U;
     vlSelf->top__DOT__genblk1__BRA__0__KET____DOT__queue_block__DOT__xqueue[0U] = 0xffffffffU;
     vlSelf->top__DOT__genblk1__BRA__0__KET____DOT__queue_block__DOT__yqueue[0U] = 0xffffffffU;
@@ -65,7 +67,8 @@ VL_ATTR_COLD void Vtop___024root___initial__TOP__0(Vtop___024root* vlSelf) {
     vlSelf->top__DOT__genblk1__BRA__0__KET____DOT__queue_block__DOT__yqueue[9U] = 0xffffffffU;
     vlSelf->top__DOT__genblk1__BRA__0__KET____DOT__queue_block__DOT__unnamedblk1__DOT__i = 0xaU;
     vlSelf->top__DOT__genblk1__BRA__1__KET____DOT__queue_block__DOT__prev_xpixel = 0xffffffffU;
-    vlSelf->top__DOT____Vcellout__genblk1__BRA__1__KET____DOT__queue_block__en = 0U;
+    vlSelf->top__DOT____Vcellout__genblk1__BRA__1__KET____DOT__queue_block__xpixel_o = 0xffffffffU;
+    vlSelf->top__DOT____Vcellout__genblk1__BRA__1__KET____DOT__queue_block__ypixel_o = 0xffffffffU;
     vlSelf->top__DOT__genblk1__BRA__1__KET____DOT__queue_block__DOT__colour_queue[0U] = 0U;
     vlSelf->top__DOT__genblk1__BRA__1__KET____DOT__queue_block__DOT__xqueue[0U] = 0xffffffffU;
     vlSelf->top__DOT__genblk1__BRA__1__KET____DOT__queue_block__DOT__yqueue[0U] = 0xffffffffU;
@@ -98,7 +101,8 @@ VL_ATTR_COLD void Vtop___024root___initial__TOP__0(Vtop___024root* vlSelf) {
     vlSelf->top__DOT__genblk1__BRA__1__KET____DOT__queue_block__DOT__yqueue[9U] = 0xffffffffU;
     vlSelf->top__DOT__genblk1__BRA__1__KET____DOT__queue_block__DOT__unnamedblk1__DOT__i = 0xaU;
     vlSelf->top__DOT__genblk1__BRA__2__KET____DOT__queue_block__DOT__prev_xpixel = 0xffffffffU;
-    vlSelf->top__DOT____Vcellout__genblk1__BRA__2__KET____DOT__queue_block__en = 0U;
+    vlSelf->top__DOT____Vcellout__genblk1__BRA__2__KET____DOT__queue_block__xpixel_o = 0xffffffffU;
+    vlSelf->top__DOT____Vcellout__genblk1__BRA__2__KET____DOT__queue_block__ypixel_o = 0xffffffffU;
     vlSelf->top__DOT__genblk1__BRA__2__KET____DOT__queue_block__DOT__colour_queue[0U] = 0U;
     vlSelf->top__DOT__genblk1__BRA__2__KET____DOT__queue_block__DOT__xqueue[0U] = 0xffffffffU;
     vlSelf->top__DOT__genblk1__BRA__2__KET____DOT__queue_block__DOT__yqueue[0U] = 0xffffffffU;
@@ -131,7 +135,8 @@ VL_ATTR_COLD void Vtop___024root___initial__TOP__0(Vtop___024root* vlSelf) {
     vlSelf->top__DOT__genblk1__BRA__2__KET____DOT__queue_block__DOT__yqueue[9U] = 0xffffffffU;
     vlSelf->top__DOT__genblk1__BRA__2__KET____DOT__queue_block__DOT__unnamedblk1__DOT__i = 0xaU;
     vlSelf->top__DOT__genblk1__BRA__3__KET____DOT__queue_block__DOT__prev_xpixel = 0xffffffffU;
-    vlSelf->top__DOT____Vcellout__genblk1__BRA__3__KET____DOT__queue_block__en = 0U;
+    vlSelf->top__DOT____Vcellout__genblk1__BRA__3__KET____DOT__queue_block__xpixel_o = 0xffffffffU;
+    vlSelf->top__DOT____Vcellout__genblk1__BRA__3__KET____DOT__queue_block__ypixel_o = 0xffffffffU;
     vlSelf->top__DOT__genblk1__BRA__3__KET____DOT__queue_block__DOT__colour_queue[0U] = 0U;
     vlSelf->top__DOT__genblk1__BRA__3__KET____DOT__queue_block__DOT__xqueue[0U] = 0xffffffffU;
     vlSelf->top__DOT__genblk1__BRA__3__KET____DOT__queue_block__DOT__yqueue[0U] = 0xffffffffU;
@@ -164,7 +169,8 @@ VL_ATTR_COLD void Vtop___024root___initial__TOP__0(Vtop___024root* vlSelf) {
     vlSelf->top__DOT__genblk1__BRA__3__KET____DOT__queue_block__DOT__yqueue[9U] = 0xffffffffU;
     vlSelf->top__DOT__genblk1__BRA__3__KET____DOT__queue_block__DOT__unnamedblk1__DOT__i = 0xaU;
     vlSelf->top__DOT__genblk1__BRA__4__KET____DOT__queue_block__DOT__prev_xpixel = 0xffffffffU;
-    vlSelf->top__DOT____Vcellout__genblk1__BRA__4__KET____DOT__queue_block__en = 0U;
+    vlSelf->top__DOT____Vcellout__genblk1__BRA__4__KET____DOT__queue_block__xpixel_o = 0xffffffffU;
+    vlSelf->top__DOT____Vcellout__genblk1__BRA__4__KET____DOT__queue_block__ypixel_o = 0xffffffffU;
     vlSelf->top__DOT__genblk1__BRA__4__KET____DOT__queue_block__DOT__colour_queue[0U] = 0U;
     vlSelf->top__DOT__genblk1__BRA__4__KET____DOT__queue_block__DOT__xqueue[0U] = 0xffffffffU;
     vlSelf->top__DOT__genblk1__BRA__4__KET____DOT__queue_block__DOT__yqueue[0U] = 0xffffffffU;
@@ -197,7 +203,8 @@ VL_ATTR_COLD void Vtop___024root___initial__TOP__0(Vtop___024root* vlSelf) {
     vlSelf->top__DOT__genblk1__BRA__4__KET____DOT__queue_block__DOT__yqueue[9U] = 0xffffffffU;
     vlSelf->top__DOT__genblk1__BRA__4__KET____DOT__queue_block__DOT__unnamedblk1__DOT__i = 0xaU;
     vlSelf->top__DOT__genblk1__BRA__5__KET____DOT__queue_block__DOT__prev_xpixel = 0xffffffffU;
-    vlSelf->top__DOT____Vcellout__genblk1__BRA__5__KET____DOT__queue_block__en = 0U;
+    vlSelf->top__DOT____Vcellout__genblk1__BRA__5__KET____DOT__queue_block__xpixel_o = 0xffffffffU;
+    vlSelf->top__DOT____Vcellout__genblk1__BRA__5__KET____DOT__queue_block__ypixel_o = 0xffffffffU;
     vlSelf->top__DOT__genblk1__BRA__5__KET____DOT__queue_block__DOT__colour_queue[0U] = 0U;
     vlSelf->top__DOT__genblk1__BRA__5__KET____DOT__queue_block__DOT__xqueue[0U] = 0xffffffffU;
     vlSelf->top__DOT__genblk1__BRA__5__KET____DOT__queue_block__DOT__yqueue[0U] = 0xffffffffU;
@@ -240,41 +247,41 @@ VL_ATTR_COLD void Vtop___024root___settle__TOP__0(Vtop___024root* vlSelf) {
     IData/*31:0*/ top__DOT__distributor__DOT____Vlvbound_hc3b9a86b__0;
     IData/*23:0*/ top__DOT__lut_rom__DOT____Vlvbound_h5eb2d243__0;
     // Body
-    vlSelf->r = (0xffU & vlSelf->top__DOT__colour_o_wire);
-    vlSelf->g = (0xffU & (vlSelf->top__DOT__colour_o_wire 
-                          >> 8U));
-    vlSelf->b = (0xffU & (vlSelf->top__DOT__colour_o_wire 
-                          >> 0x10U));
+    vlSelf->top__DOT__ypixel_bus[0U] = vlSelf->top__DOT____Vcellout__genblk1__BRA__0__KET____DOT__engine__ypixel;
+    vlSelf->top__DOT__xpixel_bus[0U] = vlSelf->top__DOT____Vcellout__genblk1__BRA__0__KET____DOT__engine__xpixel;
+    vlSelf->full_queue[0U] = (0xaU == (IData)(vlSelf->top__DOT__genblk1__BRA__0__KET____DOT__queue_block__DOT__counter));
+    vlSelf->top__DOT__ypixel_bus[1U] = vlSelf->top__DOT____Vcellout__genblk1__BRA__1__KET____DOT__engine__ypixel;
+    vlSelf->top__DOT__xpixel_bus[1U] = vlSelf->top__DOT____Vcellout__genblk1__BRA__1__KET____DOT__engine__xpixel;
+    vlSelf->full_queue[1U] = (0xaU == (IData)(vlSelf->top__DOT__genblk1__BRA__1__KET____DOT__queue_block__DOT__counter));
+    vlSelf->top__DOT__ypixel_bus[2U] = vlSelf->top__DOT____Vcellout__genblk1__BRA__2__KET____DOT__engine__ypixel;
+    vlSelf->top__DOT__xpixel_bus[2U] = vlSelf->top__DOT____Vcellout__genblk1__BRA__2__KET____DOT__engine__xpixel;
+    vlSelf->full_queue[2U] = (0xaU == (IData)(vlSelf->top__DOT__genblk1__BRA__2__KET____DOT__queue_block__DOT__counter));
+    vlSelf->top__DOT__ypixel_bus[3U] = vlSelf->top__DOT____Vcellout__genblk1__BRA__3__KET____DOT__engine__ypixel;
+    vlSelf->top__DOT__xpixel_bus[3U] = vlSelf->top__DOT____Vcellout__genblk1__BRA__3__KET____DOT__engine__xpixel;
+    vlSelf->full_queue[3U] = (0xaU == (IData)(vlSelf->top__DOT__genblk1__BRA__3__KET____DOT__queue_block__DOT__counter));
+    vlSelf->top__DOT__ypixel_bus[4U] = vlSelf->top__DOT____Vcellout__genblk1__BRA__4__KET____DOT__engine__ypixel;
+    vlSelf->top__DOT__xpixel_bus[4U] = vlSelf->top__DOT____Vcellout__genblk1__BRA__4__KET____DOT__engine__xpixel;
+    vlSelf->full_queue[4U] = (0xaU == (IData)(vlSelf->top__DOT__genblk1__BRA__4__KET____DOT__queue_block__DOT__counter));
+    vlSelf->top__DOT__ypixel_bus[5U] = vlSelf->top__DOT____Vcellout__genblk1__BRA__5__KET____DOT__engine__ypixel;
+    vlSelf->top__DOT__xpixel_bus[5U] = vlSelf->top__DOT____Vcellout__genblk1__BRA__5__KET____DOT__engine__xpixel;
+    vlSelf->full_queue[5U] = (0xaU == (IData)(vlSelf->top__DOT__genblk1__BRA__5__KET____DOT__queue_block__DOT__counter));
+    vlSelf->top__DOT__queue_colour[0U] = vlSelf->top__DOT____Vcellout__genblk1__BRA__0__KET____DOT__queue_block__colour_o;
+    vlSelf->top__DOT__queue_colour[1U] = vlSelf->top__DOT____Vcellout__genblk1__BRA__1__KET____DOT__queue_block__colour_o;
+    vlSelf->top__DOT__queue_colour[2U] = vlSelf->top__DOT____Vcellout__genblk1__BRA__2__KET____DOT__queue_block__colour_o;
+    vlSelf->top__DOT__queue_colour[3U] = vlSelf->top__DOT____Vcellout__genblk1__BRA__3__KET____DOT__queue_block__colour_o;
+    vlSelf->top__DOT__queue_colour[4U] = vlSelf->top__DOT____Vcellout__genblk1__BRA__4__KET____DOT__queue_block__colour_o;
+    vlSelf->top__DOT__queue_colour[5U] = vlSelf->top__DOT____Vcellout__genblk1__BRA__5__KET____DOT__queue_block__colour_o;
     vlSelf->top__DOT__iterations_bus[0U] = vlSelf->top__DOT____Vcellout__genblk1__BRA__0__KET____DOT__engine__iterations;
     vlSelf->top__DOT__iterations_bus[1U] = vlSelf->top__DOT____Vcellout__genblk1__BRA__1__KET____DOT__engine__iterations;
     vlSelf->top__DOT__iterations_bus[2U] = vlSelf->top__DOT____Vcellout__genblk1__BRA__2__KET____DOT__engine__iterations;
     vlSelf->top__DOT__iterations_bus[3U] = vlSelf->top__DOT____Vcellout__genblk1__BRA__3__KET____DOT__engine__iterations;
     vlSelf->top__DOT__iterations_bus[4U] = vlSelf->top__DOT____Vcellout__genblk1__BRA__4__KET____DOT__engine__iterations;
     vlSelf->top__DOT__iterations_bus[5U] = vlSelf->top__DOT____Vcellout__genblk1__BRA__5__KET____DOT__engine__iterations;
-    vlSelf->top__DOT__ypixel_bus[0U] = vlSelf->top__DOT____Vcellout__genblk1__BRA__0__KET____DOT__engine__ypixel;
-    vlSelf->top__DOT__xpixel_bus[0U] = vlSelf->top__DOT____Vcellout__genblk1__BRA__0__KET____DOT__engine__xpixel;
-    vlSelf->top__DOT__ypixel_bus[1U] = vlSelf->top__DOT____Vcellout__genblk1__BRA__1__KET____DOT__engine__ypixel;
-    vlSelf->top__DOT__xpixel_bus[1U] = vlSelf->top__DOT____Vcellout__genblk1__BRA__1__KET____DOT__engine__xpixel;
-    vlSelf->top__DOT__ypixel_bus[2U] = vlSelf->top__DOT____Vcellout__genblk1__BRA__2__KET____DOT__engine__ypixel;
-    vlSelf->top__DOT__xpixel_bus[2U] = vlSelf->top__DOT____Vcellout__genblk1__BRA__2__KET____DOT__engine__xpixel;
-    vlSelf->top__DOT__ypixel_bus[3U] = vlSelf->top__DOT____Vcellout__genblk1__BRA__3__KET____DOT__engine__ypixel;
-    vlSelf->top__DOT__xpixel_bus[3U] = vlSelf->top__DOT____Vcellout__genblk1__BRA__3__KET____DOT__engine__xpixel;
-    vlSelf->top__DOT__ypixel_bus[4U] = vlSelf->top__DOT____Vcellout__genblk1__BRA__4__KET____DOT__engine__ypixel;
-    vlSelf->top__DOT__xpixel_bus[4U] = vlSelf->top__DOT____Vcellout__genblk1__BRA__4__KET____DOT__engine__xpixel;
-    vlSelf->top__DOT__ypixel_bus[5U] = vlSelf->top__DOT____Vcellout__genblk1__BRA__5__KET____DOT__engine__ypixel;
-    vlSelf->top__DOT__xpixel_bus[5U] = vlSelf->top__DOT____Vcellout__genblk1__BRA__5__KET____DOT__engine__xpixel;
-    vlSelf->top__DOT____Vcellout__genblk1__BRA__0__KET____DOT__queue_block__full_queue 
-        = (0xaU == (IData)(vlSelf->top__DOT__genblk1__BRA__0__KET____DOT__queue_block__DOT__counter));
-    vlSelf->top__DOT____Vcellout__genblk1__BRA__1__KET____DOT__queue_block__full_queue 
-        = (0xaU == (IData)(vlSelf->top__DOT__genblk1__BRA__1__KET____DOT__queue_block__DOT__counter));
-    vlSelf->top__DOT____Vcellout__genblk1__BRA__2__KET____DOT__queue_block__full_queue 
-        = (0xaU == (IData)(vlSelf->top__DOT__genblk1__BRA__2__KET____DOT__queue_block__DOT__counter));
-    vlSelf->top__DOT____Vcellout__genblk1__BRA__3__KET____DOT__queue_block__full_queue 
-        = (0xaU == (IData)(vlSelf->top__DOT__genblk1__BRA__3__KET____DOT__queue_block__DOT__counter));
-    vlSelf->top__DOT____Vcellout__genblk1__BRA__4__KET____DOT__queue_block__full_queue 
-        = (0xaU == (IData)(vlSelf->top__DOT__genblk1__BRA__4__KET____DOT__queue_block__DOT__counter));
-    vlSelf->top__DOT____Vcellout__genblk1__BRA__5__KET____DOT__queue_block__full_queue 
-        = (0xaU == (IData)(vlSelf->top__DOT__genblk1__BRA__5__KET____DOT__queue_block__DOT__counter));
+    vlSelf->r = (0xffU & vlSelf->top__DOT__colour_o_wire);
+    vlSelf->g = (0xffU & (vlSelf->top__DOT__colour_o_wire 
+                          >> 8U));
+    vlSelf->b = (0xffU & (vlSelf->top__DOT__colour_o_wire 
+                          >> 0x10U));
     vlSelf->top__DOT__fin_bus = ((0x30U & (IData)(vlSelf->top__DOT__fin_bus)) 
                                  | (((IData)(vlSelf->top__DOT____Vcellout__genblk1__BRA__3__KET____DOT__engine__finished) 
                                      << 3U) | (((IData)(vlSelf->top__DOT____Vcellout__genblk1__BRA__2__KET____DOT__engine__finished) 
@@ -345,54 +352,30 @@ VL_ATTR_COLD void Vtop___024root___settle__TOP__0(Vtop___024root* vlSelf) {
                                                + vlSelf->top__DOT__distributor__DOT__x0), (IData)(0x280U))), (IData)(0x1e0U));
     vlSelf->top__DOT____Vcellout__distributor__y[5U] 
         = top__DOT__distributor__DOT____Vlvbound_hc3b9a86b__0;
-    vlSelf->top__DOT____Vcellout__genblk1__BRA__0__KET____DOT__queue_block__en 
-        = (0xffffffffU != vlSelf->top__DOT__genblk1__BRA__0__KET____DOT__queue_block__DOT__xqueue
-           [0U]);
-    if ((0xaU != (IData)(vlSelf->top__DOT__genblk1__BRA__0__KET____DOT__queue_block__DOT__counter))) {
-        if ((0U == (IData)(vlSelf->top__DOT__genblk1__BRA__0__KET____DOT__queue_block__DOT__counter))) {
-            vlSelf->top__DOT____Vcellout__genblk1__BRA__0__KET____DOT__queue_block__en = 0U;
-        }
-    }
-    vlSelf->top__DOT____Vcellout__genblk1__BRA__1__KET____DOT__queue_block__en 
-        = (0xffffffffU != vlSelf->top__DOT__genblk1__BRA__1__KET____DOT__queue_block__DOT__xqueue
-           [0U]);
-    if ((0xaU != (IData)(vlSelf->top__DOT__genblk1__BRA__1__KET____DOT__queue_block__DOT__counter))) {
-        if ((0U == (IData)(vlSelf->top__DOT__genblk1__BRA__1__KET____DOT__queue_block__DOT__counter))) {
-            vlSelf->top__DOT____Vcellout__genblk1__BRA__1__KET____DOT__queue_block__en = 0U;
-        }
-    }
-    vlSelf->top__DOT____Vcellout__genblk1__BRA__2__KET____DOT__queue_block__en 
-        = (0xffffffffU != vlSelf->top__DOT__genblk1__BRA__2__KET____DOT__queue_block__DOT__xqueue
-           [0U]);
-    if ((0xaU != (IData)(vlSelf->top__DOT__genblk1__BRA__2__KET____DOT__queue_block__DOT__counter))) {
-        if ((0U == (IData)(vlSelf->top__DOT__genblk1__BRA__2__KET____DOT__queue_block__DOT__counter))) {
-            vlSelf->top__DOT____Vcellout__genblk1__BRA__2__KET____DOT__queue_block__en = 0U;
-        }
-    }
-    vlSelf->top__DOT____Vcellout__genblk1__BRA__3__KET____DOT__queue_block__en 
-        = (0xffffffffU != vlSelf->top__DOT__genblk1__BRA__3__KET____DOT__queue_block__DOT__xqueue
-           [0U]);
-    if ((0xaU != (IData)(vlSelf->top__DOT__genblk1__BRA__3__KET____DOT__queue_block__DOT__counter))) {
-        if ((0U == (IData)(vlSelf->top__DOT__genblk1__BRA__3__KET____DOT__queue_block__DOT__counter))) {
-            vlSelf->top__DOT____Vcellout__genblk1__BRA__3__KET____DOT__queue_block__en = 0U;
-        }
-    }
-    vlSelf->top__DOT____Vcellout__genblk1__BRA__4__KET____DOT__queue_block__en 
-        = (0xffffffffU != vlSelf->top__DOT__genblk1__BRA__4__KET____DOT__queue_block__DOT__xqueue
-           [0U]);
-    if ((0xaU != (IData)(vlSelf->top__DOT__genblk1__BRA__4__KET____DOT__queue_block__DOT__counter))) {
-        if ((0U == (IData)(vlSelf->top__DOT__genblk1__BRA__4__KET____DOT__queue_block__DOT__counter))) {
-            vlSelf->top__DOT____Vcellout__genblk1__BRA__4__KET____DOT__queue_block__en = 0U;
-        }
-    }
-    vlSelf->top__DOT____Vcellout__genblk1__BRA__5__KET____DOT__queue_block__en 
-        = (0xffffffffU != vlSelf->top__DOT__genblk1__BRA__5__KET____DOT__queue_block__DOT__xqueue
-           [0U]);
-    if ((0xaU != (IData)(vlSelf->top__DOT__genblk1__BRA__5__KET____DOT__queue_block__DOT__counter))) {
-        if ((0U == (IData)(vlSelf->top__DOT__genblk1__BRA__5__KET____DOT__queue_block__DOT__counter))) {
-            vlSelf->top__DOT____Vcellout__genblk1__BRA__5__KET____DOT__queue_block__en = 0U;
-        }
-    }
+    vlSelf->top__DOT__queue_x[0U] = vlSelf->top__DOT____Vcellout__genblk1__BRA__0__KET____DOT__queue_block__xpixel_o;
+    vlSelf->top__DOT__queue_y[0U] = vlSelf->top__DOT____Vcellout__genblk1__BRA__0__KET____DOT__queue_block__ypixel_o;
+    vlSelf->top__DOT__queue_x[1U] = vlSelf->top__DOT____Vcellout__genblk1__BRA__1__KET____DOT__queue_block__xpixel_o;
+    vlSelf->top__DOT__queue_y[1U] = vlSelf->top__DOT____Vcellout__genblk1__BRA__1__KET____DOT__queue_block__ypixel_o;
+    vlSelf->top__DOT__queue_x[2U] = vlSelf->top__DOT____Vcellout__genblk1__BRA__2__KET____DOT__queue_block__xpixel_o;
+    vlSelf->top__DOT__queue_y[2U] = vlSelf->top__DOT____Vcellout__genblk1__BRA__2__KET____DOT__queue_block__ypixel_o;
+    vlSelf->top__DOT__queue_x[3U] = vlSelf->top__DOT____Vcellout__genblk1__BRA__3__KET____DOT__queue_block__xpixel_o;
+    vlSelf->top__DOT__queue_y[3U] = vlSelf->top__DOT____Vcellout__genblk1__BRA__3__KET____DOT__queue_block__ypixel_o;
+    vlSelf->top__DOT__queue_x[4U] = vlSelf->top__DOT____Vcellout__genblk1__BRA__4__KET____DOT__queue_block__xpixel_o;
+    vlSelf->top__DOT__queue_y[4U] = vlSelf->top__DOT____Vcellout__genblk1__BRA__4__KET____DOT__queue_block__ypixel_o;
+    vlSelf->top__DOT__queue_x[5U] = vlSelf->top__DOT____Vcellout__genblk1__BRA__5__KET____DOT__queue_block__xpixel_o;
+    vlSelf->top__DOT__queue_y[5U] = vlSelf->top__DOT____Vcellout__genblk1__BRA__5__KET____DOT__queue_block__ypixel_o;
+    vlSelf->top__DOT____Vcellinp__combinator_block__colour_i[5U] 
+        = vlSelf->top__DOT__queue_colour[5U];
+    vlSelf->top__DOT____Vcellinp__combinator_block__colour_i[4U] 
+        = vlSelf->top__DOT__queue_colour[4U];
+    vlSelf->top__DOT____Vcellinp__combinator_block__colour_i[3U] 
+        = vlSelf->top__DOT__queue_colour[3U];
+    vlSelf->top__DOT____Vcellinp__combinator_block__colour_i[2U] 
+        = vlSelf->top__DOT__queue_colour[2U];
+    vlSelf->top__DOT____Vcellinp__combinator_block__colour_i[1U] 
+        = vlSelf->top__DOT__queue_colour[1U];
+    vlSelf->top__DOT____Vcellinp__combinator_block__colour_i[0U] 
+        = vlSelf->top__DOT__queue_colour[0U];
     vlSelf->top__DOT____Vcellinp__lut_rom__iterations[5U] 
         = vlSelf->top__DOT__iterations_bus[5U];
     vlSelf->top__DOT____Vcellinp__lut_rom__iterations[4U] 
@@ -405,12 +388,6 @@ VL_ATTR_COLD void Vtop___024root___settle__TOP__0(Vtop___024root* vlSelf) {
         = vlSelf->top__DOT__iterations_bus[1U];
     vlSelf->top__DOT____Vcellinp__lut_rom__iterations[0U] 
         = vlSelf->top__DOT__iterations_bus[0U];
-    vlSelf->full_queue[0U] = vlSelf->top__DOT____Vcellout__genblk1__BRA__0__KET____DOT__queue_block__full_queue;
-    vlSelf->full_queue[1U] = vlSelf->top__DOT____Vcellout__genblk1__BRA__1__KET____DOT__queue_block__full_queue;
-    vlSelf->full_queue[2U] = vlSelf->top__DOT____Vcellout__genblk1__BRA__2__KET____DOT__queue_block__full_queue;
-    vlSelf->full_queue[3U] = vlSelf->top__DOT____Vcellout__genblk1__BRA__3__KET____DOT__queue_block__full_queue;
-    vlSelf->full_queue[4U] = vlSelf->top__DOT____Vcellout__genblk1__BRA__4__KET____DOT__queue_block__full_queue;
-    vlSelf->full_queue[5U] = vlSelf->top__DOT____Vcellout__genblk1__BRA__5__KET____DOT__queue_block__full_queue;
     vlSelf->top__DOT__fin_wire = ((0x3fU == (IData)(vlSelf->top__DOT__fin_bus)) 
                                   | (IData)(vlSelf->reset));
     vlSelf->top__DOT__reset_engine = ((0x3fU == (IData)(vlSelf->top__DOT__fin_bus)) 
@@ -439,17 +416,30 @@ VL_ATTR_COLD void Vtop___024root___settle__TOP__0(Vtop___024root* vlSelf) {
         [1U];
     vlSelf->top__DOT__y[0U] = vlSelf->top__DOT____Vcellout__distributor__y
         [0U];
-    vlSelf->top__DOT__en_bus = ((0x30U & (IData)(vlSelf->top__DOT__en_bus)) 
-                                | (((IData)(vlSelf->top__DOT____Vcellout__genblk1__BRA__3__KET____DOT__queue_block__en) 
-                                    << 3U) | (((IData)(vlSelf->top__DOT____Vcellout__genblk1__BRA__2__KET____DOT__queue_block__en) 
-                                               << 2U) 
-                                              | (((IData)(vlSelf->top__DOT____Vcellout__genblk1__BRA__1__KET____DOT__queue_block__en) 
-                                                  << 1U) 
-                                                 | (IData)(vlSelf->top__DOT____Vcellout__genblk1__BRA__0__KET____DOT__queue_block__en)))));
-    vlSelf->top__DOT__en_bus = ((0xfU & (IData)(vlSelf->top__DOT__en_bus)) 
-                                | (((IData)(vlSelf->top__DOT____Vcellout__genblk1__BRA__5__KET____DOT__queue_block__en) 
-                                    << 5U) | ((IData)(vlSelf->top__DOT____Vcellout__genblk1__BRA__4__KET____DOT__queue_block__en) 
-                                              << 4U)));
+    vlSelf->top__DOT____Vcellinp__combinator_block__xpixel_i[5U] 
+        = vlSelf->top__DOT__queue_x[5U];
+    vlSelf->top__DOT____Vcellinp__combinator_block__xpixel_i[4U] 
+        = vlSelf->top__DOT__queue_x[4U];
+    vlSelf->top__DOT____Vcellinp__combinator_block__xpixel_i[3U] 
+        = vlSelf->top__DOT__queue_x[3U];
+    vlSelf->top__DOT____Vcellinp__combinator_block__xpixel_i[2U] 
+        = vlSelf->top__DOT__queue_x[2U];
+    vlSelf->top__DOT____Vcellinp__combinator_block__xpixel_i[1U] 
+        = vlSelf->top__DOT__queue_x[1U];
+    vlSelf->top__DOT____Vcellinp__combinator_block__xpixel_i[0U] 
+        = vlSelf->top__DOT__queue_x[0U];
+    vlSelf->top__DOT____Vcellinp__combinator_block__ypixel_i[5U] 
+        = vlSelf->top__DOT__queue_y[5U];
+    vlSelf->top__DOT____Vcellinp__combinator_block__ypixel_i[4U] 
+        = vlSelf->top__DOT__queue_y[4U];
+    vlSelf->top__DOT____Vcellinp__combinator_block__ypixel_i[3U] 
+        = vlSelf->top__DOT__queue_y[3U];
+    vlSelf->top__DOT____Vcellinp__combinator_block__ypixel_i[2U] 
+        = vlSelf->top__DOT__queue_y[2U];
+    vlSelf->top__DOT____Vcellinp__combinator_block__ypixel_i[1U] 
+        = vlSelf->top__DOT__queue_y[1U];
+    vlSelf->top__DOT____Vcellinp__combinator_block__ypixel_i[0U] 
+        = vlSelf->top__DOT__queue_y[0U];
     top__DOT__lut_rom__DOT____Vlvbound_h5eb2d243__0 
         = ((0x31U >= (0x3fU & vlSelf->top__DOT____Vcellinp__lut_rom__iterations
                       [0U])) ? vlSelf->top__DOT__lut_rom__DOT__lut_array
@@ -561,7 +551,9 @@ VL_ATTR_COLD void Vtop___024root___ctor_var_reset(Vtop___024root* vlSelf) {
     vlSelf->top__DOT__colour_o_wire = VL_RAND_RESET_I(24);
     vlSelf->top__DOT__xpixel_wire = VL_RAND_RESET_I(32);
     vlSelf->top__DOT__ypixel_wire = VL_RAND_RESET_I(32);
-    vlSelf->top__DOT__colour_wire = VL_RAND_RESET_I(24);
+    for (int __Vi0=0; __Vi0<6; ++__Vi0) {
+        vlSelf->top__DOT__colour_bus[__Vi0] = VL_RAND_RESET_I(24);
+    }
     vlSelf->top__DOT__reset_engine = VL_RAND_RESET_I(1);
     vlSelf->top__DOT__fin_wire = VL_RAND_RESET_I(1);
     vlSelf->top__DOT__fin_bus = VL_RAND_RESET_I(6);
@@ -581,8 +573,15 @@ VL_ATTR_COLD void Vtop___024root___ctor_var_reset(Vtop___024root* vlSelf) {
         vlSelf->top__DOT__ypixel_bus[__Vi0] = VL_RAND_RESET_I(32);
     }
     vlSelf->top__DOT__en_bus = VL_RAND_RESET_I(6);
+    vlSelf->top__DOT__taken_bus = VL_RAND_RESET_I(6);
     for (int __Vi0=0; __Vi0<6; ++__Vi0) {
-        vlSelf->top__DOT__colour_bus[__Vi0] = VL_RAND_RESET_I(24);
+        vlSelf->top__DOT__queue_colour[__Vi0] = VL_RAND_RESET_I(24);
+    }
+    for (int __Vi0=0; __Vi0<6; ++__Vi0) {
+        vlSelf->top__DOT__queue_x[__Vi0] = VL_RAND_RESET_I(32);
+    }
+    for (int __Vi0=0; __Vi0<6; ++__Vi0) {
+        vlSelf->top__DOT__queue_y[__Vi0] = VL_RAND_RESET_I(32);
     }
     for (int __Vi0=0; __Vi0<6; ++__Vi0) {
         vlSelf->top__DOT____Vcellout__distributor__y[__Vi0] = VL_RAND_RESET_I(32);
@@ -596,49 +595,65 @@ VL_ATTR_COLD void Vtop___024root___ctor_var_reset(Vtop___024root* vlSelf) {
     for (int __Vi0=0; __Vi0<6; ++__Vi0) {
         vlSelf->top__DOT____Vcellinp__lut_rom__iterations[__Vi0] = VL_RAND_RESET_I(32);
     }
+    for (int __Vi0=0; __Vi0<6; ++__Vi0) {
+        vlSelf->top__DOT____Vcellinp__combinator_block__ypixel_i[__Vi0] = VL_RAND_RESET_I(32);
+    }
+    for (int __Vi0=0; __Vi0<6; ++__Vi0) {
+        vlSelf->top__DOT____Vcellinp__combinator_block__xpixel_i[__Vi0] = VL_RAND_RESET_I(32);
+    }
+    for (int __Vi0=0; __Vi0<6; ++__Vi0) {
+        vlSelf->top__DOT____Vcellinp__combinator_block__colour_i[__Vi0] = VL_RAND_RESET_I(24);
+    }
     vlSelf->top__DOT____Vcellout__genblk1__BRA__0__KET____DOT__engine__ypixel = VL_RAND_RESET_I(32);
     vlSelf->top__DOT____Vcellout__genblk1__BRA__0__KET____DOT__engine__xpixel = VL_RAND_RESET_I(32);
     vlSelf->top__DOT____Vcellout__genblk1__BRA__0__KET____DOT__engine__iterations = VL_RAND_RESET_I(32);
     vlSelf->top__DOT____Vcellout__genblk1__BRA__0__KET____DOT__engine__finished = VL_RAND_RESET_I(1);
-    vlSelf->top__DOT____Vcellout__genblk1__BRA__0__KET____DOT__queue_block__en = VL_RAND_RESET_I(1);
-    vlSelf->top__DOT____Vcellout__genblk1__BRA__0__KET____DOT__queue_block__full_queue = VL_RAND_RESET_I(1);
+    vlSelf->top__DOT____Vcellout__genblk1__BRA__0__KET____DOT__queue_block__ypixel_o = VL_RAND_RESET_I(32);
+    vlSelf->top__DOT____Vcellout__genblk1__BRA__0__KET____DOT__queue_block__xpixel_o = VL_RAND_RESET_I(32);
+    vlSelf->top__DOT____Vcellout__genblk1__BRA__0__KET____DOT__queue_block__colour_o = VL_RAND_RESET_I(24);
     vlSelf->top__DOT____Vcellout__genblk1__BRA__1__KET____DOT__engine__ypixel = VL_RAND_RESET_I(32);
     vlSelf->top__DOT____Vcellout__genblk1__BRA__1__KET____DOT__engine__xpixel = VL_RAND_RESET_I(32);
     vlSelf->top__DOT____Vcellout__genblk1__BRA__1__KET____DOT__engine__iterations = VL_RAND_RESET_I(32);
     vlSelf->top__DOT____Vcellout__genblk1__BRA__1__KET____DOT__engine__finished = VL_RAND_RESET_I(1);
-    vlSelf->top__DOT____Vcellout__genblk1__BRA__1__KET____DOT__queue_block__en = VL_RAND_RESET_I(1);
-    vlSelf->top__DOT____Vcellout__genblk1__BRA__1__KET____DOT__queue_block__full_queue = VL_RAND_RESET_I(1);
+    vlSelf->top__DOT____Vcellout__genblk1__BRA__1__KET____DOT__queue_block__ypixel_o = VL_RAND_RESET_I(32);
+    vlSelf->top__DOT____Vcellout__genblk1__BRA__1__KET____DOT__queue_block__xpixel_o = VL_RAND_RESET_I(32);
+    vlSelf->top__DOT____Vcellout__genblk1__BRA__1__KET____DOT__queue_block__colour_o = VL_RAND_RESET_I(24);
     vlSelf->top__DOT____Vcellout__genblk1__BRA__2__KET____DOT__engine__ypixel = VL_RAND_RESET_I(32);
     vlSelf->top__DOT____Vcellout__genblk1__BRA__2__KET____DOT__engine__xpixel = VL_RAND_RESET_I(32);
     vlSelf->top__DOT____Vcellout__genblk1__BRA__2__KET____DOT__engine__iterations = VL_RAND_RESET_I(32);
     vlSelf->top__DOT____Vcellout__genblk1__BRA__2__KET____DOT__engine__finished = VL_RAND_RESET_I(1);
-    vlSelf->top__DOT____Vcellout__genblk1__BRA__2__KET____DOT__queue_block__en = VL_RAND_RESET_I(1);
-    vlSelf->top__DOT____Vcellout__genblk1__BRA__2__KET____DOT__queue_block__full_queue = VL_RAND_RESET_I(1);
+    vlSelf->top__DOT____Vcellout__genblk1__BRA__2__KET____DOT__queue_block__ypixel_o = VL_RAND_RESET_I(32);
+    vlSelf->top__DOT____Vcellout__genblk1__BRA__2__KET____DOT__queue_block__xpixel_o = VL_RAND_RESET_I(32);
+    vlSelf->top__DOT____Vcellout__genblk1__BRA__2__KET____DOT__queue_block__colour_o = VL_RAND_RESET_I(24);
     vlSelf->top__DOT____Vcellout__genblk1__BRA__3__KET____DOT__engine__ypixel = VL_RAND_RESET_I(32);
     vlSelf->top__DOT____Vcellout__genblk1__BRA__3__KET____DOT__engine__xpixel = VL_RAND_RESET_I(32);
     vlSelf->top__DOT____Vcellout__genblk1__BRA__3__KET____DOT__engine__iterations = VL_RAND_RESET_I(32);
     vlSelf->top__DOT____Vcellout__genblk1__BRA__3__KET____DOT__engine__finished = VL_RAND_RESET_I(1);
-    vlSelf->top__DOT____Vcellout__genblk1__BRA__3__KET____DOT__queue_block__en = VL_RAND_RESET_I(1);
-    vlSelf->top__DOT____Vcellout__genblk1__BRA__3__KET____DOT__queue_block__full_queue = VL_RAND_RESET_I(1);
+    vlSelf->top__DOT____Vcellout__genblk1__BRA__3__KET____DOT__queue_block__ypixel_o = VL_RAND_RESET_I(32);
+    vlSelf->top__DOT____Vcellout__genblk1__BRA__3__KET____DOT__queue_block__xpixel_o = VL_RAND_RESET_I(32);
+    vlSelf->top__DOT____Vcellout__genblk1__BRA__3__KET____DOT__queue_block__colour_o = VL_RAND_RESET_I(24);
     vlSelf->top__DOT____Vcellout__genblk1__BRA__4__KET____DOT__engine__ypixel = VL_RAND_RESET_I(32);
     vlSelf->top__DOT____Vcellout__genblk1__BRA__4__KET____DOT__engine__xpixel = VL_RAND_RESET_I(32);
     vlSelf->top__DOT____Vcellout__genblk1__BRA__4__KET____DOT__engine__iterations = VL_RAND_RESET_I(32);
     vlSelf->top__DOT____Vcellout__genblk1__BRA__4__KET____DOT__engine__finished = VL_RAND_RESET_I(1);
-    vlSelf->top__DOT____Vcellout__genblk1__BRA__4__KET____DOT__queue_block__en = VL_RAND_RESET_I(1);
-    vlSelf->top__DOT____Vcellout__genblk1__BRA__4__KET____DOT__queue_block__full_queue = VL_RAND_RESET_I(1);
+    vlSelf->top__DOT____Vcellout__genblk1__BRA__4__KET____DOT__queue_block__ypixel_o = VL_RAND_RESET_I(32);
+    vlSelf->top__DOT____Vcellout__genblk1__BRA__4__KET____DOT__queue_block__xpixel_o = VL_RAND_RESET_I(32);
+    vlSelf->top__DOT____Vcellout__genblk1__BRA__4__KET____DOT__queue_block__colour_o = VL_RAND_RESET_I(24);
     vlSelf->top__DOT____Vcellout__genblk1__BRA__5__KET____DOT__engine__ypixel = VL_RAND_RESET_I(32);
     vlSelf->top__DOT____Vcellout__genblk1__BRA__5__KET____DOT__engine__xpixel = VL_RAND_RESET_I(32);
     vlSelf->top__DOT____Vcellout__genblk1__BRA__5__KET____DOT__engine__iterations = VL_RAND_RESET_I(32);
     vlSelf->top__DOT____Vcellout__genblk1__BRA__5__KET____DOT__engine__finished = VL_RAND_RESET_I(1);
-    vlSelf->top__DOT____Vcellout__genblk1__BRA__5__KET____DOT__queue_block__en = VL_RAND_RESET_I(1);
-    vlSelf->top__DOT____Vcellout__genblk1__BRA__5__KET____DOT__queue_block__full_queue = VL_RAND_RESET_I(1);
+    vlSelf->top__DOT____Vcellout__genblk1__BRA__5__KET____DOT__queue_block__ypixel_o = VL_RAND_RESET_I(32);
+    vlSelf->top__DOT____Vcellout__genblk1__BRA__5__KET____DOT__queue_block__xpixel_o = VL_RAND_RESET_I(32);
+    vlSelf->top__DOT____Vcellout__genblk1__BRA__5__KET____DOT__queue_block__colour_o = VL_RAND_RESET_I(24);
     vlSelf->top__DOT__distributor__DOT__x0 = VL_RAND_RESET_I(32);
     vlSelf->top__DOT__distributor__DOT__y0 = VL_RAND_RESET_I(32);
     for (int __Vi0=0; __Vi0<50; ++__Vi0) {
         vlSelf->top__DOT__lut_rom__DOT__lut_array[__Vi0] = VL_RAND_RESET_I(24);
     }
-    vlSelf->top__DOT__combinator_block__DOT__xpixel = VL_RAND_RESET_I(32);
-    vlSelf->top__DOT__combinator_block__DOT__ypixel = VL_RAND_RESET_I(32);
+    vlSelf->top__DOT__combinator_block__DOT__next_xpixel = VL_RAND_RESET_I(32);
+    vlSelf->top__DOT__combinator_block__DOT__next_ypixel = VL_RAND_RESET_I(32);
+    vlSelf->top__DOT__combinator_block__DOT__unnamedblk1__DOT__i = 0;
     vlSelf->top__DOT__genblk1__BRA__0__KET____DOT__engine__DOT__x0_buff = VL_RAND_RESET_I(32);
     vlSelf->top__DOT__genblk1__BRA__0__KET____DOT__engine__DOT__y0_buff = VL_RAND_RESET_I(32);
     vlSelf->top__DOT__genblk1__BRA__0__KET____DOT__engine__DOT__state = 0;
@@ -647,7 +662,6 @@ VL_ATTR_COLD void Vtop___024root___ctor_var_reset(Vtop___024root* vlSelf) {
     vlSelf->top__DOT__genblk1__BRA__0__KET____DOT__engine__DOT__y_tmp = VL_RAND_RESET_Q(64);
     vlSelf->top__DOT__genblk1__BRA__0__KET____DOT__engine__DOT__x2 = VL_RAND_RESET_Q(64);
     vlSelf->top__DOT__genblk1__BRA__0__KET____DOT__engine__DOT__y2 = VL_RAND_RESET_Q(64);
-    vlSelf->top__DOT__genblk1__BRA__0__KET____DOT__queue_block__DOT__xpixel_o = VL_RAND_RESET_I(32);
     for (int __Vi0=0; __Vi0<10; ++__Vi0) {
         vlSelf->top__DOT__genblk1__BRA__0__KET____DOT__queue_block__DOT__colour_queue[__Vi0] = VL_RAND_RESET_I(24);
     }
@@ -658,6 +672,7 @@ VL_ATTR_COLD void Vtop___024root___ctor_var_reset(Vtop___024root* vlSelf) {
         vlSelf->top__DOT__genblk1__BRA__0__KET____DOT__queue_block__DOT__yqueue[__Vi0] = VL_RAND_RESET_I(32);
     }
     vlSelf->top__DOT__genblk1__BRA__0__KET____DOT__queue_block__DOT__counter = VL_RAND_RESET_I(4);
+    vlSelf->top__DOT__genblk1__BRA__0__KET____DOT__queue_block__DOT__taken_wire = VL_RAND_RESET_I(1);
     vlSelf->top__DOT__genblk1__BRA__0__KET____DOT__queue_block__DOT__prev_xpixel = VL_RAND_RESET_I(32);
     vlSelf->top__DOT__genblk1__BRA__0__KET____DOT__queue_block__DOT__unnamedblk1__DOT__i = 0;
     vlSelf->top__DOT__genblk1__BRA__0__KET____DOT__queue_block__DOT__unnamedblk2__DOT__i = 0;
@@ -676,7 +691,6 @@ VL_ATTR_COLD void Vtop___024root___ctor_var_reset(Vtop___024root* vlSelf) {
     vlSelf->top__DOT__genblk1__BRA__1__KET____DOT__engine__DOT__y_tmp = VL_RAND_RESET_Q(64);
     vlSelf->top__DOT__genblk1__BRA__1__KET____DOT__engine__DOT__x2 = VL_RAND_RESET_Q(64);
     vlSelf->top__DOT__genblk1__BRA__1__KET____DOT__engine__DOT__y2 = VL_RAND_RESET_Q(64);
-    vlSelf->top__DOT__genblk1__BRA__1__KET____DOT__queue_block__DOT__xpixel_o = VL_RAND_RESET_I(32);
     for (int __Vi0=0; __Vi0<10; ++__Vi0) {
         vlSelf->top__DOT__genblk1__BRA__1__KET____DOT__queue_block__DOT__colour_queue[__Vi0] = VL_RAND_RESET_I(24);
     }
@@ -687,6 +701,7 @@ VL_ATTR_COLD void Vtop___024root___ctor_var_reset(Vtop___024root* vlSelf) {
         vlSelf->top__DOT__genblk1__BRA__1__KET____DOT__queue_block__DOT__yqueue[__Vi0] = VL_RAND_RESET_I(32);
     }
     vlSelf->top__DOT__genblk1__BRA__1__KET____DOT__queue_block__DOT__counter = VL_RAND_RESET_I(4);
+    vlSelf->top__DOT__genblk1__BRA__1__KET____DOT__queue_block__DOT__taken_wire = VL_RAND_RESET_I(1);
     vlSelf->top__DOT__genblk1__BRA__1__KET____DOT__queue_block__DOT__prev_xpixel = VL_RAND_RESET_I(32);
     vlSelf->top__DOT__genblk1__BRA__1__KET____DOT__queue_block__DOT__unnamedblk1__DOT__i = 0;
     vlSelf->top__DOT__genblk1__BRA__1__KET____DOT__queue_block__DOT__unnamedblk2__DOT__i = 0;
@@ -705,7 +720,6 @@ VL_ATTR_COLD void Vtop___024root___ctor_var_reset(Vtop___024root* vlSelf) {
     vlSelf->top__DOT__genblk1__BRA__2__KET____DOT__engine__DOT__y_tmp = VL_RAND_RESET_Q(64);
     vlSelf->top__DOT__genblk1__BRA__2__KET____DOT__engine__DOT__x2 = VL_RAND_RESET_Q(64);
     vlSelf->top__DOT__genblk1__BRA__2__KET____DOT__engine__DOT__y2 = VL_RAND_RESET_Q(64);
-    vlSelf->top__DOT__genblk1__BRA__2__KET____DOT__queue_block__DOT__xpixel_o = VL_RAND_RESET_I(32);
     for (int __Vi0=0; __Vi0<10; ++__Vi0) {
         vlSelf->top__DOT__genblk1__BRA__2__KET____DOT__queue_block__DOT__colour_queue[__Vi0] = VL_RAND_RESET_I(24);
     }
@@ -716,6 +730,7 @@ VL_ATTR_COLD void Vtop___024root___ctor_var_reset(Vtop___024root* vlSelf) {
         vlSelf->top__DOT__genblk1__BRA__2__KET____DOT__queue_block__DOT__yqueue[__Vi0] = VL_RAND_RESET_I(32);
     }
     vlSelf->top__DOT__genblk1__BRA__2__KET____DOT__queue_block__DOT__counter = VL_RAND_RESET_I(4);
+    vlSelf->top__DOT__genblk1__BRA__2__KET____DOT__queue_block__DOT__taken_wire = VL_RAND_RESET_I(1);
     vlSelf->top__DOT__genblk1__BRA__2__KET____DOT__queue_block__DOT__prev_xpixel = VL_RAND_RESET_I(32);
     vlSelf->top__DOT__genblk1__BRA__2__KET____DOT__queue_block__DOT__unnamedblk1__DOT__i = 0;
     vlSelf->top__DOT__genblk1__BRA__2__KET____DOT__queue_block__DOT__unnamedblk2__DOT__i = 0;
@@ -734,7 +749,6 @@ VL_ATTR_COLD void Vtop___024root___ctor_var_reset(Vtop___024root* vlSelf) {
     vlSelf->top__DOT__genblk1__BRA__3__KET____DOT__engine__DOT__y_tmp = VL_RAND_RESET_Q(64);
     vlSelf->top__DOT__genblk1__BRA__3__KET____DOT__engine__DOT__x2 = VL_RAND_RESET_Q(64);
     vlSelf->top__DOT__genblk1__BRA__3__KET____DOT__engine__DOT__y2 = VL_RAND_RESET_Q(64);
-    vlSelf->top__DOT__genblk1__BRA__3__KET____DOT__queue_block__DOT__xpixel_o = VL_RAND_RESET_I(32);
     for (int __Vi0=0; __Vi0<10; ++__Vi0) {
         vlSelf->top__DOT__genblk1__BRA__3__KET____DOT__queue_block__DOT__colour_queue[__Vi0] = VL_RAND_RESET_I(24);
     }
@@ -745,6 +759,7 @@ VL_ATTR_COLD void Vtop___024root___ctor_var_reset(Vtop___024root* vlSelf) {
         vlSelf->top__DOT__genblk1__BRA__3__KET____DOT__queue_block__DOT__yqueue[__Vi0] = VL_RAND_RESET_I(32);
     }
     vlSelf->top__DOT__genblk1__BRA__3__KET____DOT__queue_block__DOT__counter = VL_RAND_RESET_I(4);
+    vlSelf->top__DOT__genblk1__BRA__3__KET____DOT__queue_block__DOT__taken_wire = VL_RAND_RESET_I(1);
     vlSelf->top__DOT__genblk1__BRA__3__KET____DOT__queue_block__DOT__prev_xpixel = VL_RAND_RESET_I(32);
     vlSelf->top__DOT__genblk1__BRA__3__KET____DOT__queue_block__DOT__unnamedblk1__DOT__i = 0;
     vlSelf->top__DOT__genblk1__BRA__3__KET____DOT__queue_block__DOT__unnamedblk2__DOT__i = 0;
@@ -763,7 +778,6 @@ VL_ATTR_COLD void Vtop___024root___ctor_var_reset(Vtop___024root* vlSelf) {
     vlSelf->top__DOT__genblk1__BRA__4__KET____DOT__engine__DOT__y_tmp = VL_RAND_RESET_Q(64);
     vlSelf->top__DOT__genblk1__BRA__4__KET____DOT__engine__DOT__x2 = VL_RAND_RESET_Q(64);
     vlSelf->top__DOT__genblk1__BRA__4__KET____DOT__engine__DOT__y2 = VL_RAND_RESET_Q(64);
-    vlSelf->top__DOT__genblk1__BRA__4__KET____DOT__queue_block__DOT__xpixel_o = VL_RAND_RESET_I(32);
     for (int __Vi0=0; __Vi0<10; ++__Vi0) {
         vlSelf->top__DOT__genblk1__BRA__4__KET____DOT__queue_block__DOT__colour_queue[__Vi0] = VL_RAND_RESET_I(24);
     }
@@ -774,6 +788,7 @@ VL_ATTR_COLD void Vtop___024root___ctor_var_reset(Vtop___024root* vlSelf) {
         vlSelf->top__DOT__genblk1__BRA__4__KET____DOT__queue_block__DOT__yqueue[__Vi0] = VL_RAND_RESET_I(32);
     }
     vlSelf->top__DOT__genblk1__BRA__4__KET____DOT__queue_block__DOT__counter = VL_RAND_RESET_I(4);
+    vlSelf->top__DOT__genblk1__BRA__4__KET____DOT__queue_block__DOT__taken_wire = VL_RAND_RESET_I(1);
     vlSelf->top__DOT__genblk1__BRA__4__KET____DOT__queue_block__DOT__prev_xpixel = VL_RAND_RESET_I(32);
     vlSelf->top__DOT__genblk1__BRA__4__KET____DOT__queue_block__DOT__unnamedblk1__DOT__i = 0;
     vlSelf->top__DOT__genblk1__BRA__4__KET____DOT__queue_block__DOT__unnamedblk2__DOT__i = 0;
@@ -792,7 +807,6 @@ VL_ATTR_COLD void Vtop___024root___ctor_var_reset(Vtop___024root* vlSelf) {
     vlSelf->top__DOT__genblk1__BRA__5__KET____DOT__engine__DOT__y_tmp = VL_RAND_RESET_Q(64);
     vlSelf->top__DOT__genblk1__BRA__5__KET____DOT__engine__DOT__x2 = VL_RAND_RESET_Q(64);
     vlSelf->top__DOT__genblk1__BRA__5__KET____DOT__engine__DOT__y2 = VL_RAND_RESET_Q(64);
-    vlSelf->top__DOT__genblk1__BRA__5__KET____DOT__queue_block__DOT__xpixel_o = VL_RAND_RESET_I(32);
     for (int __Vi0=0; __Vi0<10; ++__Vi0) {
         vlSelf->top__DOT__genblk1__BRA__5__KET____DOT__queue_block__DOT__colour_queue[__Vi0] = VL_RAND_RESET_I(24);
     }
@@ -803,6 +817,7 @@ VL_ATTR_COLD void Vtop___024root___ctor_var_reset(Vtop___024root* vlSelf) {
         vlSelf->top__DOT__genblk1__BRA__5__KET____DOT__queue_block__DOT__yqueue[__Vi0] = VL_RAND_RESET_I(32);
     }
     vlSelf->top__DOT__genblk1__BRA__5__KET____DOT__queue_block__DOT__counter = VL_RAND_RESET_I(4);
+    vlSelf->top__DOT__genblk1__BRA__5__KET____DOT__queue_block__DOT__taken_wire = VL_RAND_RESET_I(1);
     vlSelf->top__DOT__genblk1__BRA__5__KET____DOT__queue_block__DOT__prev_xpixel = VL_RAND_RESET_I(32);
     vlSelf->top__DOT__genblk1__BRA__5__KET____DOT__queue_block__DOT__unnamedblk1__DOT__i = 0;
     vlSelf->top__DOT__genblk1__BRA__5__KET____DOT__queue_block__DOT__unnamedblk2__DOT__i = 0;
