@@ -1,5 +1,5 @@
 module queue_new #(
-    parameter   DATA_WIDTH = 32,
+    parameter   DATA_WIDTH = 10,
                 QUEUE_SIZE = 10,
                 COUNTER_SIZE = 4,
                 RBG_SIZE = 24

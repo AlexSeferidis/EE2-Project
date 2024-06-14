@@ -1,7 +1,7 @@
 module top #(
-    parameter   DATA_WIDTH = 32,
+    parameter   DATA_WIDTH = 10,
                 RBG_SIZE = 24,
-                NUM_ENGINES = 30,
+                NUM_ENGINES = 6,
                 ITERATIONS_WIDTH = 32
 )(
     input logic                         clk,
@@ -58,7 +58,7 @@ generate
     for(i = 0; i < NUM_ENGINES; i++)begin
         mandelbrot_engine engine(
             .clk(clk),
-            .reset(reset_engine),
+            .reset(1'b0),
             .iterations_max(iterations_max),
             .x0_(x[i]),
             .y0_(y[i]),
@@ -66,7 +66,7 @@ generate
             .x_offset(x_offset),
             .y_offset(y_offset),
             .full_queue(full_queue_bus[i]),
-            .finished(fin_bus[i]),
+            .en_pixel_map(fin_bus[i]),
             .iterations(iterations_bus[i]),
             .xpixel(xpixel_bus[i]),
             .ypixel(ypixel_bus[i])
@@ -124,15 +124,12 @@ always_comb begin
 
     if(fin_bus == {NUM_ENGINES{1'b1}})begin
         fin_wire = 1;
-        reset_engine = 1;
     end
     else if (reset) begin
-        reset_engine = 1;
         fin_wire = 1;
     end
     else begin
         fin_wire = 0;
-        reset_engine = 0;
     end
 end
 

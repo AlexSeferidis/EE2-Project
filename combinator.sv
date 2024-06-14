@@ -1,5 +1,5 @@
 module combinator #(
-    parameter   DATA_WIDTH = 32,
+    parameter   DATA_WIDTH = 10,
                 RBG_SIZE = 24,
                 SCREEN_WIDTH = 640,
                 SCREEN_HEIGHT = 480
