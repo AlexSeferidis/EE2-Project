@@ -5,7 +5,94 @@
 #include "Vtop.h"
 #include "Vtop__Syms.h"
 
+<<<<<<< HEAD
 //==========
+=======
+//============================================================
+// Constructors
+
+Vtop::Vtop(VerilatedContext* _vcontextp__, const char* _vcname__)
+    : VerilatedModel{*_vcontextp__}
+    , vlSymsp{new Vtop__Syms(contextp(), _vcname__, this)}
+    , clk{vlSymsp->TOP.clk}
+    , reset{vlSymsp->TOP.reset}
+    , ready{vlSymsp->TOP.ready}
+    , r{vlSymsp->TOP.r}
+    , g{vlSymsp->TOP.g}
+    , b{vlSymsp->TOP.b}
+    , first{vlSymsp->TOP.first}
+    , last_x{vlSymsp->TOP.last_x}
+    , last_y{vlSymsp->TOP.last_y}
+    , valid{vlSymsp->TOP.valid}
+    , iterations_max{vlSymsp->TOP.iterations_max}
+    , zoom{vlSymsp->TOP.zoom}
+    , x_offset{vlSymsp->TOP.x_offset}
+    , y_offset{vlSymsp->TOP.y_offset}
+    , __PVT__top__DOT__genblk1__BRA__0__KET____DOT__engine{vlSymsp->TOP.__PVT__top__DOT__genblk1__BRA__0__KET____DOT__engine}
+    , __PVT__top__DOT__genblk1__BRA__0__KET____DOT__queue_block{vlSymsp->TOP.__PVT__top__DOT__genblk1__BRA__0__KET____DOT__queue_block}
+    , __PVT__top__DOT__genblk1__BRA__1__KET____DOT__engine{vlSymsp->TOP.__PVT__top__DOT__genblk1__BRA__1__KET____DOT__engine}
+    , __PVT__top__DOT__genblk1__BRA__1__KET____DOT__queue_block{vlSymsp->TOP.__PVT__top__DOT__genblk1__BRA__1__KET____DOT__queue_block}
+    , __PVT__top__DOT__genblk1__BRA__2__KET____DOT__engine{vlSymsp->TOP.__PVT__top__DOT__genblk1__BRA__2__KET____DOT__engine}
+    , __PVT__top__DOT__genblk1__BRA__2__KET____DOT__queue_block{vlSymsp->TOP.__PVT__top__DOT__genblk1__BRA__2__KET____DOT__queue_block}
+    , __PVT__top__DOT__genblk1__BRA__3__KET____DOT__engine{vlSymsp->TOP.__PVT__top__DOT__genblk1__BRA__3__KET____DOT__engine}
+    , __PVT__top__DOT__genblk1__BRA__3__KET____DOT__queue_block{vlSymsp->TOP.__PVT__top__DOT__genblk1__BRA__3__KET____DOT__queue_block}
+    , __PVT__top__DOT__genblk1__BRA__4__KET____DOT__engine{vlSymsp->TOP.__PVT__top__DOT__genblk1__BRA__4__KET____DOT__engine}
+    , __PVT__top__DOT__genblk1__BRA__4__KET____DOT__queue_block{vlSymsp->TOP.__PVT__top__DOT__genblk1__BRA__4__KET____DOT__queue_block}
+    , __PVT__top__DOT__genblk1__BRA__5__KET____DOT__engine{vlSymsp->TOP.__PVT__top__DOT__genblk1__BRA__5__KET____DOT__engine}
+    , __PVT__top__DOT__genblk1__BRA__5__KET____DOT__queue_block{vlSymsp->TOP.__PVT__top__DOT__genblk1__BRA__5__KET____DOT__queue_block}
+    , __PVT__top__DOT__genblk1__BRA__6__KET____DOT__engine{vlSymsp->TOP.__PVT__top__DOT__genblk1__BRA__6__KET____DOT__engine}
+    , __PVT__top__DOT__genblk1__BRA__6__KET____DOT__queue_block{vlSymsp->TOP.__PVT__top__DOT__genblk1__BRA__6__KET____DOT__queue_block}
+    , __PVT__top__DOT__genblk1__BRA__7__KET____DOT__engine{vlSymsp->TOP.__PVT__top__DOT__genblk1__BRA__7__KET____DOT__engine}
+    , __PVT__top__DOT__genblk1__BRA__7__KET____DOT__queue_block{vlSymsp->TOP.__PVT__top__DOT__genblk1__BRA__7__KET____DOT__queue_block}
+    , __PVT__top__DOT__genblk1__BRA__8__KET____DOT__engine{vlSymsp->TOP.__PVT__top__DOT__genblk1__BRA__8__KET____DOT__engine}
+    , __PVT__top__DOT__genblk1__BRA__8__KET____DOT__queue_block{vlSymsp->TOP.__PVT__top__DOT__genblk1__BRA__8__KET____DOT__queue_block}
+    , __PVT__top__DOT__genblk1__BRA__9__KET____DOT__engine{vlSymsp->TOP.__PVT__top__DOT__genblk1__BRA__9__KET____DOT__engine}
+    , __PVT__top__DOT__genblk1__BRA__9__KET____DOT__queue_block{vlSymsp->TOP.__PVT__top__DOT__genblk1__BRA__9__KET____DOT__queue_block}
+    , __PVT__top__DOT__genblk1__BRA__10__KET____DOT__engine{vlSymsp->TOP.__PVT__top__DOT__genblk1__BRA__10__KET____DOT__engine}
+    , __PVT__top__DOT__genblk1__BRA__10__KET____DOT__queue_block{vlSymsp->TOP.__PVT__top__DOT__genblk1__BRA__10__KET____DOT__queue_block}
+    , __PVT__top__DOT__genblk1__BRA__11__KET____DOT__engine{vlSymsp->TOP.__PVT__top__DOT__genblk1__BRA__11__KET____DOT__engine}
+    , __PVT__top__DOT__genblk1__BRA__11__KET____DOT__queue_block{vlSymsp->TOP.__PVT__top__DOT__genblk1__BRA__11__KET____DOT__queue_block}
+    , rootp{&(vlSymsp->TOP)}
+{
+    // Register model with the context
+    contextp()->addModel(this);
+}
+
+Vtop::Vtop(const char* _vcname__)
+    : Vtop(Verilated::threadContextp(), _vcname__)
+{
+}
+
+//============================================================
+// Destructor
+
+Vtop::~Vtop() {
+    delete vlSymsp;
+}
+
+//============================================================
+// Evaluation loop
+
+void Vtop___024root___eval_initial(Vtop___024root* vlSelf);
+void Vtop___024root___eval_settle(Vtop___024root* vlSelf);
+void Vtop___024root___eval(Vtop___024root* vlSelf);
+#ifdef VL_DEBUG
+void Vtop___024root___eval_debug_assertions(Vtop___024root* vlSelf);
+#endif  // VL_DEBUG
+void Vtop___024root___final(Vtop___024root* vlSelf);
+
+static void _eval_initial_loop(Vtop__Syms* __restrict vlSymsp) {
+    vlSymsp->__Vm_didInit = true;
+    Vtop___024root___eval_initial(&(vlSymsp->TOP));
+    // Evaluate till stable
+    vlSymsp->__Vm_activity = true;
+    do {
+        VL_DEBUG_IF(VL_DBG_MSGF("+ Initial loop\n"););
+        Vtop___024root___eval_settle(&(vlSymsp->TOP));
+        Vtop___024root___eval(&(vlSymsp->TOP));
+    } while (0);
+}
+>>>>>>> f286281ae43e88f0425f2bbc458afd01a3d0bcba
 
 void Vtop::eval_step() {
     VL_DEBUG_IF(VL_DBG_MSGF("+++++TOP Evaluate Vtop::eval\n"); );

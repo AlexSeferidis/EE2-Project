@@ -26,6 +26,17 @@ VL_MODULE(Vtop_mandelbrot_engine) {
     VL_IN8(full_queue,0,0);
     VL_OUT8(en_pixel_map,0,0);
     VL_OUT8(iterations,5,0);
+<<<<<<< HEAD
+=======
+    CData/*0:0*/ __PVT__distributor_ready;
+    CData/*5:0*/ __PVT__curr_iterations;
+    CData/*0:0*/ __PVT__en_stage_1;
+    CData/*0:0*/ __PVT__en_stage_2;
+    CData/*0:0*/ __PVT__init;
+    CData/*5:0*/ __Vcellinp__R0__in;
+    CData/*1:0*/ __PVT__SM__DOT__state;
+    CData/*1:0*/ __PVT__SM__DOT__next;
+>>>>>>> f286281ae43e88f0425f2bbc458afd01a3d0bcba
     VL_IN16(x0_,9,0);
     VL_IN16(y0_,9,0);
     VL_OUT16(xpixel,9,0);

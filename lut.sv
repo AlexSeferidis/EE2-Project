@@ -1,8 +1,8 @@
 module lut #(
-    parameter   DATA_WIDTH = 32,
+    parameter   DATA_WIDTH = 10,
                 RBG_SIZE = 24,
                 MAX_ITERATION = 50,
-                NUM_ENGINES = 6,
+                NUM_ENGINES = 12,
                 LUT_SIZE = 256
 )(
     input logic [DATA_WIDTH-1:0]    iterations [NUM_ENGINES-1:0],

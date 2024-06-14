@@ -12,6 +12,7 @@
 // INCLUDE MODULE CLASSES
 #include "Vtop.h"
 #include "Vtop_mandelbrot_engine.h"
+#include "Vtop_queue_new.h"
 
 // SYMS CLASS
 class Vtop__Syms : public VerilatedSyms {
@@ -26,16 +27,42 @@ class Vtop__Syms : public VerilatedSyms {
     // SUBCELL STATE
     Vtop*                          TOPp;
     Vtop_mandelbrot_engine         TOP__top__DOT__genblk1__BRA__0__KET____DOT__engine;
+    Vtop_queue_new                 TOP__top__DOT__genblk1__BRA__0__KET____DOT__queue_block;
+    Vtop_mandelbrot_engine         TOP__top__DOT__genblk1__BRA__10__KET____DOT__engine;
+    Vtop_queue_new                 TOP__top__DOT__genblk1__BRA__10__KET____DOT__queue_block;
+    Vtop_mandelbrot_engine         TOP__top__DOT__genblk1__BRA__11__KET____DOT__engine;
+    Vtop_queue_new                 TOP__top__DOT__genblk1__BRA__11__KET____DOT__queue_block;
     Vtop_mandelbrot_engine         TOP__top__DOT__genblk1__BRA__1__KET____DOT__engine;
+    Vtop_queue_new                 TOP__top__DOT__genblk1__BRA__1__KET____DOT__queue_block;
     Vtop_mandelbrot_engine         TOP__top__DOT__genblk1__BRA__2__KET____DOT__engine;
+    Vtop_queue_new                 TOP__top__DOT__genblk1__BRA__2__KET____DOT__queue_block;
     Vtop_mandelbrot_engine         TOP__top__DOT__genblk1__BRA__3__KET____DOT__engine;
+    Vtop_queue_new                 TOP__top__DOT__genblk1__BRA__3__KET____DOT__queue_block;
     Vtop_mandelbrot_engine         TOP__top__DOT__genblk1__BRA__4__KET____DOT__engine;
+    Vtop_queue_new                 TOP__top__DOT__genblk1__BRA__4__KET____DOT__queue_block;
     Vtop_mandelbrot_engine         TOP__top__DOT__genblk1__BRA__5__KET____DOT__engine;
+<<<<<<< HEAD
     
     // CREATORS
     Vtop__Syms(Vtop* topp, const char* namep);
     ~Vtop__Syms() {}
     
+=======
+    Vtop_queue_new                 TOP__top__DOT__genblk1__BRA__5__KET____DOT__queue_block;
+    Vtop_mandelbrot_engine         TOP__top__DOT__genblk1__BRA__6__KET____DOT__engine;
+    Vtop_queue_new                 TOP__top__DOT__genblk1__BRA__6__KET____DOT__queue_block;
+    Vtop_mandelbrot_engine         TOP__top__DOT__genblk1__BRA__7__KET____DOT__engine;
+    Vtop_queue_new                 TOP__top__DOT__genblk1__BRA__7__KET____DOT__queue_block;
+    Vtop_mandelbrot_engine         TOP__top__DOT__genblk1__BRA__8__KET____DOT__engine;
+    Vtop_queue_new                 TOP__top__DOT__genblk1__BRA__8__KET____DOT__queue_block;
+    Vtop_mandelbrot_engine         TOP__top__DOT__genblk1__BRA__9__KET____DOT__engine;
+    Vtop_queue_new                 TOP__top__DOT__genblk1__BRA__9__KET____DOT__queue_block;
+
+    // CONSTRUCTORS
+    Vtop__Syms(VerilatedContext* contextp, const char* namep, Vtop* modelp);
+    ~Vtop__Syms();
+
+>>>>>>> f286281ae43e88f0425f2bbc458afd01a3d0bcba
     // METHODS
     inline const char* name() { return __Vm_namep; }
     

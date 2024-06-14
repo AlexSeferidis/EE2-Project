@@ -24,12 +24,28 @@ VM_TRACE_FST_WRITER_THREAD = 0
 # Generated module classes, fast-path, compile with highest optimization
 VM_CLASSES_FAST += \
 	Vtop \
+<<<<<<< HEAD
 	Vtop_mandelbrot_engine \
+=======
+	Vtop___024root__DepSet_h84412442__0 \
+	Vtop___024root__DepSet_heccd7ead__0 \
+	Vtop_mandelbrot_engine__DepSet_h51e9ebf0__0 \
+	Vtop_queue_new__DepSet_h2d75d6ae__0 \
+	Vtop_queue_new__DepSet_h85b8ac51__0 \
+>>>>>>> f286281ae43e88f0425f2bbc458afd01a3d0bcba
 
 # Generated module classes, non-fast-path, compile with low/medium optimization
 VM_CLASSES_SLOW += \
 	Vtop__Slow \
 	Vtop_mandelbrot_engine__Slow \
+<<<<<<< HEAD
+=======
+	Vtop_mandelbrot_engine__DepSet_h51e9ebf0__0__Slow \
+	Vtop_mandelbrot_engine__DepSet_h9924b71b__0__Slow \
+	Vtop_queue_new__Slow \
+	Vtop_queue_new__DepSet_h2d75d6ae__0__Slow \
+	Vtop_queue_new__DepSet_h85b8ac51__0__Slow \
+>>>>>>> f286281ae43e88f0425f2bbc458afd01a3d0bcba
 
 # Generated support classes, fast-path, compile with highest optimization
 VM_SUPPORT_FAST += \

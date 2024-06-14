@@ -15,6 +15,7 @@
 class Vtop__Syms;
 class Vtop_VerilatedVcd;
 class Vtop_mandelbrot_engine;
+class Vtop_queue_new;
 
 
 //----------
@@ -34,6 +35,7 @@ VL_MODULE(Vtop) {
     // PORTS
     // The application code writes and reads these signals to
     // propagate new values into/out from the Verilated model.
+<<<<<<< HEAD
     VL_IN8(clk,0,0);
     VL_IN8(reset,0,0);
     VL_IN8(ready,0,0);
@@ -503,6 +505,55 @@ VL_MODULE(Vtop) {
     // Internals; generally not touched by application code
     Vtop__Syms* __VlSymsp;  // Symbol table
     
+=======
+    VL_IN8(&clk,0,0);
+    VL_IN8(&reset,0,0);
+    VL_IN8(&ready,0,0);
+    VL_OUT8(&r,7,0);
+    VL_OUT8(&g,7,0);
+    VL_OUT8(&b,7,0);
+    VL_OUT8(&first,0,0);
+    VL_OUT8(&last_x,0,0);
+    VL_OUT8(&last_y,0,0);
+    VL_OUT8(&valid,0,0);
+    VL_IN16(&iterations_max,9,0);
+    VL_IN16(&zoom,9,0);
+    VL_IN16(&x_offset,9,0);
+    VL_IN16(&y_offset,9,0);
+
+    // CELLS
+    // Public to allow access to /* verilator public */ items.
+    // Otherwise the application code can consider these internals.
+    Vtop_mandelbrot_engine* const __PVT__top__DOT__genblk1__BRA__0__KET____DOT__engine;
+    Vtop_queue_new* const __PVT__top__DOT__genblk1__BRA__0__KET____DOT__queue_block;
+    Vtop_mandelbrot_engine* const __PVT__top__DOT__genblk1__BRA__1__KET____DOT__engine;
+    Vtop_queue_new* const __PVT__top__DOT__genblk1__BRA__1__KET____DOT__queue_block;
+    Vtop_mandelbrot_engine* const __PVT__top__DOT__genblk1__BRA__2__KET____DOT__engine;
+    Vtop_queue_new* const __PVT__top__DOT__genblk1__BRA__2__KET____DOT__queue_block;
+    Vtop_mandelbrot_engine* const __PVT__top__DOT__genblk1__BRA__3__KET____DOT__engine;
+    Vtop_queue_new* const __PVT__top__DOT__genblk1__BRA__3__KET____DOT__queue_block;
+    Vtop_mandelbrot_engine* const __PVT__top__DOT__genblk1__BRA__4__KET____DOT__engine;
+    Vtop_queue_new* const __PVT__top__DOT__genblk1__BRA__4__KET____DOT__queue_block;
+    Vtop_mandelbrot_engine* const __PVT__top__DOT__genblk1__BRA__5__KET____DOT__engine;
+    Vtop_queue_new* const __PVT__top__DOT__genblk1__BRA__5__KET____DOT__queue_block;
+    Vtop_mandelbrot_engine* const __PVT__top__DOT__genblk1__BRA__6__KET____DOT__engine;
+    Vtop_queue_new* const __PVT__top__DOT__genblk1__BRA__6__KET____DOT__queue_block;
+    Vtop_mandelbrot_engine* const __PVT__top__DOT__genblk1__BRA__7__KET____DOT__engine;
+    Vtop_queue_new* const __PVT__top__DOT__genblk1__BRA__7__KET____DOT__queue_block;
+    Vtop_mandelbrot_engine* const __PVT__top__DOT__genblk1__BRA__8__KET____DOT__engine;
+    Vtop_queue_new* const __PVT__top__DOT__genblk1__BRA__8__KET____DOT__queue_block;
+    Vtop_mandelbrot_engine* const __PVT__top__DOT__genblk1__BRA__9__KET____DOT__engine;
+    Vtop_queue_new* const __PVT__top__DOT__genblk1__BRA__9__KET____DOT__queue_block;
+    Vtop_mandelbrot_engine* const __PVT__top__DOT__genblk1__BRA__10__KET____DOT__engine;
+    Vtop_queue_new* const __PVT__top__DOT__genblk1__BRA__10__KET____DOT__queue_block;
+    Vtop_mandelbrot_engine* const __PVT__top__DOT__genblk1__BRA__11__KET____DOT__engine;
+    Vtop_queue_new* const __PVT__top__DOT__genblk1__BRA__11__KET____DOT__queue_block;
+
+    // Root instance pointer to allow access to model internals,
+    // including inlined /* verilator public_flat_* */ items.
+    Vtop___024root* const rootp;
+
+>>>>>>> f286281ae43e88f0425f2bbc458afd01a3d0bcba
     // CONSTRUCTORS
   private:
     VL_UNCOPYABLE(Vtop);  ///< Copying not allowed
