@@ -4,7 +4,7 @@ module distributorN#(
                 // SCREEN_HEIGHT = 720,
                 SCREEN_WIDTH = 640,
                 SCREEN_HEIGHT = 480,
-                NUM_ENGINES = 30
+                NUM_ENGINES = 12
 )(
     input logic                         clk,
     input logic                         reset,

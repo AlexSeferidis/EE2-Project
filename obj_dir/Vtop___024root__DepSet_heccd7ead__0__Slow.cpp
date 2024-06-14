@@ -49,43 +49,43 @@ VL_ATTR_COLD void Vtop___024root___ctor_var_reset(Vtop___024root* vlSelf) {
     vlSelf->top__DOT__colour_o_wire = VL_RAND_RESET_I(24);
     vlSelf->top__DOT__xpixel_wire = VL_RAND_RESET_I(10);
     vlSelf->top__DOT__ypixel_wire = VL_RAND_RESET_I(10);
-    for (int __Vi0=0; __Vi0<30; ++__Vi0) {
+    for (int __Vi0=0; __Vi0<12; ++__Vi0) {
         vlSelf->top__DOT__colour_bus_o[__Vi0] = VL_RAND_RESET_I(24);
     }
     vlSelf->top__DOT__reset_engine = VL_RAND_RESET_I(1);
-    vlSelf->top__DOT__fin_bus = VL_RAND_RESET_I(30);
-    for (int __Vi0=0; __Vi0<30; ++__Vi0) {
+    vlSelf->top__DOT__fin_bus = VL_RAND_RESET_I(12);
+    for (int __Vi0=0; __Vi0<12; ++__Vi0) {
         vlSelf->top__DOT__x[__Vi0] = VL_RAND_RESET_I(10);
     }
-    for (int __Vi0=0; __Vi0<30; ++__Vi0) {
+    for (int __Vi0=0; __Vi0<12; ++__Vi0) {
         vlSelf->top__DOT__y[__Vi0] = VL_RAND_RESET_I(10);
     }
-    for (int __Vi0=0; __Vi0<30; ++__Vi0) {
+    for (int __Vi0=0; __Vi0<12; ++__Vi0) {
         vlSelf->top__DOT__iterations_bus[__Vi0] = VL_RAND_RESET_I(10);
     }
-    for (int __Vi0=0; __Vi0<30; ++__Vi0) {
+    for (int __Vi0=0; __Vi0<12; ++__Vi0) {
         vlSelf->top__DOT__xpixel_bus[__Vi0] = VL_RAND_RESET_I(10);
     }
-    for (int __Vi0=0; __Vi0<30; ++__Vi0) {
+    for (int __Vi0=0; __Vi0<12; ++__Vi0) {
         vlSelf->top__DOT__ypixel_bus[__Vi0] = VL_RAND_RESET_I(10);
     }
-    vlSelf->top__DOT__en_bus = VL_RAND_RESET_I(30);
-    for (int __Vi0=0; __Vi0<30; ++__Vi0) {
+    vlSelf->top__DOT__en_bus = VL_RAND_RESET_I(12);
+    for (int __Vi0=0; __Vi0<12; ++__Vi0) {
         vlSelf->top__DOT__colour_bus_i[__Vi0] = VL_RAND_RESET_I(24);
     }
-    vlSelf->top__DOT__full_queue_bus = VL_RAND_RESET_I(30);
-    vlSelf->top__DOT__match_bus = VL_RAND_RESET_I(30);
+    vlSelf->top__DOT__full_queue_bus = VL_RAND_RESET_I(12);
+    vlSelf->top__DOT__match_bus = VL_RAND_RESET_I(12);
     vlSelf->top__DOT__j = 0;
-    for (int __Vi0=0; __Vi0<30; ++__Vi0) {
+    for (int __Vi0=0; __Vi0<12; ++__Vi0) {
         vlSelf->top__DOT____Vcellout__distributor__y[__Vi0] = VL_RAND_RESET_I(10);
     }
-    for (int __Vi0=0; __Vi0<30; ++__Vi0) {
+    for (int __Vi0=0; __Vi0<12; ++__Vi0) {
         vlSelf->top__DOT____Vcellout__distributor__x[__Vi0] = VL_RAND_RESET_I(10);
     }
-    for (int __Vi0=0; __Vi0<30; ++__Vi0) {
+    for (int __Vi0=0; __Vi0<12; ++__Vi0) {
         vlSelf->top__DOT____Vcellout__lut_rom__rgb_val[__Vi0] = VL_RAND_RESET_I(24);
     }
-    for (int __Vi0=0; __Vi0<30; ++__Vi0) {
+    for (int __Vi0=0; __Vi0<12; ++__Vi0) {
         vlSelf->top__DOT____Vcellinp__lut_rom__iterations[__Vi0] = VL_RAND_RESET_I(10);
     }
     vlSelf->top__DOT__distributor__DOT__x0 = VL_RAND_RESET_I(10);

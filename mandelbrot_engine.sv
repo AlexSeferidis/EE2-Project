@@ -11,12 +11,12 @@ module mandelbrot_engine#(
     input logic                                     clk,
     input logic                                     reset,
     input logic [ITERATIONS_WIDTH-1:0]              iterations_max, // EFFICIENCY - variable ITERATIONS_WIDTH depending on iterations_max
-    input logic  [PIXEL_DATA_WIDTH - 1:0]    x0_, // y0_ and x0_ is in pixels
-    input logic  [PIXEL_DATA_WIDTH - 1:0]    y0_,
-    input logic [2:0]                zoom,
-    input logic signed [ENGINE_DATA_WIDTH-1:0]         x_offset, 
-    input logic signed [ENGINE_DATA_WIDTH-1:0]         y_offset,
-    input logic                              full_queue,
+    input logic  [PIXEL_DATA_WIDTH - 1:0]           x0_, // y0_ and x0_ is in pixels
+    input logic  [PIXEL_DATA_WIDTH - 1:0]           y0_,
+    input logic [2:0]                               zoom,
+    input logic signed [ENGINE_DATA_WIDTH-1:0]      x_offset, 
+    input logic signed [ENGINE_DATA_WIDTH-1:0]      y_offset,
+    input logic                                     full_queue,
 
     output logic                                    en_pixel_map,
     output logic [ITERATIONS_WIDTH-1:0]             iterations,
@@ -29,6 +29,7 @@ localparam ENGINE_INT_WIDTH = ENGINE_DATA_WIDTH - ENGINE_FRACT_WIDTH;
 logic signed [ENGINE_DATA_WIDTH-1:0] x, y;
 logic finished, distributor_ready;
 
+initial xpixel = -1;
 
 // ----------- MAP: PIXEL -> COMPLEX COORDS ----------
 

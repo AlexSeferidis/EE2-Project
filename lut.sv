@@ -2,7 +2,7 @@ module lut #(
     parameter   DATA_WIDTH = 10,
                 RBG_SIZE = 24,
                 MAX_ITERATION = 50,
-                NUM_ENGINES = 30
+                NUM_ENGINES = 12
 )(
     input logic [DATA_WIDTH-1:0]    iterations [NUM_ENGINES-1:0],
     // input logic                     clk,

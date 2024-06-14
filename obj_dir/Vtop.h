@@ -70,42 +70,6 @@ class Vtop VL_NOT_FINAL : public VerilatedModel {
     Vtop_queue_new* const __PVT__top__DOT__genblk1__BRA__10__KET____DOT__queue_block;
     Vtop_mandelbrot_engine* const __PVT__top__DOT__genblk1__BRA__11__KET____DOT__engine;
     Vtop_queue_new* const __PVT__top__DOT__genblk1__BRA__11__KET____DOT__queue_block;
-    Vtop_mandelbrot_engine* const __PVT__top__DOT__genblk1__BRA__12__KET____DOT__engine;
-    Vtop_queue_new* const __PVT__top__DOT__genblk1__BRA__12__KET____DOT__queue_block;
-    Vtop_mandelbrot_engine* const __PVT__top__DOT__genblk1__BRA__13__KET____DOT__engine;
-    Vtop_queue_new* const __PVT__top__DOT__genblk1__BRA__13__KET____DOT__queue_block;
-    Vtop_mandelbrot_engine* const __PVT__top__DOT__genblk1__BRA__14__KET____DOT__engine;
-    Vtop_queue_new* const __PVT__top__DOT__genblk1__BRA__14__KET____DOT__queue_block;
-    Vtop_mandelbrot_engine* const __PVT__top__DOT__genblk1__BRA__15__KET____DOT__engine;
-    Vtop_queue_new* const __PVT__top__DOT__genblk1__BRA__15__KET____DOT__queue_block;
-    Vtop_mandelbrot_engine* const __PVT__top__DOT__genblk1__BRA__16__KET____DOT__engine;
-    Vtop_queue_new* const __PVT__top__DOT__genblk1__BRA__16__KET____DOT__queue_block;
-    Vtop_mandelbrot_engine* const __PVT__top__DOT__genblk1__BRA__17__KET____DOT__engine;
-    Vtop_queue_new* const __PVT__top__DOT__genblk1__BRA__17__KET____DOT__queue_block;
-    Vtop_mandelbrot_engine* const __PVT__top__DOT__genblk1__BRA__18__KET____DOT__engine;
-    Vtop_queue_new* const __PVT__top__DOT__genblk1__BRA__18__KET____DOT__queue_block;
-    Vtop_mandelbrot_engine* const __PVT__top__DOT__genblk1__BRA__19__KET____DOT__engine;
-    Vtop_queue_new* const __PVT__top__DOT__genblk1__BRA__19__KET____DOT__queue_block;
-    Vtop_mandelbrot_engine* const __PVT__top__DOT__genblk1__BRA__20__KET____DOT__engine;
-    Vtop_queue_new* const __PVT__top__DOT__genblk1__BRA__20__KET____DOT__queue_block;
-    Vtop_mandelbrot_engine* const __PVT__top__DOT__genblk1__BRA__21__KET____DOT__engine;
-    Vtop_queue_new* const __PVT__top__DOT__genblk1__BRA__21__KET____DOT__queue_block;
-    Vtop_mandelbrot_engine* const __PVT__top__DOT__genblk1__BRA__22__KET____DOT__engine;
-    Vtop_queue_new* const __PVT__top__DOT__genblk1__BRA__22__KET____DOT__queue_block;
-    Vtop_mandelbrot_engine* const __PVT__top__DOT__genblk1__BRA__23__KET____DOT__engine;
-    Vtop_queue_new* const __PVT__top__DOT__genblk1__BRA__23__KET____DOT__queue_block;
-    Vtop_mandelbrot_engine* const __PVT__top__DOT__genblk1__BRA__24__KET____DOT__engine;
-    Vtop_queue_new* const __PVT__top__DOT__genblk1__BRA__24__KET____DOT__queue_block;
-    Vtop_mandelbrot_engine* const __PVT__top__DOT__genblk1__BRA__25__KET____DOT__engine;
-    Vtop_queue_new* const __PVT__top__DOT__genblk1__BRA__25__KET____DOT__queue_block;
-    Vtop_mandelbrot_engine* const __PVT__top__DOT__genblk1__BRA__26__KET____DOT__engine;
-    Vtop_queue_new* const __PVT__top__DOT__genblk1__BRA__26__KET____DOT__queue_block;
-    Vtop_mandelbrot_engine* const __PVT__top__DOT__genblk1__BRA__27__KET____DOT__engine;
-    Vtop_queue_new* const __PVT__top__DOT__genblk1__BRA__27__KET____DOT__queue_block;
-    Vtop_mandelbrot_engine* const __PVT__top__DOT__genblk1__BRA__28__KET____DOT__engine;
-    Vtop_queue_new* const __PVT__top__DOT__genblk1__BRA__28__KET____DOT__queue_block;
-    Vtop_mandelbrot_engine* const __PVT__top__DOT__genblk1__BRA__29__KET____DOT__engine;
-    Vtop_queue_new* const __PVT__top__DOT__genblk1__BRA__29__KET____DOT__queue_block;
 
     // Root instance pointer to allow access to model internals,
     // including inlined /* verilator public_flat_* */ items.

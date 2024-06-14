@@ -133,9 +133,9 @@ VL_INLINE_OPT void Vtop_queue_new___sequent__TOP__top__DOT__genblk1__BRA__0__KET
     if (vlSymsp->TOP.reset) {
         vlSelf->__Vdly__counter = 0U;
         vlSelf->__Vdlyvset__colour_queue__v0 = 1U;
-    } else if ((vlSymsp->TOP.top__DOT__fin_bus & (vlSymsp->TOP.top__DOT__xpixel_bus
-                                                  [0U] 
-                                                  != (IData)(vlSelf->__PVT__prev_xpixel)))) {
+    } else if (((IData)(vlSymsp->TOP.top__DOT__fin_bus) 
+                & (vlSymsp->TOP.top__DOT__xpixel_bus
+                   [0U] != (IData)(vlSelf->__PVT__prev_xpixel)))) {
         vlSelf->__Vlvbound_he6b57a3a__0 = vlSymsp->TOP.top__DOT__colour_bus_i
             [0U];
         vlSelf->__PVT__prev_xpixel = vlSymsp->TOP.top__DOT__xpixel_bus
@@ -317,9 +317,9 @@ VL_INLINE_OPT void Vtop_queue_new___sequent__TOP__top__DOT__genblk1__BRA__1__KET
     if (vlSymsp->TOP.reset) {
         vlSelf->__Vdly__counter = 0U;
         vlSelf->__Vdlyvset__colour_queue__v0 = 1U;
-    } else if (((vlSymsp->TOP.top__DOT__fin_bus >> 1U) 
-                & (vlSymsp->TOP.top__DOT__xpixel_bus
-                   [1U] != (IData)(vlSelf->__PVT__prev_xpixel)))) {
+    } else if ((((IData)(vlSymsp->TOP.top__DOT__fin_bus) 
+                 >> 1U) & (vlSymsp->TOP.top__DOT__xpixel_bus
+                           [1U] != (IData)(vlSelf->__PVT__prev_xpixel)))) {
         vlSelf->__Vlvbound_he6b57a3a__0 = vlSymsp->TOP.top__DOT__colour_bus_i
             [1U];
         vlSelf->__PVT__prev_xpixel = vlSymsp->TOP.top__DOT__xpixel_bus
@@ -357,9 +357,9 @@ VL_INLINE_OPT void Vtop_queue_new___sequent__TOP__top__DOT__genblk1__BRA__2__KET
     if (vlSymsp->TOP.reset) {
         vlSelf->__Vdly__counter = 0U;
         vlSelf->__Vdlyvset__colour_queue__v0 = 1U;
-    } else if (((vlSymsp->TOP.top__DOT__fin_bus >> 2U) 
-                & (vlSymsp->TOP.top__DOT__xpixel_bus
-                   [2U] != (IData)(vlSelf->__PVT__prev_xpixel)))) {
+    } else if ((((IData)(vlSymsp->TOP.top__DOT__fin_bus) 
+                 >> 2U) & (vlSymsp->TOP.top__DOT__xpixel_bus
+                           [2U] != (IData)(vlSelf->__PVT__prev_xpixel)))) {
         vlSelf->__Vlvbound_he6b57a3a__0 = vlSymsp->TOP.top__DOT__colour_bus_i
             [2U];
         vlSelf->__PVT__prev_xpixel = vlSymsp->TOP.top__DOT__xpixel_bus
@@ -397,9 +397,9 @@ VL_INLINE_OPT void Vtop_queue_new___sequent__TOP__top__DOT__genblk1__BRA__3__KET
     if (vlSymsp->TOP.reset) {
         vlSelf->__Vdly__counter = 0U;
         vlSelf->__Vdlyvset__colour_queue__v0 = 1U;
-    } else if (((vlSymsp->TOP.top__DOT__fin_bus >> 3U) 
-                & (vlSymsp->TOP.top__DOT__xpixel_bus
-                   [3U] != (IData)(vlSelf->__PVT__prev_xpixel)))) {
+    } else if ((((IData)(vlSymsp->TOP.top__DOT__fin_bus) 
+                 >> 3U) & (vlSymsp->TOP.top__DOT__xpixel_bus
+                           [3U] != (IData)(vlSelf->__PVT__prev_xpixel)))) {
         vlSelf->__Vlvbound_he6b57a3a__0 = vlSymsp->TOP.top__DOT__colour_bus_i
             [3U];
         vlSelf->__PVT__prev_xpixel = vlSymsp->TOP.top__DOT__xpixel_bus
@@ -437,9 +437,9 @@ VL_INLINE_OPT void Vtop_queue_new___sequent__TOP__top__DOT__genblk1__BRA__4__KET
     if (vlSymsp->TOP.reset) {
         vlSelf->__Vdly__counter = 0U;
         vlSelf->__Vdlyvset__colour_queue__v0 = 1U;
-    } else if (((vlSymsp->TOP.top__DOT__fin_bus >> 4U) 
-                & (vlSymsp->TOP.top__DOT__xpixel_bus
-                   [4U] != (IData)(vlSelf->__PVT__prev_xpixel)))) {
+    } else if ((((IData)(vlSymsp->TOP.top__DOT__fin_bus) 
+                 >> 4U) & (vlSymsp->TOP.top__DOT__xpixel_bus
+                           [4U] != (IData)(vlSelf->__PVT__prev_xpixel)))) {
         vlSelf->__Vlvbound_he6b57a3a__0 = vlSymsp->TOP.top__DOT__colour_bus_i
             [4U];
         vlSelf->__PVT__prev_xpixel = vlSymsp->TOP.top__DOT__xpixel_bus
@@ -477,9 +477,9 @@ VL_INLINE_OPT void Vtop_queue_new___sequent__TOP__top__DOT__genblk1__BRA__5__KET
     if (vlSymsp->TOP.reset) {
         vlSelf->__Vdly__counter = 0U;
         vlSelf->__Vdlyvset__colour_queue__v0 = 1U;
-    } else if (((vlSymsp->TOP.top__DOT__fin_bus >> 5U) 
-                & (vlSymsp->TOP.top__DOT__xpixel_bus
-                   [5U] != (IData)(vlSelf->__PVT__prev_xpixel)))) {
+    } else if ((((IData)(vlSymsp->TOP.top__DOT__fin_bus) 
+                 >> 5U) & (vlSymsp->TOP.top__DOT__xpixel_bus
+                           [5U] != (IData)(vlSelf->__PVT__prev_xpixel)))) {
         vlSelf->__Vlvbound_he6b57a3a__0 = vlSymsp->TOP.top__DOT__colour_bus_i
             [5U];
         vlSelf->__PVT__prev_xpixel = vlSymsp->TOP.top__DOT__xpixel_bus
@@ -517,9 +517,9 @@ VL_INLINE_OPT void Vtop_queue_new___sequent__TOP__top__DOT__genblk1__BRA__6__KET
     if (vlSymsp->TOP.reset) {
         vlSelf->__Vdly__counter = 0U;
         vlSelf->__Vdlyvset__colour_queue__v0 = 1U;
-    } else if (((vlSymsp->TOP.top__DOT__fin_bus >> 6U) 
-                & (vlSymsp->TOP.top__DOT__xpixel_bus
-                   [6U] != (IData)(vlSelf->__PVT__prev_xpixel)))) {
+    } else if ((((IData)(vlSymsp->TOP.top__DOT__fin_bus) 
+                 >> 6U) & (vlSymsp->TOP.top__DOT__xpixel_bus
+                           [6U] != (IData)(vlSelf->__PVT__prev_xpixel)))) {
         vlSelf->__Vlvbound_he6b57a3a__0 = vlSymsp->TOP.top__DOT__colour_bus_i
             [6U];
         vlSelf->__PVT__prev_xpixel = vlSymsp->TOP.top__DOT__xpixel_bus
@@ -557,9 +557,9 @@ VL_INLINE_OPT void Vtop_queue_new___sequent__TOP__top__DOT__genblk1__BRA__7__KET
     if (vlSymsp->TOP.reset) {
         vlSelf->__Vdly__counter = 0U;
         vlSelf->__Vdlyvset__colour_queue__v0 = 1U;
-    } else if (((vlSymsp->TOP.top__DOT__fin_bus >> 7U) 
-                & (vlSymsp->TOP.top__DOT__xpixel_bus
-                   [7U] != (IData)(vlSelf->__PVT__prev_xpixel)))) {
+    } else if ((((IData)(vlSymsp->TOP.top__DOT__fin_bus) 
+                 >> 7U) & (vlSymsp->TOP.top__DOT__xpixel_bus
+                           [7U] != (IData)(vlSelf->__PVT__prev_xpixel)))) {
         vlSelf->__Vlvbound_he6b57a3a__0 = vlSymsp->TOP.top__DOT__colour_bus_i
             [7U];
         vlSelf->__PVT__prev_xpixel = vlSymsp->TOP.top__DOT__xpixel_bus
@@ -597,9 +597,9 @@ VL_INLINE_OPT void Vtop_queue_new___sequent__TOP__top__DOT__genblk1__BRA__8__KET
     if (vlSymsp->TOP.reset) {
         vlSelf->__Vdly__counter = 0U;
         vlSelf->__Vdlyvset__colour_queue__v0 = 1U;
-    } else if (((vlSymsp->TOP.top__DOT__fin_bus >> 8U) 
-                & (vlSymsp->TOP.top__DOT__xpixel_bus
-                   [8U] != (IData)(vlSelf->__PVT__prev_xpixel)))) {
+    } else if ((((IData)(vlSymsp->TOP.top__DOT__fin_bus) 
+                 >> 8U) & (vlSymsp->TOP.top__DOT__xpixel_bus
+                           [8U] != (IData)(vlSelf->__PVT__prev_xpixel)))) {
         vlSelf->__Vlvbound_he6b57a3a__0 = vlSymsp->TOP.top__DOT__colour_bus_i
             [8U];
         vlSelf->__PVT__prev_xpixel = vlSymsp->TOP.top__DOT__xpixel_bus
@@ -637,9 +637,9 @@ VL_INLINE_OPT void Vtop_queue_new___sequent__TOP__top__DOT__genblk1__BRA__9__KET
     if (vlSymsp->TOP.reset) {
         vlSelf->__Vdly__counter = 0U;
         vlSelf->__Vdlyvset__colour_queue__v0 = 1U;
-    } else if (((vlSymsp->TOP.top__DOT__fin_bus >> 9U) 
-                & (vlSymsp->TOP.top__DOT__xpixel_bus
-                   [9U] != (IData)(vlSelf->__PVT__prev_xpixel)))) {
+    } else if ((((IData)(vlSymsp->TOP.top__DOT__fin_bus) 
+                 >> 9U) & (vlSymsp->TOP.top__DOT__xpixel_bus
+                           [9U] != (IData)(vlSelf->__PVT__prev_xpixel)))) {
         vlSelf->__Vlvbound_he6b57a3a__0 = vlSymsp->TOP.top__DOT__colour_bus_i
             [9U];
         vlSelf->__PVT__prev_xpixel = vlSymsp->TOP.top__DOT__xpixel_bus
@@ -677,9 +677,9 @@ VL_INLINE_OPT void Vtop_queue_new___sequent__TOP__top__DOT__genblk1__BRA__10__KE
     if (vlSymsp->TOP.reset) {
         vlSelf->__Vdly__counter = 0U;
         vlSelf->__Vdlyvset__colour_queue__v0 = 1U;
-    } else if (((vlSymsp->TOP.top__DOT__fin_bus >> 0xaU) 
-                & (vlSymsp->TOP.top__DOT__xpixel_bus
-                   [0xaU] != (IData)(vlSelf->__PVT__prev_xpixel)))) {
+    } else if ((((IData)(vlSymsp->TOP.top__DOT__fin_bus) 
+                 >> 0xaU) & (vlSymsp->TOP.top__DOT__xpixel_bus
+                             [0xaU] != (IData)(vlSelf->__PVT__prev_xpixel)))) {
         vlSelf->__Vlvbound_he6b57a3a__0 = vlSymsp->TOP.top__DOT__colour_bus_i
             [0xaU];
         vlSelf->__PVT__prev_xpixel = vlSymsp->TOP.top__DOT__xpixel_bus
@@ -717,9 +717,9 @@ VL_INLINE_OPT void Vtop_queue_new___sequent__TOP__top__DOT__genblk1__BRA__11__KE
     if (vlSymsp->TOP.reset) {
         vlSelf->__Vdly__counter = 0U;
         vlSelf->__Vdlyvset__colour_queue__v0 = 1U;
-    } else if (((vlSymsp->TOP.top__DOT__fin_bus >> 0xbU) 
-                & (vlSymsp->TOP.top__DOT__xpixel_bus
-                   [0xbU] != (IData)(vlSelf->__PVT__prev_xpixel)))) {
+    } else if ((((IData)(vlSymsp->TOP.top__DOT__fin_bus) 
+                 >> 0xbU) & (vlSymsp->TOP.top__DOT__xpixel_bus
+                             [0xbU] != (IData)(vlSelf->__PVT__prev_xpixel)))) {
         vlSelf->__Vlvbound_he6b57a3a__0 = vlSymsp->TOP.top__DOT__colour_bus_i
             [0xbU];
         vlSelf->__PVT__prev_xpixel = vlSymsp->TOP.top__DOT__xpixel_bus
@@ -728,726 +728,6 @@ VL_INLINE_OPT void Vtop_queue_new___sequent__TOP__top__DOT__genblk1__BRA__11__KE
             [0xbU];
         vlSelf->__Vlvbound_hb8aa41f5__0 = vlSymsp->TOP.top__DOT__ypixel_bus
             [0xbU];
-        if ((9U >= (IData)(vlSelf->__PVT__counter))) {
-            vlSelf->__Vdlyvval__colour_queue__v10 = vlSelf->__Vlvbound_he6b57a3a__0;
-            vlSelf->__Vdlyvset__colour_queue__v10 = 1U;
-            vlSelf->__Vdlyvdim0__colour_queue__v10 
-                = vlSelf->__PVT__counter;
-        }
-        if ((9U >= (IData)(vlSelf->__PVT__counter))) {
-            vlSelf->__Vdlyvval__xqueue__v10 = vlSelf->__Vlvbound_ha6a48450__0;
-            vlSelf->__Vdlyvset__xqueue__v10 = 1U;
-            vlSelf->__Vdlyvdim0__xqueue__v10 = vlSelf->__PVT__counter;
-        }
-        if ((9U >= (IData)(vlSelf->__PVT__counter))) {
-            vlSelf->__Vdlyvval__yqueue__v10 = vlSelf->__Vlvbound_hb8aa41f5__0;
-            vlSelf->__Vdlyvset__yqueue__v10 = 1U;
-            vlSelf->__Vdlyvdim0__yqueue__v10 = vlSelf->__PVT__counter;
-        }
-        vlSelf->__Vdly__counter = (0xfU & ((IData)(1U) 
-                                           + (IData)(vlSelf->__PVT__counter)));
-    }
-}
-
-VL_INLINE_OPT void Vtop_queue_new___sequent__TOP__top__DOT__genblk1__BRA__12__KET____DOT__queue_block__3(Vtop_queue_new* vlSelf) {
-    if (false && vlSelf) {}  // Prevent unused
-    Vtop__Syms* const __restrict vlSymsp VL_ATTR_UNUSED = vlSelf->vlSymsp;
-    VL_DEBUG_IF(VL_DBG_MSGF("+        Vtop_queue_new___sequent__TOP__top__DOT__genblk1__BRA__12__KET____DOT__queue_block__3\n"); );
-    // Body
-    if (vlSymsp->TOP.reset) {
-        vlSelf->__Vdly__counter = 0U;
-        vlSelf->__Vdlyvset__colour_queue__v0 = 1U;
-    } else if (((vlSymsp->TOP.top__DOT__fin_bus >> 0xcU) 
-                & (vlSymsp->TOP.top__DOT__xpixel_bus
-                   [0xcU] != (IData)(vlSelf->__PVT__prev_xpixel)))) {
-        vlSelf->__Vlvbound_he6b57a3a__0 = vlSymsp->TOP.top__DOT__colour_bus_i
-            [0xcU];
-        vlSelf->__PVT__prev_xpixel = vlSymsp->TOP.top__DOT__xpixel_bus
-            [0xcU];
-        vlSelf->__Vlvbound_ha6a48450__0 = vlSymsp->TOP.top__DOT__xpixel_bus
-            [0xcU];
-        vlSelf->__Vlvbound_hb8aa41f5__0 = vlSymsp->TOP.top__DOT__ypixel_bus
-            [0xcU];
-        if ((9U >= (IData)(vlSelf->__PVT__counter))) {
-            vlSelf->__Vdlyvval__colour_queue__v10 = vlSelf->__Vlvbound_he6b57a3a__0;
-            vlSelf->__Vdlyvset__colour_queue__v10 = 1U;
-            vlSelf->__Vdlyvdim0__colour_queue__v10 
-                = vlSelf->__PVT__counter;
-        }
-        if ((9U >= (IData)(vlSelf->__PVT__counter))) {
-            vlSelf->__Vdlyvval__xqueue__v10 = vlSelf->__Vlvbound_ha6a48450__0;
-            vlSelf->__Vdlyvset__xqueue__v10 = 1U;
-            vlSelf->__Vdlyvdim0__xqueue__v10 = vlSelf->__PVT__counter;
-        }
-        if ((9U >= (IData)(vlSelf->__PVT__counter))) {
-            vlSelf->__Vdlyvval__yqueue__v10 = vlSelf->__Vlvbound_hb8aa41f5__0;
-            vlSelf->__Vdlyvset__yqueue__v10 = 1U;
-            vlSelf->__Vdlyvdim0__yqueue__v10 = vlSelf->__PVT__counter;
-        }
-        vlSelf->__Vdly__counter = (0xfU & ((IData)(1U) 
-                                           + (IData)(vlSelf->__PVT__counter)));
-    }
-}
-
-VL_INLINE_OPT void Vtop_queue_new___sequent__TOP__top__DOT__genblk1__BRA__13__KET____DOT__queue_block__3(Vtop_queue_new* vlSelf) {
-    if (false && vlSelf) {}  // Prevent unused
-    Vtop__Syms* const __restrict vlSymsp VL_ATTR_UNUSED = vlSelf->vlSymsp;
-    VL_DEBUG_IF(VL_DBG_MSGF("+        Vtop_queue_new___sequent__TOP__top__DOT__genblk1__BRA__13__KET____DOT__queue_block__3\n"); );
-    // Body
-    if (vlSymsp->TOP.reset) {
-        vlSelf->__Vdly__counter = 0U;
-        vlSelf->__Vdlyvset__colour_queue__v0 = 1U;
-    } else if (((vlSymsp->TOP.top__DOT__fin_bus >> 0xdU) 
-                & (vlSymsp->TOP.top__DOT__xpixel_bus
-                   [0xdU] != (IData)(vlSelf->__PVT__prev_xpixel)))) {
-        vlSelf->__Vlvbound_he6b57a3a__0 = vlSymsp->TOP.top__DOT__colour_bus_i
-            [0xdU];
-        vlSelf->__PVT__prev_xpixel = vlSymsp->TOP.top__DOT__xpixel_bus
-            [0xdU];
-        vlSelf->__Vlvbound_ha6a48450__0 = vlSymsp->TOP.top__DOT__xpixel_bus
-            [0xdU];
-        vlSelf->__Vlvbound_hb8aa41f5__0 = vlSymsp->TOP.top__DOT__ypixel_bus
-            [0xdU];
-        if ((9U >= (IData)(vlSelf->__PVT__counter))) {
-            vlSelf->__Vdlyvval__colour_queue__v10 = vlSelf->__Vlvbound_he6b57a3a__0;
-            vlSelf->__Vdlyvset__colour_queue__v10 = 1U;
-            vlSelf->__Vdlyvdim0__colour_queue__v10 
-                = vlSelf->__PVT__counter;
-        }
-        if ((9U >= (IData)(vlSelf->__PVT__counter))) {
-            vlSelf->__Vdlyvval__xqueue__v10 = vlSelf->__Vlvbound_ha6a48450__0;
-            vlSelf->__Vdlyvset__xqueue__v10 = 1U;
-            vlSelf->__Vdlyvdim0__xqueue__v10 = vlSelf->__PVT__counter;
-        }
-        if ((9U >= (IData)(vlSelf->__PVT__counter))) {
-            vlSelf->__Vdlyvval__yqueue__v10 = vlSelf->__Vlvbound_hb8aa41f5__0;
-            vlSelf->__Vdlyvset__yqueue__v10 = 1U;
-            vlSelf->__Vdlyvdim0__yqueue__v10 = vlSelf->__PVT__counter;
-        }
-        vlSelf->__Vdly__counter = (0xfU & ((IData)(1U) 
-                                           + (IData)(vlSelf->__PVT__counter)));
-    }
-}
-
-VL_INLINE_OPT void Vtop_queue_new___sequent__TOP__top__DOT__genblk1__BRA__14__KET____DOT__queue_block__3(Vtop_queue_new* vlSelf) {
-    if (false && vlSelf) {}  // Prevent unused
-    Vtop__Syms* const __restrict vlSymsp VL_ATTR_UNUSED = vlSelf->vlSymsp;
-    VL_DEBUG_IF(VL_DBG_MSGF("+        Vtop_queue_new___sequent__TOP__top__DOT__genblk1__BRA__14__KET____DOT__queue_block__3\n"); );
-    // Body
-    if (vlSymsp->TOP.reset) {
-        vlSelf->__Vdly__counter = 0U;
-        vlSelf->__Vdlyvset__colour_queue__v0 = 1U;
-    } else if (((vlSymsp->TOP.top__DOT__fin_bus >> 0xeU) 
-                & (vlSymsp->TOP.top__DOT__xpixel_bus
-                   [0xeU] != (IData)(vlSelf->__PVT__prev_xpixel)))) {
-        vlSelf->__Vlvbound_he6b57a3a__0 = vlSymsp->TOP.top__DOT__colour_bus_i
-            [0xeU];
-        vlSelf->__PVT__prev_xpixel = vlSymsp->TOP.top__DOT__xpixel_bus
-            [0xeU];
-        vlSelf->__Vlvbound_ha6a48450__0 = vlSymsp->TOP.top__DOT__xpixel_bus
-            [0xeU];
-        vlSelf->__Vlvbound_hb8aa41f5__0 = vlSymsp->TOP.top__DOT__ypixel_bus
-            [0xeU];
-        if ((9U >= (IData)(vlSelf->__PVT__counter))) {
-            vlSelf->__Vdlyvval__colour_queue__v10 = vlSelf->__Vlvbound_he6b57a3a__0;
-            vlSelf->__Vdlyvset__colour_queue__v10 = 1U;
-            vlSelf->__Vdlyvdim0__colour_queue__v10 
-                = vlSelf->__PVT__counter;
-        }
-        if ((9U >= (IData)(vlSelf->__PVT__counter))) {
-            vlSelf->__Vdlyvval__xqueue__v10 = vlSelf->__Vlvbound_ha6a48450__0;
-            vlSelf->__Vdlyvset__xqueue__v10 = 1U;
-            vlSelf->__Vdlyvdim0__xqueue__v10 = vlSelf->__PVT__counter;
-        }
-        if ((9U >= (IData)(vlSelf->__PVT__counter))) {
-            vlSelf->__Vdlyvval__yqueue__v10 = vlSelf->__Vlvbound_hb8aa41f5__0;
-            vlSelf->__Vdlyvset__yqueue__v10 = 1U;
-            vlSelf->__Vdlyvdim0__yqueue__v10 = vlSelf->__PVT__counter;
-        }
-        vlSelf->__Vdly__counter = (0xfU & ((IData)(1U) 
-                                           + (IData)(vlSelf->__PVT__counter)));
-    }
-}
-
-VL_INLINE_OPT void Vtop_queue_new___sequent__TOP__top__DOT__genblk1__BRA__15__KET____DOT__queue_block__3(Vtop_queue_new* vlSelf) {
-    if (false && vlSelf) {}  // Prevent unused
-    Vtop__Syms* const __restrict vlSymsp VL_ATTR_UNUSED = vlSelf->vlSymsp;
-    VL_DEBUG_IF(VL_DBG_MSGF("+        Vtop_queue_new___sequent__TOP__top__DOT__genblk1__BRA__15__KET____DOT__queue_block__3\n"); );
-    // Body
-    if (vlSymsp->TOP.reset) {
-        vlSelf->__Vdly__counter = 0U;
-        vlSelf->__Vdlyvset__colour_queue__v0 = 1U;
-    } else if (((vlSymsp->TOP.top__DOT__fin_bus >> 0xfU) 
-                & (vlSymsp->TOP.top__DOT__xpixel_bus
-                   [0xfU] != (IData)(vlSelf->__PVT__prev_xpixel)))) {
-        vlSelf->__Vlvbound_he6b57a3a__0 = vlSymsp->TOP.top__DOT__colour_bus_i
-            [0xfU];
-        vlSelf->__PVT__prev_xpixel = vlSymsp->TOP.top__DOT__xpixel_bus
-            [0xfU];
-        vlSelf->__Vlvbound_ha6a48450__0 = vlSymsp->TOP.top__DOT__xpixel_bus
-            [0xfU];
-        vlSelf->__Vlvbound_hb8aa41f5__0 = vlSymsp->TOP.top__DOT__ypixel_bus
-            [0xfU];
-        if ((9U >= (IData)(vlSelf->__PVT__counter))) {
-            vlSelf->__Vdlyvval__colour_queue__v10 = vlSelf->__Vlvbound_he6b57a3a__0;
-            vlSelf->__Vdlyvset__colour_queue__v10 = 1U;
-            vlSelf->__Vdlyvdim0__colour_queue__v10 
-                = vlSelf->__PVT__counter;
-        }
-        if ((9U >= (IData)(vlSelf->__PVT__counter))) {
-            vlSelf->__Vdlyvval__xqueue__v10 = vlSelf->__Vlvbound_ha6a48450__0;
-            vlSelf->__Vdlyvset__xqueue__v10 = 1U;
-            vlSelf->__Vdlyvdim0__xqueue__v10 = vlSelf->__PVT__counter;
-        }
-        if ((9U >= (IData)(vlSelf->__PVT__counter))) {
-            vlSelf->__Vdlyvval__yqueue__v10 = vlSelf->__Vlvbound_hb8aa41f5__0;
-            vlSelf->__Vdlyvset__yqueue__v10 = 1U;
-            vlSelf->__Vdlyvdim0__yqueue__v10 = vlSelf->__PVT__counter;
-        }
-        vlSelf->__Vdly__counter = (0xfU & ((IData)(1U) 
-                                           + (IData)(vlSelf->__PVT__counter)));
-    }
-}
-
-VL_INLINE_OPT void Vtop_queue_new___sequent__TOP__top__DOT__genblk1__BRA__16__KET____DOT__queue_block__3(Vtop_queue_new* vlSelf) {
-    if (false && vlSelf) {}  // Prevent unused
-    Vtop__Syms* const __restrict vlSymsp VL_ATTR_UNUSED = vlSelf->vlSymsp;
-    VL_DEBUG_IF(VL_DBG_MSGF("+        Vtop_queue_new___sequent__TOP__top__DOT__genblk1__BRA__16__KET____DOT__queue_block__3\n"); );
-    // Body
-    if (vlSymsp->TOP.reset) {
-        vlSelf->__Vdly__counter = 0U;
-        vlSelf->__Vdlyvset__colour_queue__v0 = 1U;
-    } else if (((vlSymsp->TOP.top__DOT__fin_bus >> 0x10U) 
-                & (vlSymsp->TOP.top__DOT__xpixel_bus
-                   [0x10U] != (IData)(vlSelf->__PVT__prev_xpixel)))) {
-        vlSelf->__Vlvbound_he6b57a3a__0 = vlSymsp->TOP.top__DOT__colour_bus_i
-            [0x10U];
-        vlSelf->__PVT__prev_xpixel = vlSymsp->TOP.top__DOT__xpixel_bus
-            [0x10U];
-        vlSelf->__Vlvbound_ha6a48450__0 = vlSymsp->TOP.top__DOT__xpixel_bus
-            [0x10U];
-        vlSelf->__Vlvbound_hb8aa41f5__0 = vlSymsp->TOP.top__DOT__ypixel_bus
-            [0x10U];
-        if ((9U >= (IData)(vlSelf->__PVT__counter))) {
-            vlSelf->__Vdlyvval__colour_queue__v10 = vlSelf->__Vlvbound_he6b57a3a__0;
-            vlSelf->__Vdlyvset__colour_queue__v10 = 1U;
-            vlSelf->__Vdlyvdim0__colour_queue__v10 
-                = vlSelf->__PVT__counter;
-        }
-        if ((9U >= (IData)(vlSelf->__PVT__counter))) {
-            vlSelf->__Vdlyvval__xqueue__v10 = vlSelf->__Vlvbound_ha6a48450__0;
-            vlSelf->__Vdlyvset__xqueue__v10 = 1U;
-            vlSelf->__Vdlyvdim0__xqueue__v10 = vlSelf->__PVT__counter;
-        }
-        if ((9U >= (IData)(vlSelf->__PVT__counter))) {
-            vlSelf->__Vdlyvval__yqueue__v10 = vlSelf->__Vlvbound_hb8aa41f5__0;
-            vlSelf->__Vdlyvset__yqueue__v10 = 1U;
-            vlSelf->__Vdlyvdim0__yqueue__v10 = vlSelf->__PVT__counter;
-        }
-        vlSelf->__Vdly__counter = (0xfU & ((IData)(1U) 
-                                           + (IData)(vlSelf->__PVT__counter)));
-    }
-}
-
-VL_INLINE_OPT void Vtop_queue_new___sequent__TOP__top__DOT__genblk1__BRA__17__KET____DOT__queue_block__3(Vtop_queue_new* vlSelf) {
-    if (false && vlSelf) {}  // Prevent unused
-    Vtop__Syms* const __restrict vlSymsp VL_ATTR_UNUSED = vlSelf->vlSymsp;
-    VL_DEBUG_IF(VL_DBG_MSGF("+        Vtop_queue_new___sequent__TOP__top__DOT__genblk1__BRA__17__KET____DOT__queue_block__3\n"); );
-    // Body
-    if (vlSymsp->TOP.reset) {
-        vlSelf->__Vdly__counter = 0U;
-        vlSelf->__Vdlyvset__colour_queue__v0 = 1U;
-    } else if (((vlSymsp->TOP.top__DOT__fin_bus >> 0x11U) 
-                & (vlSymsp->TOP.top__DOT__xpixel_bus
-                   [0x11U] != (IData)(vlSelf->__PVT__prev_xpixel)))) {
-        vlSelf->__Vlvbound_he6b57a3a__0 = vlSymsp->TOP.top__DOT__colour_bus_i
-            [0x11U];
-        vlSelf->__PVT__prev_xpixel = vlSymsp->TOP.top__DOT__xpixel_bus
-            [0x11U];
-        vlSelf->__Vlvbound_ha6a48450__0 = vlSymsp->TOP.top__DOT__xpixel_bus
-            [0x11U];
-        vlSelf->__Vlvbound_hb8aa41f5__0 = vlSymsp->TOP.top__DOT__ypixel_bus
-            [0x11U];
-        if ((9U >= (IData)(vlSelf->__PVT__counter))) {
-            vlSelf->__Vdlyvval__colour_queue__v10 = vlSelf->__Vlvbound_he6b57a3a__0;
-            vlSelf->__Vdlyvset__colour_queue__v10 = 1U;
-            vlSelf->__Vdlyvdim0__colour_queue__v10 
-                = vlSelf->__PVT__counter;
-        }
-        if ((9U >= (IData)(vlSelf->__PVT__counter))) {
-            vlSelf->__Vdlyvval__xqueue__v10 = vlSelf->__Vlvbound_ha6a48450__0;
-            vlSelf->__Vdlyvset__xqueue__v10 = 1U;
-            vlSelf->__Vdlyvdim0__xqueue__v10 = vlSelf->__PVT__counter;
-        }
-        if ((9U >= (IData)(vlSelf->__PVT__counter))) {
-            vlSelf->__Vdlyvval__yqueue__v10 = vlSelf->__Vlvbound_hb8aa41f5__0;
-            vlSelf->__Vdlyvset__yqueue__v10 = 1U;
-            vlSelf->__Vdlyvdim0__yqueue__v10 = vlSelf->__PVT__counter;
-        }
-        vlSelf->__Vdly__counter = (0xfU & ((IData)(1U) 
-                                           + (IData)(vlSelf->__PVT__counter)));
-    }
-}
-
-VL_INLINE_OPT void Vtop_queue_new___sequent__TOP__top__DOT__genblk1__BRA__18__KET____DOT__queue_block__3(Vtop_queue_new* vlSelf) {
-    if (false && vlSelf) {}  // Prevent unused
-    Vtop__Syms* const __restrict vlSymsp VL_ATTR_UNUSED = vlSelf->vlSymsp;
-    VL_DEBUG_IF(VL_DBG_MSGF("+        Vtop_queue_new___sequent__TOP__top__DOT__genblk1__BRA__18__KET____DOT__queue_block__3\n"); );
-    // Body
-    if (vlSymsp->TOP.reset) {
-        vlSelf->__Vdly__counter = 0U;
-        vlSelf->__Vdlyvset__colour_queue__v0 = 1U;
-    } else if (((vlSymsp->TOP.top__DOT__fin_bus >> 0x12U) 
-                & (vlSymsp->TOP.top__DOT__xpixel_bus
-                   [0x12U] != (IData)(vlSelf->__PVT__prev_xpixel)))) {
-        vlSelf->__Vlvbound_he6b57a3a__0 = vlSymsp->TOP.top__DOT__colour_bus_i
-            [0x12U];
-        vlSelf->__PVT__prev_xpixel = vlSymsp->TOP.top__DOT__xpixel_bus
-            [0x12U];
-        vlSelf->__Vlvbound_ha6a48450__0 = vlSymsp->TOP.top__DOT__xpixel_bus
-            [0x12U];
-        vlSelf->__Vlvbound_hb8aa41f5__0 = vlSymsp->TOP.top__DOT__ypixel_bus
-            [0x12U];
-        if ((9U >= (IData)(vlSelf->__PVT__counter))) {
-            vlSelf->__Vdlyvval__colour_queue__v10 = vlSelf->__Vlvbound_he6b57a3a__0;
-            vlSelf->__Vdlyvset__colour_queue__v10 = 1U;
-            vlSelf->__Vdlyvdim0__colour_queue__v10 
-                = vlSelf->__PVT__counter;
-        }
-        if ((9U >= (IData)(vlSelf->__PVT__counter))) {
-            vlSelf->__Vdlyvval__xqueue__v10 = vlSelf->__Vlvbound_ha6a48450__0;
-            vlSelf->__Vdlyvset__xqueue__v10 = 1U;
-            vlSelf->__Vdlyvdim0__xqueue__v10 = vlSelf->__PVT__counter;
-        }
-        if ((9U >= (IData)(vlSelf->__PVT__counter))) {
-            vlSelf->__Vdlyvval__yqueue__v10 = vlSelf->__Vlvbound_hb8aa41f5__0;
-            vlSelf->__Vdlyvset__yqueue__v10 = 1U;
-            vlSelf->__Vdlyvdim0__yqueue__v10 = vlSelf->__PVT__counter;
-        }
-        vlSelf->__Vdly__counter = (0xfU & ((IData)(1U) 
-                                           + (IData)(vlSelf->__PVT__counter)));
-    }
-}
-
-VL_INLINE_OPT void Vtop_queue_new___sequent__TOP__top__DOT__genblk1__BRA__19__KET____DOT__queue_block__3(Vtop_queue_new* vlSelf) {
-    if (false && vlSelf) {}  // Prevent unused
-    Vtop__Syms* const __restrict vlSymsp VL_ATTR_UNUSED = vlSelf->vlSymsp;
-    VL_DEBUG_IF(VL_DBG_MSGF("+        Vtop_queue_new___sequent__TOP__top__DOT__genblk1__BRA__19__KET____DOT__queue_block__3\n"); );
-    // Body
-    if (vlSymsp->TOP.reset) {
-        vlSelf->__Vdly__counter = 0U;
-        vlSelf->__Vdlyvset__colour_queue__v0 = 1U;
-    } else if (((vlSymsp->TOP.top__DOT__fin_bus >> 0x13U) 
-                & (vlSymsp->TOP.top__DOT__xpixel_bus
-                   [0x13U] != (IData)(vlSelf->__PVT__prev_xpixel)))) {
-        vlSelf->__Vlvbound_he6b57a3a__0 = vlSymsp->TOP.top__DOT__colour_bus_i
-            [0x13U];
-        vlSelf->__PVT__prev_xpixel = vlSymsp->TOP.top__DOT__xpixel_bus
-            [0x13U];
-        vlSelf->__Vlvbound_ha6a48450__0 = vlSymsp->TOP.top__DOT__xpixel_bus
-            [0x13U];
-        vlSelf->__Vlvbound_hb8aa41f5__0 = vlSymsp->TOP.top__DOT__ypixel_bus
-            [0x13U];
-        if ((9U >= (IData)(vlSelf->__PVT__counter))) {
-            vlSelf->__Vdlyvval__colour_queue__v10 = vlSelf->__Vlvbound_he6b57a3a__0;
-            vlSelf->__Vdlyvset__colour_queue__v10 = 1U;
-            vlSelf->__Vdlyvdim0__colour_queue__v10 
-                = vlSelf->__PVT__counter;
-        }
-        if ((9U >= (IData)(vlSelf->__PVT__counter))) {
-            vlSelf->__Vdlyvval__xqueue__v10 = vlSelf->__Vlvbound_ha6a48450__0;
-            vlSelf->__Vdlyvset__xqueue__v10 = 1U;
-            vlSelf->__Vdlyvdim0__xqueue__v10 = vlSelf->__PVT__counter;
-        }
-        if ((9U >= (IData)(vlSelf->__PVT__counter))) {
-            vlSelf->__Vdlyvval__yqueue__v10 = vlSelf->__Vlvbound_hb8aa41f5__0;
-            vlSelf->__Vdlyvset__yqueue__v10 = 1U;
-            vlSelf->__Vdlyvdim0__yqueue__v10 = vlSelf->__PVT__counter;
-        }
-        vlSelf->__Vdly__counter = (0xfU & ((IData)(1U) 
-                                           + (IData)(vlSelf->__PVT__counter)));
-    }
-}
-
-VL_INLINE_OPT void Vtop_queue_new___sequent__TOP__top__DOT__genblk1__BRA__20__KET____DOT__queue_block__3(Vtop_queue_new* vlSelf) {
-    if (false && vlSelf) {}  // Prevent unused
-    Vtop__Syms* const __restrict vlSymsp VL_ATTR_UNUSED = vlSelf->vlSymsp;
-    VL_DEBUG_IF(VL_DBG_MSGF("+        Vtop_queue_new___sequent__TOP__top__DOT__genblk1__BRA__20__KET____DOT__queue_block__3\n"); );
-    // Body
-    if (vlSymsp->TOP.reset) {
-        vlSelf->__Vdly__counter = 0U;
-        vlSelf->__Vdlyvset__colour_queue__v0 = 1U;
-    } else if (((vlSymsp->TOP.top__DOT__fin_bus >> 0x14U) 
-                & (vlSymsp->TOP.top__DOT__xpixel_bus
-                   [0x14U] != (IData)(vlSelf->__PVT__prev_xpixel)))) {
-        vlSelf->__Vlvbound_he6b57a3a__0 = vlSymsp->TOP.top__DOT__colour_bus_i
-            [0x14U];
-        vlSelf->__PVT__prev_xpixel = vlSymsp->TOP.top__DOT__xpixel_bus
-            [0x14U];
-        vlSelf->__Vlvbound_ha6a48450__0 = vlSymsp->TOP.top__DOT__xpixel_bus
-            [0x14U];
-        vlSelf->__Vlvbound_hb8aa41f5__0 = vlSymsp->TOP.top__DOT__ypixel_bus
-            [0x14U];
-        if ((9U >= (IData)(vlSelf->__PVT__counter))) {
-            vlSelf->__Vdlyvval__colour_queue__v10 = vlSelf->__Vlvbound_he6b57a3a__0;
-            vlSelf->__Vdlyvset__colour_queue__v10 = 1U;
-            vlSelf->__Vdlyvdim0__colour_queue__v10 
-                = vlSelf->__PVT__counter;
-        }
-        if ((9U >= (IData)(vlSelf->__PVT__counter))) {
-            vlSelf->__Vdlyvval__xqueue__v10 = vlSelf->__Vlvbound_ha6a48450__0;
-            vlSelf->__Vdlyvset__xqueue__v10 = 1U;
-            vlSelf->__Vdlyvdim0__xqueue__v10 = vlSelf->__PVT__counter;
-        }
-        if ((9U >= (IData)(vlSelf->__PVT__counter))) {
-            vlSelf->__Vdlyvval__yqueue__v10 = vlSelf->__Vlvbound_hb8aa41f5__0;
-            vlSelf->__Vdlyvset__yqueue__v10 = 1U;
-            vlSelf->__Vdlyvdim0__yqueue__v10 = vlSelf->__PVT__counter;
-        }
-        vlSelf->__Vdly__counter = (0xfU & ((IData)(1U) 
-                                           + (IData)(vlSelf->__PVT__counter)));
-    }
-}
-
-VL_INLINE_OPT void Vtop_queue_new___sequent__TOP__top__DOT__genblk1__BRA__21__KET____DOT__queue_block__3(Vtop_queue_new* vlSelf) {
-    if (false && vlSelf) {}  // Prevent unused
-    Vtop__Syms* const __restrict vlSymsp VL_ATTR_UNUSED = vlSelf->vlSymsp;
-    VL_DEBUG_IF(VL_DBG_MSGF("+        Vtop_queue_new___sequent__TOP__top__DOT__genblk1__BRA__21__KET____DOT__queue_block__3\n"); );
-    // Body
-    if (vlSymsp->TOP.reset) {
-        vlSelf->__Vdly__counter = 0U;
-        vlSelf->__Vdlyvset__colour_queue__v0 = 1U;
-    } else if (((vlSymsp->TOP.top__DOT__fin_bus >> 0x15U) 
-                & (vlSymsp->TOP.top__DOT__xpixel_bus
-                   [0x15U] != (IData)(vlSelf->__PVT__prev_xpixel)))) {
-        vlSelf->__Vlvbound_he6b57a3a__0 = vlSymsp->TOP.top__DOT__colour_bus_i
-            [0x15U];
-        vlSelf->__PVT__prev_xpixel = vlSymsp->TOP.top__DOT__xpixel_bus
-            [0x15U];
-        vlSelf->__Vlvbound_ha6a48450__0 = vlSymsp->TOP.top__DOT__xpixel_bus
-            [0x15U];
-        vlSelf->__Vlvbound_hb8aa41f5__0 = vlSymsp->TOP.top__DOT__ypixel_bus
-            [0x15U];
-        if ((9U >= (IData)(vlSelf->__PVT__counter))) {
-            vlSelf->__Vdlyvval__colour_queue__v10 = vlSelf->__Vlvbound_he6b57a3a__0;
-            vlSelf->__Vdlyvset__colour_queue__v10 = 1U;
-            vlSelf->__Vdlyvdim0__colour_queue__v10 
-                = vlSelf->__PVT__counter;
-        }
-        if ((9U >= (IData)(vlSelf->__PVT__counter))) {
-            vlSelf->__Vdlyvval__xqueue__v10 = vlSelf->__Vlvbound_ha6a48450__0;
-            vlSelf->__Vdlyvset__xqueue__v10 = 1U;
-            vlSelf->__Vdlyvdim0__xqueue__v10 = vlSelf->__PVT__counter;
-        }
-        if ((9U >= (IData)(vlSelf->__PVT__counter))) {
-            vlSelf->__Vdlyvval__yqueue__v10 = vlSelf->__Vlvbound_hb8aa41f5__0;
-            vlSelf->__Vdlyvset__yqueue__v10 = 1U;
-            vlSelf->__Vdlyvdim0__yqueue__v10 = vlSelf->__PVT__counter;
-        }
-        vlSelf->__Vdly__counter = (0xfU & ((IData)(1U) 
-                                           + (IData)(vlSelf->__PVT__counter)));
-    }
-}
-
-VL_INLINE_OPT void Vtop_queue_new___sequent__TOP__top__DOT__genblk1__BRA__22__KET____DOT__queue_block__3(Vtop_queue_new* vlSelf) {
-    if (false && vlSelf) {}  // Prevent unused
-    Vtop__Syms* const __restrict vlSymsp VL_ATTR_UNUSED = vlSelf->vlSymsp;
-    VL_DEBUG_IF(VL_DBG_MSGF("+        Vtop_queue_new___sequent__TOP__top__DOT__genblk1__BRA__22__KET____DOT__queue_block__3\n"); );
-    // Body
-    if (vlSymsp->TOP.reset) {
-        vlSelf->__Vdly__counter = 0U;
-        vlSelf->__Vdlyvset__colour_queue__v0 = 1U;
-    } else if (((vlSymsp->TOP.top__DOT__fin_bus >> 0x16U) 
-                & (vlSymsp->TOP.top__DOT__xpixel_bus
-                   [0x16U] != (IData)(vlSelf->__PVT__prev_xpixel)))) {
-        vlSelf->__Vlvbound_he6b57a3a__0 = vlSymsp->TOP.top__DOT__colour_bus_i
-            [0x16U];
-        vlSelf->__PVT__prev_xpixel = vlSymsp->TOP.top__DOT__xpixel_bus
-            [0x16U];
-        vlSelf->__Vlvbound_ha6a48450__0 = vlSymsp->TOP.top__DOT__xpixel_bus
-            [0x16U];
-        vlSelf->__Vlvbound_hb8aa41f5__0 = vlSymsp->TOP.top__DOT__ypixel_bus
-            [0x16U];
-        if ((9U >= (IData)(vlSelf->__PVT__counter))) {
-            vlSelf->__Vdlyvval__colour_queue__v10 = vlSelf->__Vlvbound_he6b57a3a__0;
-            vlSelf->__Vdlyvset__colour_queue__v10 = 1U;
-            vlSelf->__Vdlyvdim0__colour_queue__v10 
-                = vlSelf->__PVT__counter;
-        }
-        if ((9U >= (IData)(vlSelf->__PVT__counter))) {
-            vlSelf->__Vdlyvval__xqueue__v10 = vlSelf->__Vlvbound_ha6a48450__0;
-            vlSelf->__Vdlyvset__xqueue__v10 = 1U;
-            vlSelf->__Vdlyvdim0__xqueue__v10 = vlSelf->__PVT__counter;
-        }
-        if ((9U >= (IData)(vlSelf->__PVT__counter))) {
-            vlSelf->__Vdlyvval__yqueue__v10 = vlSelf->__Vlvbound_hb8aa41f5__0;
-            vlSelf->__Vdlyvset__yqueue__v10 = 1U;
-            vlSelf->__Vdlyvdim0__yqueue__v10 = vlSelf->__PVT__counter;
-        }
-        vlSelf->__Vdly__counter = (0xfU & ((IData)(1U) 
-                                           + (IData)(vlSelf->__PVT__counter)));
-    }
-}
-
-VL_INLINE_OPT void Vtop_queue_new___sequent__TOP__top__DOT__genblk1__BRA__23__KET____DOT__queue_block__3(Vtop_queue_new* vlSelf) {
-    if (false && vlSelf) {}  // Prevent unused
-    Vtop__Syms* const __restrict vlSymsp VL_ATTR_UNUSED = vlSelf->vlSymsp;
-    VL_DEBUG_IF(VL_DBG_MSGF("+        Vtop_queue_new___sequent__TOP__top__DOT__genblk1__BRA__23__KET____DOT__queue_block__3\n"); );
-    // Body
-    if (vlSymsp->TOP.reset) {
-        vlSelf->__Vdly__counter = 0U;
-        vlSelf->__Vdlyvset__colour_queue__v0 = 1U;
-    } else if (((vlSymsp->TOP.top__DOT__fin_bus >> 0x17U) 
-                & (vlSymsp->TOP.top__DOT__xpixel_bus
-                   [0x17U] != (IData)(vlSelf->__PVT__prev_xpixel)))) {
-        vlSelf->__Vlvbound_he6b57a3a__0 = vlSymsp->TOP.top__DOT__colour_bus_i
-            [0x17U];
-        vlSelf->__PVT__prev_xpixel = vlSymsp->TOP.top__DOT__xpixel_bus
-            [0x17U];
-        vlSelf->__Vlvbound_ha6a48450__0 = vlSymsp->TOP.top__DOT__xpixel_bus
-            [0x17U];
-        vlSelf->__Vlvbound_hb8aa41f5__0 = vlSymsp->TOP.top__DOT__ypixel_bus
-            [0x17U];
-        if ((9U >= (IData)(vlSelf->__PVT__counter))) {
-            vlSelf->__Vdlyvval__colour_queue__v10 = vlSelf->__Vlvbound_he6b57a3a__0;
-            vlSelf->__Vdlyvset__colour_queue__v10 = 1U;
-            vlSelf->__Vdlyvdim0__colour_queue__v10 
-                = vlSelf->__PVT__counter;
-        }
-        if ((9U >= (IData)(vlSelf->__PVT__counter))) {
-            vlSelf->__Vdlyvval__xqueue__v10 = vlSelf->__Vlvbound_ha6a48450__0;
-            vlSelf->__Vdlyvset__xqueue__v10 = 1U;
-            vlSelf->__Vdlyvdim0__xqueue__v10 = vlSelf->__PVT__counter;
-        }
-        if ((9U >= (IData)(vlSelf->__PVT__counter))) {
-            vlSelf->__Vdlyvval__yqueue__v10 = vlSelf->__Vlvbound_hb8aa41f5__0;
-            vlSelf->__Vdlyvset__yqueue__v10 = 1U;
-            vlSelf->__Vdlyvdim0__yqueue__v10 = vlSelf->__PVT__counter;
-        }
-        vlSelf->__Vdly__counter = (0xfU & ((IData)(1U) 
-                                           + (IData)(vlSelf->__PVT__counter)));
-    }
-}
-
-VL_INLINE_OPT void Vtop_queue_new___sequent__TOP__top__DOT__genblk1__BRA__24__KET____DOT__queue_block__3(Vtop_queue_new* vlSelf) {
-    if (false && vlSelf) {}  // Prevent unused
-    Vtop__Syms* const __restrict vlSymsp VL_ATTR_UNUSED = vlSelf->vlSymsp;
-    VL_DEBUG_IF(VL_DBG_MSGF("+        Vtop_queue_new___sequent__TOP__top__DOT__genblk1__BRA__24__KET____DOT__queue_block__3\n"); );
-    // Body
-    if (vlSymsp->TOP.reset) {
-        vlSelf->__Vdly__counter = 0U;
-        vlSelf->__Vdlyvset__colour_queue__v0 = 1U;
-    } else if (((vlSymsp->TOP.top__DOT__fin_bus >> 0x18U) 
-                & (vlSymsp->TOP.top__DOT__xpixel_bus
-                   [0x18U] != (IData)(vlSelf->__PVT__prev_xpixel)))) {
-        vlSelf->__Vlvbound_he6b57a3a__0 = vlSymsp->TOP.top__DOT__colour_bus_i
-            [0x18U];
-        vlSelf->__PVT__prev_xpixel = vlSymsp->TOP.top__DOT__xpixel_bus
-            [0x18U];
-        vlSelf->__Vlvbound_ha6a48450__0 = vlSymsp->TOP.top__DOT__xpixel_bus
-            [0x18U];
-        vlSelf->__Vlvbound_hb8aa41f5__0 = vlSymsp->TOP.top__DOT__ypixel_bus
-            [0x18U];
-        if ((9U >= (IData)(vlSelf->__PVT__counter))) {
-            vlSelf->__Vdlyvval__colour_queue__v10 = vlSelf->__Vlvbound_he6b57a3a__0;
-            vlSelf->__Vdlyvset__colour_queue__v10 = 1U;
-            vlSelf->__Vdlyvdim0__colour_queue__v10 
-                = vlSelf->__PVT__counter;
-        }
-        if ((9U >= (IData)(vlSelf->__PVT__counter))) {
-            vlSelf->__Vdlyvval__xqueue__v10 = vlSelf->__Vlvbound_ha6a48450__0;
-            vlSelf->__Vdlyvset__xqueue__v10 = 1U;
-            vlSelf->__Vdlyvdim0__xqueue__v10 = vlSelf->__PVT__counter;
-        }
-        if ((9U >= (IData)(vlSelf->__PVT__counter))) {
-            vlSelf->__Vdlyvval__yqueue__v10 = vlSelf->__Vlvbound_hb8aa41f5__0;
-            vlSelf->__Vdlyvset__yqueue__v10 = 1U;
-            vlSelf->__Vdlyvdim0__yqueue__v10 = vlSelf->__PVT__counter;
-        }
-        vlSelf->__Vdly__counter = (0xfU & ((IData)(1U) 
-                                           + (IData)(vlSelf->__PVT__counter)));
-    }
-}
-
-VL_INLINE_OPT void Vtop_queue_new___sequent__TOP__top__DOT__genblk1__BRA__25__KET____DOT__queue_block__3(Vtop_queue_new* vlSelf) {
-    if (false && vlSelf) {}  // Prevent unused
-    Vtop__Syms* const __restrict vlSymsp VL_ATTR_UNUSED = vlSelf->vlSymsp;
-    VL_DEBUG_IF(VL_DBG_MSGF("+        Vtop_queue_new___sequent__TOP__top__DOT__genblk1__BRA__25__KET____DOT__queue_block__3\n"); );
-    // Body
-    if (vlSymsp->TOP.reset) {
-        vlSelf->__Vdly__counter = 0U;
-        vlSelf->__Vdlyvset__colour_queue__v0 = 1U;
-    } else if (((vlSymsp->TOP.top__DOT__fin_bus >> 0x19U) 
-                & (vlSymsp->TOP.top__DOT__xpixel_bus
-                   [0x19U] != (IData)(vlSelf->__PVT__prev_xpixel)))) {
-        vlSelf->__Vlvbound_he6b57a3a__0 = vlSymsp->TOP.top__DOT__colour_bus_i
-            [0x19U];
-        vlSelf->__PVT__prev_xpixel = vlSymsp->TOP.top__DOT__xpixel_bus
-            [0x19U];
-        vlSelf->__Vlvbound_ha6a48450__0 = vlSymsp->TOP.top__DOT__xpixel_bus
-            [0x19U];
-        vlSelf->__Vlvbound_hb8aa41f5__0 = vlSymsp->TOP.top__DOT__ypixel_bus
-            [0x19U];
-        if ((9U >= (IData)(vlSelf->__PVT__counter))) {
-            vlSelf->__Vdlyvval__colour_queue__v10 = vlSelf->__Vlvbound_he6b57a3a__0;
-            vlSelf->__Vdlyvset__colour_queue__v10 = 1U;
-            vlSelf->__Vdlyvdim0__colour_queue__v10 
-                = vlSelf->__PVT__counter;
-        }
-        if ((9U >= (IData)(vlSelf->__PVT__counter))) {
-            vlSelf->__Vdlyvval__xqueue__v10 = vlSelf->__Vlvbound_ha6a48450__0;
-            vlSelf->__Vdlyvset__xqueue__v10 = 1U;
-            vlSelf->__Vdlyvdim0__xqueue__v10 = vlSelf->__PVT__counter;
-        }
-        if ((9U >= (IData)(vlSelf->__PVT__counter))) {
-            vlSelf->__Vdlyvval__yqueue__v10 = vlSelf->__Vlvbound_hb8aa41f5__0;
-            vlSelf->__Vdlyvset__yqueue__v10 = 1U;
-            vlSelf->__Vdlyvdim0__yqueue__v10 = vlSelf->__PVT__counter;
-        }
-        vlSelf->__Vdly__counter = (0xfU & ((IData)(1U) 
-                                           + (IData)(vlSelf->__PVT__counter)));
-    }
-}
-
-VL_INLINE_OPT void Vtop_queue_new___sequent__TOP__top__DOT__genblk1__BRA__26__KET____DOT__queue_block__3(Vtop_queue_new* vlSelf) {
-    if (false && vlSelf) {}  // Prevent unused
-    Vtop__Syms* const __restrict vlSymsp VL_ATTR_UNUSED = vlSelf->vlSymsp;
-    VL_DEBUG_IF(VL_DBG_MSGF("+        Vtop_queue_new___sequent__TOP__top__DOT__genblk1__BRA__26__KET____DOT__queue_block__3\n"); );
-    // Body
-    if (vlSymsp->TOP.reset) {
-        vlSelf->__Vdly__counter = 0U;
-        vlSelf->__Vdlyvset__colour_queue__v0 = 1U;
-    } else if (((vlSymsp->TOP.top__DOT__fin_bus >> 0x1aU) 
-                & (vlSymsp->TOP.top__DOT__xpixel_bus
-                   [0x1aU] != (IData)(vlSelf->__PVT__prev_xpixel)))) {
-        vlSelf->__Vlvbound_he6b57a3a__0 = vlSymsp->TOP.top__DOT__colour_bus_i
-            [0x1aU];
-        vlSelf->__PVT__prev_xpixel = vlSymsp->TOP.top__DOT__xpixel_bus
-            [0x1aU];
-        vlSelf->__Vlvbound_ha6a48450__0 = vlSymsp->TOP.top__DOT__xpixel_bus
-            [0x1aU];
-        vlSelf->__Vlvbound_hb8aa41f5__0 = vlSymsp->TOP.top__DOT__ypixel_bus
-            [0x1aU];
-        if ((9U >= (IData)(vlSelf->__PVT__counter))) {
-            vlSelf->__Vdlyvval__colour_queue__v10 = vlSelf->__Vlvbound_he6b57a3a__0;
-            vlSelf->__Vdlyvset__colour_queue__v10 = 1U;
-            vlSelf->__Vdlyvdim0__colour_queue__v10 
-                = vlSelf->__PVT__counter;
-        }
-        if ((9U >= (IData)(vlSelf->__PVT__counter))) {
-            vlSelf->__Vdlyvval__xqueue__v10 = vlSelf->__Vlvbound_ha6a48450__0;
-            vlSelf->__Vdlyvset__xqueue__v10 = 1U;
-            vlSelf->__Vdlyvdim0__xqueue__v10 = vlSelf->__PVT__counter;
-        }
-        if ((9U >= (IData)(vlSelf->__PVT__counter))) {
-            vlSelf->__Vdlyvval__yqueue__v10 = vlSelf->__Vlvbound_hb8aa41f5__0;
-            vlSelf->__Vdlyvset__yqueue__v10 = 1U;
-            vlSelf->__Vdlyvdim0__yqueue__v10 = vlSelf->__PVT__counter;
-        }
-        vlSelf->__Vdly__counter = (0xfU & ((IData)(1U) 
-                                           + (IData)(vlSelf->__PVT__counter)));
-    }
-}
-
-VL_INLINE_OPT void Vtop_queue_new___sequent__TOP__top__DOT__genblk1__BRA__27__KET____DOT__queue_block__3(Vtop_queue_new* vlSelf) {
-    if (false && vlSelf) {}  // Prevent unused
-    Vtop__Syms* const __restrict vlSymsp VL_ATTR_UNUSED = vlSelf->vlSymsp;
-    VL_DEBUG_IF(VL_DBG_MSGF("+        Vtop_queue_new___sequent__TOP__top__DOT__genblk1__BRA__27__KET____DOT__queue_block__3\n"); );
-    // Body
-    if (vlSymsp->TOP.reset) {
-        vlSelf->__Vdly__counter = 0U;
-        vlSelf->__Vdlyvset__colour_queue__v0 = 1U;
-    } else if (((vlSymsp->TOP.top__DOT__fin_bus >> 0x1bU) 
-                & (vlSymsp->TOP.top__DOT__xpixel_bus
-                   [0x1bU] != (IData)(vlSelf->__PVT__prev_xpixel)))) {
-        vlSelf->__Vlvbound_he6b57a3a__0 = vlSymsp->TOP.top__DOT__colour_bus_i
-            [0x1bU];
-        vlSelf->__PVT__prev_xpixel = vlSymsp->TOP.top__DOT__xpixel_bus
-            [0x1bU];
-        vlSelf->__Vlvbound_ha6a48450__0 = vlSymsp->TOP.top__DOT__xpixel_bus
-            [0x1bU];
-        vlSelf->__Vlvbound_hb8aa41f5__0 = vlSymsp->TOP.top__DOT__ypixel_bus
-            [0x1bU];
-        if ((9U >= (IData)(vlSelf->__PVT__counter))) {
-            vlSelf->__Vdlyvval__colour_queue__v10 = vlSelf->__Vlvbound_he6b57a3a__0;
-            vlSelf->__Vdlyvset__colour_queue__v10 = 1U;
-            vlSelf->__Vdlyvdim0__colour_queue__v10 
-                = vlSelf->__PVT__counter;
-        }
-        if ((9U >= (IData)(vlSelf->__PVT__counter))) {
-            vlSelf->__Vdlyvval__xqueue__v10 = vlSelf->__Vlvbound_ha6a48450__0;
-            vlSelf->__Vdlyvset__xqueue__v10 = 1U;
-            vlSelf->__Vdlyvdim0__xqueue__v10 = vlSelf->__PVT__counter;
-        }
-        if ((9U >= (IData)(vlSelf->__PVT__counter))) {
-            vlSelf->__Vdlyvval__yqueue__v10 = vlSelf->__Vlvbound_hb8aa41f5__0;
-            vlSelf->__Vdlyvset__yqueue__v10 = 1U;
-            vlSelf->__Vdlyvdim0__yqueue__v10 = vlSelf->__PVT__counter;
-        }
-        vlSelf->__Vdly__counter = (0xfU & ((IData)(1U) 
-                                           + (IData)(vlSelf->__PVT__counter)));
-    }
-}
-
-VL_INLINE_OPT void Vtop_queue_new___sequent__TOP__top__DOT__genblk1__BRA__28__KET____DOT__queue_block__3(Vtop_queue_new* vlSelf) {
-    if (false && vlSelf) {}  // Prevent unused
-    Vtop__Syms* const __restrict vlSymsp VL_ATTR_UNUSED = vlSelf->vlSymsp;
-    VL_DEBUG_IF(VL_DBG_MSGF("+        Vtop_queue_new___sequent__TOP__top__DOT__genblk1__BRA__28__KET____DOT__queue_block__3\n"); );
-    // Body
-    if (vlSymsp->TOP.reset) {
-        vlSelf->__Vdly__counter = 0U;
-        vlSelf->__Vdlyvset__colour_queue__v0 = 1U;
-    } else if (((vlSymsp->TOP.top__DOT__fin_bus >> 0x1cU) 
-                & (vlSymsp->TOP.top__DOT__xpixel_bus
-                   [0x1cU] != (IData)(vlSelf->__PVT__prev_xpixel)))) {
-        vlSelf->__Vlvbound_he6b57a3a__0 = vlSymsp->TOP.top__DOT__colour_bus_i
-            [0x1cU];
-        vlSelf->__PVT__prev_xpixel = vlSymsp->TOP.top__DOT__xpixel_bus
-            [0x1cU];
-        vlSelf->__Vlvbound_ha6a48450__0 = vlSymsp->TOP.top__DOT__xpixel_bus
-            [0x1cU];
-        vlSelf->__Vlvbound_hb8aa41f5__0 = vlSymsp->TOP.top__DOT__ypixel_bus
-            [0x1cU];
-        if ((9U >= (IData)(vlSelf->__PVT__counter))) {
-            vlSelf->__Vdlyvval__colour_queue__v10 = vlSelf->__Vlvbound_he6b57a3a__0;
-            vlSelf->__Vdlyvset__colour_queue__v10 = 1U;
-            vlSelf->__Vdlyvdim0__colour_queue__v10 
-                = vlSelf->__PVT__counter;
-        }
-        if ((9U >= (IData)(vlSelf->__PVT__counter))) {
-            vlSelf->__Vdlyvval__xqueue__v10 = vlSelf->__Vlvbound_ha6a48450__0;
-            vlSelf->__Vdlyvset__xqueue__v10 = 1U;
-            vlSelf->__Vdlyvdim0__xqueue__v10 = vlSelf->__PVT__counter;
-        }
-        if ((9U >= (IData)(vlSelf->__PVT__counter))) {
-            vlSelf->__Vdlyvval__yqueue__v10 = vlSelf->__Vlvbound_hb8aa41f5__0;
-            vlSelf->__Vdlyvset__yqueue__v10 = 1U;
-            vlSelf->__Vdlyvdim0__yqueue__v10 = vlSelf->__PVT__counter;
-        }
-        vlSelf->__Vdly__counter = (0xfU & ((IData)(1U) 
-                                           + (IData)(vlSelf->__PVT__counter)));
-    }
-}
-
-VL_INLINE_OPT void Vtop_queue_new___sequent__TOP__top__DOT__genblk1__BRA__29__KET____DOT__queue_block__3(Vtop_queue_new* vlSelf) {
-    if (false && vlSelf) {}  // Prevent unused
-    Vtop__Syms* const __restrict vlSymsp VL_ATTR_UNUSED = vlSelf->vlSymsp;
-    VL_DEBUG_IF(VL_DBG_MSGF("+        Vtop_queue_new___sequent__TOP__top__DOT__genblk1__BRA__29__KET____DOT__queue_block__3\n"); );
-    // Body
-    if (vlSymsp->TOP.reset) {
-        vlSelf->__Vdly__counter = 0U;
-        vlSelf->__Vdlyvset__colour_queue__v0 = 1U;
-    } else if (((vlSymsp->TOP.top__DOT__fin_bus >> 0x1dU) 
-                & (vlSymsp->TOP.top__DOT__xpixel_bus
-                   [0x1dU] != (IData)(vlSelf->__PVT__prev_xpixel)))) {
-        vlSelf->__Vlvbound_he6b57a3a__0 = vlSymsp->TOP.top__DOT__colour_bus_i
-            [0x1dU];
-        vlSelf->__PVT__prev_xpixel = vlSymsp->TOP.top__DOT__xpixel_bus
-            [0x1dU];
-        vlSelf->__Vlvbound_ha6a48450__0 = vlSymsp->TOP.top__DOT__xpixel_bus
-            [0x1dU];
-        vlSelf->__Vlvbound_hb8aa41f5__0 = vlSymsp->TOP.top__DOT__ypixel_bus
-            [0x1dU];
         if ((9U >= (IData)(vlSelf->__PVT__counter))) {
             vlSelf->__Vdlyvval__colour_queue__v10 = vlSelf->__Vlvbound_he6b57a3a__0;
             vlSelf->__Vdlyvset__colour_queue__v10 = 1U;

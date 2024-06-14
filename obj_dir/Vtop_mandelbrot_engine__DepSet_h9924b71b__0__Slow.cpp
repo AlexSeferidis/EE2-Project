@@ -6,6 +6,14 @@
 
 #include "Vtop_mandelbrot_engine.h"
 
+VL_ATTR_COLD void Vtop_mandelbrot_engine___initial__TOP__top__DOT__genblk1__BRA__0__KET____DOT__engine__0(Vtop_mandelbrot_engine* vlSelf) {
+    if (false && vlSelf) {}  // Prevent unused
+    Vtop__Syms* const __restrict vlSymsp VL_ATTR_UNUSED = vlSelf->vlSymsp;
+    VL_DEBUG_IF(VL_DBG_MSGF("+        Vtop_mandelbrot_engine___initial__TOP__top__DOT__genblk1__BRA__0__KET____DOT__engine__0\n"); );
+    // Body
+    vlSelf->xpixel = 0x3ffU;
+}
+
 VL_ATTR_COLD void Vtop_mandelbrot_engine___ctor_var_reset(Vtop_mandelbrot_engine* vlSelf) {
     if (false && vlSelf) {}  // Prevent unused
     Vtop__Syms* const __restrict vlSymsp VL_ATTR_UNUSED = vlSelf->vlSymsp;
