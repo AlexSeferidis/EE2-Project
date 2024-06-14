@@ -4,43 +4,41 @@
 // Internal details; most calling programs do not need this header,
 // unless using verilator public meta comments.
 
-#ifndef VERILATED_VTOP__SYMS_H_
-#define VERILATED_VTOP__SYMS_H_  // guard
+#ifndef _VTOP__SYMS_H_
+#define _VTOP__SYMS_H_  // guard
 
-#include "verilated.h"
-
-// INCLUDE MODEL CLASS
-
-#include "Vtop.h"
+#include "verilated_heavy.h"
 
 // INCLUDE MODULE CLASSES
-#include "Vtop___024root.h"
+#include "Vtop.h"
 #include "Vtop_mandelbrot_engine.h"
 
-// SYMS CLASS (contains all model state)
-class Vtop__Syms final : public VerilatedSyms {
+// SYMS CLASS
+class Vtop__Syms : public VerilatedSyms {
   public:
-    // INTERNAL STATE
-    Vtop* const __Vm_modelp;
-    bool __Vm_activity = false;  ///< Used by trace routines to determine change occurred
-    uint32_t __Vm_baseCode = 0;  ///< Used by trace routines when tracing multiple models
-    bool __Vm_didInit = false;
-
-    // MODULE INSTANCE STATE
-    Vtop___024root                 TOP;
+    
+    // LOCAL STATE
+    const char* __Vm_namep;
+    bool __Vm_activity;  ///< Used by trace routines to determine change occurred
+    uint32_t __Vm_baseCode;  ///< Used by trace routines when tracing multiple models
+    bool __Vm_didInit;
+    
+    // SUBCELL STATE
+    Vtop*                          TOPp;
     Vtop_mandelbrot_engine         TOP__top__DOT__genblk1__BRA__0__KET____DOT__engine;
     Vtop_mandelbrot_engine         TOP__top__DOT__genblk1__BRA__1__KET____DOT__engine;
     Vtop_mandelbrot_engine         TOP__top__DOT__genblk1__BRA__2__KET____DOT__engine;
     Vtop_mandelbrot_engine         TOP__top__DOT__genblk1__BRA__3__KET____DOT__engine;
     Vtop_mandelbrot_engine         TOP__top__DOT__genblk1__BRA__4__KET____DOT__engine;
     Vtop_mandelbrot_engine         TOP__top__DOT__genblk1__BRA__5__KET____DOT__engine;
-
-    // CONSTRUCTORS
-    Vtop__Syms(VerilatedContext* contextp, const char* namep, Vtop* modelp);
-    ~Vtop__Syms();
-
+    
+    // CREATORS
+    Vtop__Syms(Vtop* topp, const char* namep);
+    ~Vtop__Syms() {}
+    
     // METHODS
-    const char* name() { return TOP.name(); }
+    inline const char* name() { return __Vm_namep; }
+    
 } VL_ATTR_ALIGNED(VL_CACHE_LINE_BYTES);
 
 #endif  // guard
