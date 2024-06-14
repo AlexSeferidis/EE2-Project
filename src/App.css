@@ -1,15 +1,15 @@
 :root {
   --mode-swap: 0.5s ease;
-  --primary: #ff6f3c;
-  --secondary: #ff9a3c;
-  --accent: #ffc93c;
-  --neutral: #155263;
-  --base100: #111827;
+  --primary: #42b883;
+  --secondary: #347474;
+  --accent: #ff7e67;
+  --neutral: #35495e;
+  --base100: #004445;
   --info: #fcd34d;
   --success: #7fff00;
   --warning: #fb923c;
   --error: #f87171;
-  --text: lightgrey;
+  --text: #f5f9ee;
 }
 
 /* Scrollbar styles */
@@ -43,6 +43,12 @@
   color: var(--primary);
   padding-left: 20px;
   padding-right: 20px;
+  margin-top: -20px;
+  padding-bottom:-20px;
+  background-color: var(--secondary);
+  border-bottom: solid;
+  border-color: var(--accent);
+  margin:
 }
 
 .Param-area {
@@ -83,12 +89,12 @@
 }
 
 .Num-box {
-  color: var(--secondary);
+  color: var(--primary);
   font-size: calc(6px + 2vmin);
   font-weight: bold;
   display: flex;
   justify-content: space-between;
-  width: 100%;
+  width: 74%;
   padding: 10px;
 }
 
@@ -96,7 +102,9 @@
 } */
 
 .Num-box-input {
+  color: var(--secondary);
   font-size: calc(2vmin);
+  margin-right: 20px;
 }
 
 .dbButtonContainer{
@@ -104,7 +112,7 @@
   flex-direction: row;
   align-items: center;
   justify-content: center;
-  
+  margin-top: 10px;
 }
 .dbButton{
   align-items: "center";
@@ -112,7 +120,7 @@
   padding: 10px;
   margin: 5px;
   border-radius: 8px;
-  background-color: var(--neutral);
+  background-color: var(--accent);
 }
 
 .errorMessage{
@@ -142,6 +150,7 @@ table {
   max-width: 50vw;
   
   margin: 10px;
+  margin-top: 20px;
   
 }
 th, td{
@@ -155,6 +164,13 @@ th, td{
 }
 
 .scrollBox{
+  display: flex;
+  justify-content: center;
+  align-items: center;
   max-height: 40vh;
   overflow-y: scroll;
+}
+
+.verticalLine {
+  border-left: thick solid var(--accent);
 }

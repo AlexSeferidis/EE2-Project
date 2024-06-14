@@ -113,11 +113,11 @@ const GetPost = ({ x, y, zoom, maxItr, updateParameters }) => {
     setTimeout(fetchData, refreshDelay);
   };
 
-  const deleteId = () => {
+  const deleteId = (id) => {
     setLoading(true);
     setError(null);
 
-    fetch(`http://ec2-18-130-114-167.eu-west-2.compute.amazonaws.com:8080/parameters`, { method: 'DELETE' })
+    fetch(`http://ec2-18-130-114-167.eu-west-2.compute.amazonaws.com:8080/parameters/${id}`, { method: 'DELETE' })
       .then(response => {
         if (!response.ok) {
           throw new Error('Network response was not ok');
@@ -125,7 +125,7 @@ const GetPost = ({ x, y, zoom, maxItr, updateParameters }) => {
       })
       .then(() => {
         setLoading(false);
-        setSuccessMessage('All parameters deleted successfully');
+        setSuccessMessage(`Parameter ${id} deleted successfully`);
         clearHideMessageTimeout();
         hideMessageAfterDelay();
       })
@@ -196,15 +196,17 @@ const GetPost = ({ x, y, zoom, maxItr, updateParameters }) => {
               </thead>
               <tbody>
                 {parameterIds.map((id, index) => (
-                  <tr key={index} onClick={() => handleClick(data[index])} style={{ cursor: 'pointer' }}>
-                    <td>{id}</td>
+                  <tr key={index}>
+                    <td onClick={() => handleClick(data[index])} style={{ cursor: 'pointer' }}>{id}</td>
                     {data && data[index] && (
                       <>
-                        <td>{data[index].x_offset}</td>
-                        <td>{data[index].y_offset}</td>
-                        <td>{data[index].zoom}</td>
-                        <td>{data[index].max_iterations}</td>
-                        <td className="deleterCell">X</td>
+                        <td onClick={() => handleClick(data[index])} style={{ cursor: 'pointer' }}>{data[index].x_offset}</td>
+                        <td onClick={() => handleClick(data[index])} style={{ cursor: 'pointer' }}>{data[index].y_offset}</td>
+                        <td onClick={() => handleClick(data[index])} style={{ cursor: 'pointer' }}>{data[index].zoom}</td>
+                        <td onClick={() => handleClick(data[index])} style={{ cursor: 'pointer' }}>{data[index].max_iterations}</td>
+                        <td className="deleterCell">
+                          <Pressable onPress={() => deleteId(id)}>X</Pressable>
+                        </td>
                       </>
                     )}
                   </tr>

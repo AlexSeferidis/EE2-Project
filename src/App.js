@@ -49,6 +49,9 @@ const App = () => {
             <GetPost x={x} y={y} zoom={zoom} maxItr={maxItr} updateParameters={updateParameters} />
           </div>
         </div>
+        <div className="verticalLine">
+          
+        </div>
         <div className="MandelbrotViewport">
           <MandelbrotViewer x={x} y={y} zoom={zoom} maxItr={maxItr} />
         </div>
