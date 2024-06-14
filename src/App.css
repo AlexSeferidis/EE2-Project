@@ -1,16 +1,23 @@
 :root {
   --mode-swap: 0.5s ease;
-  --primary: #42b883;
-  --secondary: #347474;
-  --accent: #ff7e67;
-  --neutral: #35495e;
-  --base100: #004445;
+  --primary: #44318D;
+  --secondary: #e779e7;
+  --accent: #D83F87;
+  --neutral: #A4B3B6;
+  --base100: #2A1B3D;
   --info: #fcd34d;
   --success: #7fff00;
   --warning: #fb923c;
   --error: #f87171;
   --text: #f5f9ee;
 }
+
+.tiny5-regular {
+  font-family: "Tiny5", sans-serif;
+  font-weight: 400;
+  font-style: normal;
+}
+
 
 /* Scrollbar styles */
 ::-webkit-scrollbar {
@@ -20,8 +27,9 @@
 .App {
   min-height: 100vh;
   text-align: left;
-  color: var(--text);
   background-color: var(--base100);
+  color: var(--text);
+  font-family: 'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif;
 }
 
 .App-logo {
@@ -39,16 +47,16 @@
   display: flex;
   flex-direction: column;
   align-items: center;
-  font-size: calc(3vmin);
-  color: var(--primary);
+  font-size: calc(10px + 3vmin);
   padding-left: 20px;
   padding-right: 20px;
   margin-top: -20px;
-  padding-bottom:-20px;
+  margin-bottom:-20px;
   background-color: var(--secondary);
   border-bottom: solid;
   border-color: var(--accent);
-  margin:
+  
+  font-family: "Tiny5";
 }
 
 .Param-area {
@@ -62,6 +70,7 @@
   max-height: 640px;
   max-width: 100vw;
   overflow:visible;
+  
 }
 
 .Param-inputs {
@@ -79,17 +88,15 @@
   flex: 1 1 auto;
   padding: 10px;
   max-width: 50%;
-  max-height: width;
+  max-height: 50vw;
   box-sizing: border-box;
-  
+  overflow: hidden;
 }
 
 .Param-entries {
-  color: var(--accent);
 }
 
 .Num-box {
-  color: var(--primary);
   font-size: calc(6px + 2vmin);
   font-weight: bold;
   display: flex;
@@ -102,7 +109,6 @@
 } */
 
 .Num-box-input {
-  color: var(--secondary);
   font-size: calc(2vmin);
   margin-right: 20px;
 }
@@ -128,7 +134,7 @@
   padding: 10px;
   margin: 5px;
   border-radius: 8px;
-  color: var(--base100);
+
   background-color: var(--error);
 }
 .successMessage{
@@ -136,15 +142,15 @@
   padding: 10px;
   margin: 5px;
   border-radius: 8px;
-  color: var(--base100);
+
   background-color: var(--success);
 }
 
 table {
-  background-color: var(--text);
-  color: var(--base100);
+  background-color: var(--primary);
+
   border: 1px solid;
-  border-color: var(--base100);
+  border-color: var(--secondary);
   border-radius: 4px;
   padding: 2px;
   max-width: 50vw;
@@ -154,10 +160,11 @@ table {
   
 }
 th, td{
-  color: var(--base100);
-  border-color: var(--base100);
+
+  border-color: var(--secondary);
   border: 1px solid;
   padding: 3px;
+  font-size: 20px;
 }
 .deleterCell{
   background-color: var(--error);
