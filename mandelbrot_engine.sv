@@ -3,8 +3,10 @@ module mandelbrot_engine #(
                 fp_bits = 32, // internal engine datapath
                 fp_bot = 24,
                 ITERATIONS_WIDTH = 32,
-                SCREEN_WIDTH = 1280,
-                SCREEN_HEIGHT = 720,
+                // SCREEN_WIDTH = 1280,
+                // SCREEN_HEIGHT = 720,
+                SCREEN_WIDTH = 640,
+                SCREEN_HEIGHT = 480,
                 // FRACT_WIDTH = 24,
                 SCALE_FACTOR = 1 << fp_bot
                 

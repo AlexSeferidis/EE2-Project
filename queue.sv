@@ -29,6 +29,8 @@ logic [COUNTER_SIZE-1:0] counter;
 logic [DATA_WIDTH-1:0]  prev_xpixel;
 logic                   fin_wire;
 logic [RBG_SIZE-1:0]    colour_wire;
+logic [DATA_WIDTH-1:0]  xpixel_wire;
+logic [DATA_WIDTH-1:0]  ypixel_wire;
 
 initial begin
     prev_xpixel = -1;
@@ -53,9 +55,11 @@ always_ff@(posedge clk)begin
     end
 
     else begin
-        if((fin_flag)&&(xpixel_i != prev_xpixel))begin
+        if((fin_flag))begin
             fin_wire <= 1;
             colour_wire <= colour_i;
+            xpixel_wire <= xpixel_i;
+            ypixel_wire <= ypixel_i;
         end
            
         if((xpixel_check == xqueue[0])&&(ypixel_check == yqueue[0]))begin
@@ -72,12 +76,12 @@ always_ff@(posedge clk)begin
             counter <= counter - 1;
         end
         
-        else if((fin_wire)&&(xpixel_i != prev_xpixel))begin // if the new incoming xpixel is the same as the previous xpixel, ignore it
+        else if((fin_wire)&&(xpixel_wire != prev_xpixel))begin // if the new incoming xpixel is the same as the previous xpixel, ignore it
             // en <= 1;
-            prev_xpixel <= xpixel_i;
+            prev_xpixel <= xpixel_wire;
             colour_queue[counter] <=  colour_wire;
-            xqueue[counter] <= xpixel_i;
-            yqueue[counter] <= ypixel_i;
+            xqueue[counter] <= xpixel_wire;
+            yqueue[counter] <= ypixel_wire;
             counter <= counter + 1;
             fin_wire <= 0;
         end

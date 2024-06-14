@@ -24,12 +24,19 @@ VM_TRACE_FST = 0
 # Generated module classes, fast-path, compile with highest optimization
 VM_CLASSES_FAST += \
 	Vtop \
+	Vtop___024root__DepSet_h84412442__0 \
 	Vtop___024root__DepSet_heccd7ead__0 \
+	Vtop_queue_new__DepSet_h2d75d6ae__0 \
+	Vtop_queue_new__DepSet_h85b8ac51__0 \
 
 # Generated module classes, non-fast-path, compile with low/medium optimization
 VM_CLASSES_SLOW += \
 	Vtop___024root__Slow \
+	Vtop___024root__DepSet_h84412442__0__Slow \
 	Vtop___024root__DepSet_heccd7ead__0__Slow \
+	Vtop_queue_new__Slow \
+	Vtop_queue_new__DepSet_h2d75d6ae__0__Slow \
+	Vtop_queue_new__DepSet_h85b8ac51__0__Slow \
 
 # Generated support classes, fast-path, compile with highest optimization
 VM_SUPPORT_FAST += \

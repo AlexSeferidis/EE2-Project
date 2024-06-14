@@ -2,8 +2,11 @@ from PIL import Image
 import numpy as np
 
 # Define the resolution of the image
-x_max = 1280
-y_max = 720
+# x_max = 1280
+# y_max = 720
+
+x_max = 640
+y_max = 480
 
 # Read the binary file
 with open("image.data", "rb") as file:

@@ -1,7 +1,7 @@
 module top #(
     parameter   DATA_WIDTH = 32,
                 RBG_SIZE = 24,
-                NUM_ENGINES = 11,
+                NUM_ENGINES = 30,
                 ITERATIONS_WIDTH = 32
 )(
     input logic                         clk,
@@ -26,7 +26,7 @@ logic [RBG_SIZE-1:0]            colour_o_wire;
 
 logic [DATA_WIDTH-1:0]          xpixel_wire;
 logic [DATA_WIDTH-1:0]          ypixel_wire;
-logic [RBG_SIZE-1:0]            colour_wire;
+logic [RBG_SIZE-1:0]            colour_bus_o    [NUM_ENGINES-1:0];
 logic                           reset_engine;
 logic                           fin_wire;
 logic                           en_wire;
@@ -37,10 +37,13 @@ logic [ITERATIONS_WIDTH-1:0]    iterations_bus  [NUM_ENGINES-1:0];
 logic [DATA_WIDTH-1:0]          xpixel_bus      [NUM_ENGINES-1:0];
 logic [DATA_WIDTH-1:0]          ypixel_bus      [NUM_ENGINES-1:0];
 logic [NUM_ENGINES-1:0]         en_bus;
-logic [RBG_SIZE-1:0]            colour_bus      [NUM_ENGINES-1:0];
+logic [RBG_SIZE-1:0]            colour_bus_i      [NUM_ENGINES-1:0];
 logic [NUM_ENGINES-1:0]         full_queue_bus;
+logic [NUM_ENGINES-1:0]         match_bus;
 
 assign en_wire = &en_bus;
+
+int j;
 
 distributorN distributor(
     .clk(clk),
@@ -69,18 +72,19 @@ generate
             .ypixel(ypixel_bus[i])
         ); 
 
-        queue queue_block(
+        queue_new queue_block(
             .clk(clk),
             .reset(reset),
             .fin_flag(fin_bus[i]),
-            .colour_i(colour_bus[i]),
+            .colour_i(colour_bus_i[i]),
             .xpixel_i(xpixel_bus[i]),
             .ypixel_i(ypixel_bus[i]),
             .xpixel_check(xpixel_wire),
             .ypixel_check(ypixel_wire),
-            .colour_o(colour_wire),
+            .colour_o(colour_bus_o[i]),
             .full_queue(full_queue_bus[i]),
-            .en(en_bus[i])
+            .en(en_bus[i]),
+            .match(match_bus[i])
             );
     end
 endgenerate
@@ -88,13 +92,13 @@ endgenerate
 lut lut_rom(
     //.clk(clk),
     .iterations(iterations_bus),
-    .rgb_val(colour_bus)
+    .rgb_val(colour_bus_i)
 );
 
 combinator combinator_block(
     .clk(clk),
     .reset(reset),
-    .colour_i(colour_wire),
+    .colour_i(colour_bus_o[j]),
     .en(en_wire),
     .fin_flag(fin_wire),
     .ready(ready),
@@ -111,6 +115,12 @@ always_comb begin
     r = colour_o_wire[7:0];
     g = colour_o_wire[15:8];
     b = colour_o_wire[23:16];
+
+    for(int k = 0; k < NUM_ENGINES; k++)begin
+        if(match_bus[k])begin
+            j = k;
+        end
+    end
 
     if(fin_bus == {NUM_ENGINES{1'b1}})begin
         fin_wire = 1;

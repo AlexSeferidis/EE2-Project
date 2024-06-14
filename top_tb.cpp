@@ -5,8 +5,8 @@
 #include <fstream>
 #include <vector>
 
-#define SCREEN_WIDTH 1280
-#define SCREEN_HEIGHT 720
+#define SCREEN_WIDTH 640
+#define SCREEN_HEIGHT 480
 
 int main(int argc, char **argv, char **env){
 
@@ -28,7 +28,7 @@ int main(int argc, char **argv, char **env){
     top->reset = 1;
     top->ready = 1;
     top->iterations_max = 50;
-    top->zoom = 3;
+    top->zoom = 1;
     top->x_offset = 0;
     top->y_offset = 0;
 
@@ -37,7 +37,7 @@ int main(int argc, char **argv, char **env){
     int i = 0;
     int index = 0;
 
-    for (i=0; i < 3500000; i++){
+    for (i=0; i < 1100000; i++){
         
         for(clk = 0; clk < 2; clk++){
             tfp->dump(2 * i + clk);

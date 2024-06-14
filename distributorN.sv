@@ -1,8 +1,10 @@
 module distributorN#(
     parameter   PIXEL_DATA_WIDTH = 32,
-                SCREEN_WIDTH = 1280,
-                SCREEN_HEIGHT = 720,
-                NUM_ENGINES = 11
+                // SCREEN_WIDTH = 1280,
+                // SCREEN_HEIGHT = 720,
+                SCREEN_WIDTH = 640,
+                SCREEN_HEIGHT = 480,
+                NUM_ENGINES = 30
 )(
     input logic                         clk,
     input logic                         reset,
@@ -25,7 +27,7 @@ always_comb begin
     end
 end
 
-always_ff @(posedge clk, posedge reset) begin
+always_ff @(posedge clk) begin
     
     if (reset) begin
         x0 <= 0;
