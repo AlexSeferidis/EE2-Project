@@ -20,6 +20,7 @@ class Vtop_mandelbrot_engine final : public VerilatedModule {
     VL_IN8(full_queue,0,0);
     VL_OUT8(en_pixel_map,0,0);
     VL_OUT8(iterations,5,0);
+    CData/*0:0*/ __PVT__distributor_ready;
     CData/*5:0*/ __PVT__curr_iterations;
     CData/*0:0*/ __PVT__en_stage_1;
     CData/*0:0*/ __PVT__en_stage_2;

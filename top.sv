@@ -1,8 +1,8 @@
 module top #(
     parameter   DATA_WIDTH = 10,
                 RBG_SIZE = 24,
-                NUM_ENGINES = 6,
-                ITERATIONS_WIDTH = 32
+                NUM_ENGINES = 30,
+                ITERATIONS_WIDTH = 10
 )(
     input logic                         clk,
     input logic                         reset,

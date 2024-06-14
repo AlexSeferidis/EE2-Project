@@ -7,6 +7,8 @@ module pixel_map#(
     input logic clk,
     input logic reset,
     input logic en,
+    input logic distributor_ready,
+    input logic full_queue,
     input logic [PIXEL_DATA_WIDTH-1:0] pixel_x_in,
     input logic [PIXEL_DATA_WIDTH-1:0] pixel_y_in,
     input logic signed [ENGINE_DATA_WIDTH-1:0] x_offset,
@@ -47,7 +49,7 @@ module pixel_map#(
             real_x <= 0;
             imag_y <= 0;
         end
-        else if (en) begin
+        else if ((en)&&(~full_queue)&&(~distributor_ready)) begin
             pixel_x_out <= pixel_x_in;
             pixel_y_out <= pixel_y_in;
             real_x <= r_min + (r_gradient << 6);

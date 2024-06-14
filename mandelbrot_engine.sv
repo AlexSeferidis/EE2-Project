@@ -37,6 +37,8 @@ pixel_map pixel_map
     .clk(clk),
     .reset(reset),
     .en(en_pixel_map),
+    .distributor_ready(distributor_ready),
+    .full_queue(full_queue),
     .pixel_x_in(x0_),
     .pixel_y_in(y0_),
     .x_offset(x_offset),

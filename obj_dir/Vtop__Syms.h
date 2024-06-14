@@ -16,6 +16,7 @@
 // INCLUDE MODULE CLASSES
 #include "Vtop___024root.h"
 #include "Vtop_mandelbrot_engine.h"
+#include "Vtop_queue_new.h"
 
 // SYMS CLASS (contains all model state)
 class Vtop__Syms final : public VerilatedSyms {
@@ -29,11 +30,65 @@ class Vtop__Syms final : public VerilatedSyms {
     // MODULE INSTANCE STATE
     Vtop___024root                 TOP;
     Vtop_mandelbrot_engine         TOP__top__DOT__genblk1__BRA__0__KET____DOT__engine;
+    Vtop_queue_new                 TOP__top__DOT__genblk1__BRA__0__KET____DOT__queue_block;
+    Vtop_mandelbrot_engine         TOP__top__DOT__genblk1__BRA__10__KET____DOT__engine;
+    Vtop_queue_new                 TOP__top__DOT__genblk1__BRA__10__KET____DOT__queue_block;
+    Vtop_mandelbrot_engine         TOP__top__DOT__genblk1__BRA__11__KET____DOT__engine;
+    Vtop_queue_new                 TOP__top__DOT__genblk1__BRA__11__KET____DOT__queue_block;
+    Vtop_mandelbrot_engine         TOP__top__DOT__genblk1__BRA__12__KET____DOT__engine;
+    Vtop_queue_new                 TOP__top__DOT__genblk1__BRA__12__KET____DOT__queue_block;
+    Vtop_mandelbrot_engine         TOP__top__DOT__genblk1__BRA__13__KET____DOT__engine;
+    Vtop_queue_new                 TOP__top__DOT__genblk1__BRA__13__KET____DOT__queue_block;
+    Vtop_mandelbrot_engine         TOP__top__DOT__genblk1__BRA__14__KET____DOT__engine;
+    Vtop_queue_new                 TOP__top__DOT__genblk1__BRA__14__KET____DOT__queue_block;
+    Vtop_mandelbrot_engine         TOP__top__DOT__genblk1__BRA__15__KET____DOT__engine;
+    Vtop_queue_new                 TOP__top__DOT__genblk1__BRA__15__KET____DOT__queue_block;
+    Vtop_mandelbrot_engine         TOP__top__DOT__genblk1__BRA__16__KET____DOT__engine;
+    Vtop_queue_new                 TOP__top__DOT__genblk1__BRA__16__KET____DOT__queue_block;
+    Vtop_mandelbrot_engine         TOP__top__DOT__genblk1__BRA__17__KET____DOT__engine;
+    Vtop_queue_new                 TOP__top__DOT__genblk1__BRA__17__KET____DOT__queue_block;
+    Vtop_mandelbrot_engine         TOP__top__DOT__genblk1__BRA__18__KET____DOT__engine;
+    Vtop_queue_new                 TOP__top__DOT__genblk1__BRA__18__KET____DOT__queue_block;
+    Vtop_mandelbrot_engine         TOP__top__DOT__genblk1__BRA__19__KET____DOT__engine;
+    Vtop_queue_new                 TOP__top__DOT__genblk1__BRA__19__KET____DOT__queue_block;
     Vtop_mandelbrot_engine         TOP__top__DOT__genblk1__BRA__1__KET____DOT__engine;
+    Vtop_queue_new                 TOP__top__DOT__genblk1__BRA__1__KET____DOT__queue_block;
+    Vtop_mandelbrot_engine         TOP__top__DOT__genblk1__BRA__20__KET____DOT__engine;
+    Vtop_queue_new                 TOP__top__DOT__genblk1__BRA__20__KET____DOT__queue_block;
+    Vtop_mandelbrot_engine         TOP__top__DOT__genblk1__BRA__21__KET____DOT__engine;
+    Vtop_queue_new                 TOP__top__DOT__genblk1__BRA__21__KET____DOT__queue_block;
+    Vtop_mandelbrot_engine         TOP__top__DOT__genblk1__BRA__22__KET____DOT__engine;
+    Vtop_queue_new                 TOP__top__DOT__genblk1__BRA__22__KET____DOT__queue_block;
+    Vtop_mandelbrot_engine         TOP__top__DOT__genblk1__BRA__23__KET____DOT__engine;
+    Vtop_queue_new                 TOP__top__DOT__genblk1__BRA__23__KET____DOT__queue_block;
+    Vtop_mandelbrot_engine         TOP__top__DOT__genblk1__BRA__24__KET____DOT__engine;
+    Vtop_queue_new                 TOP__top__DOT__genblk1__BRA__24__KET____DOT__queue_block;
+    Vtop_mandelbrot_engine         TOP__top__DOT__genblk1__BRA__25__KET____DOT__engine;
+    Vtop_queue_new                 TOP__top__DOT__genblk1__BRA__25__KET____DOT__queue_block;
+    Vtop_mandelbrot_engine         TOP__top__DOT__genblk1__BRA__26__KET____DOT__engine;
+    Vtop_queue_new                 TOP__top__DOT__genblk1__BRA__26__KET____DOT__queue_block;
+    Vtop_mandelbrot_engine         TOP__top__DOT__genblk1__BRA__27__KET____DOT__engine;
+    Vtop_queue_new                 TOP__top__DOT__genblk1__BRA__27__KET____DOT__queue_block;
+    Vtop_mandelbrot_engine         TOP__top__DOT__genblk1__BRA__28__KET____DOT__engine;
+    Vtop_queue_new                 TOP__top__DOT__genblk1__BRA__28__KET____DOT__queue_block;
+    Vtop_mandelbrot_engine         TOP__top__DOT__genblk1__BRA__29__KET____DOT__engine;
+    Vtop_queue_new                 TOP__top__DOT__genblk1__BRA__29__KET____DOT__queue_block;
     Vtop_mandelbrot_engine         TOP__top__DOT__genblk1__BRA__2__KET____DOT__engine;
+    Vtop_queue_new                 TOP__top__DOT__genblk1__BRA__2__KET____DOT__queue_block;
     Vtop_mandelbrot_engine         TOP__top__DOT__genblk1__BRA__3__KET____DOT__engine;
+    Vtop_queue_new                 TOP__top__DOT__genblk1__BRA__3__KET____DOT__queue_block;
     Vtop_mandelbrot_engine         TOP__top__DOT__genblk1__BRA__4__KET____DOT__engine;
+    Vtop_queue_new                 TOP__top__DOT__genblk1__BRA__4__KET____DOT__queue_block;
     Vtop_mandelbrot_engine         TOP__top__DOT__genblk1__BRA__5__KET____DOT__engine;
+    Vtop_queue_new                 TOP__top__DOT__genblk1__BRA__5__KET____DOT__queue_block;
+    Vtop_mandelbrot_engine         TOP__top__DOT__genblk1__BRA__6__KET____DOT__engine;
+    Vtop_queue_new                 TOP__top__DOT__genblk1__BRA__6__KET____DOT__queue_block;
+    Vtop_mandelbrot_engine         TOP__top__DOT__genblk1__BRA__7__KET____DOT__engine;
+    Vtop_queue_new                 TOP__top__DOT__genblk1__BRA__7__KET____DOT__queue_block;
+    Vtop_mandelbrot_engine         TOP__top__DOT__genblk1__BRA__8__KET____DOT__engine;
+    Vtop_queue_new                 TOP__top__DOT__genblk1__BRA__8__KET____DOT__queue_block;
+    Vtop_mandelbrot_engine         TOP__top__DOT__genblk1__BRA__9__KET____DOT__engine;
+    Vtop_queue_new                 TOP__top__DOT__genblk1__BRA__9__KET____DOT__queue_block;
 
     // CONSTRUCTORS
     Vtop__Syms(VerilatedContext* contextp, const char* namep, Vtop* modelp);

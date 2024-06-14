@@ -26,6 +26,7 @@ VL_ATTR_COLD void Vtop_mandelbrot_engine___ctor_var_reset(Vtop_mandelbrot_engine
     vlSelf->ypixel = VL_RAND_RESET_I(10);
     vlSelf->__PVT__x = VL_RAND_RESET_I(25);
     vlSelf->__PVT__y = VL_RAND_RESET_I(25);
+    vlSelf->__PVT__distributor_ready = VL_RAND_RESET_I(1);
     vlSelf->__PVT__curr_iterations = VL_RAND_RESET_I(6);
     vlSelf->__PVT__zr = VL_RAND_RESET_I(25);
     vlSelf->__PVT__zi = VL_RAND_RESET_I(25);
