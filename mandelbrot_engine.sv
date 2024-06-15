@@ -19,6 +19,8 @@ module mandelbrot_engine#(
     input logic                                     full_queue,
 
     output logic                                    en_pixel_map,
+    output logic                                    engine_ready,
+
     output logic [ITERATIONS_WIDTH-1:0]             iterations,
     output logic [PIXEL_DATA_WIDTH-1:0]             xpixel,
     output logic [PIXEL_DATA_WIDTH-1:0]             ypixel
@@ -69,7 +71,7 @@ logic signed [ENGINE_DATA_WIDTH-1:0] max_distance = {5'd4, 20'b0};
 register #(
     .WIDTH(ITERATIONS_WIDTH)
 ) R0 (
-    .clk(clk), .rst(init), .en(en_stage_2), .in(curr_iterations + 1), .out(curr_iterations)
+    .clk(clk), .rst((init & ~full_queue && ~distributor_ready)), .en(en_stage_2), .in(curr_iterations + 1), .out(curr_iterations)
 );
 
 // Stage 1
@@ -116,7 +118,7 @@ assign finished = (distance > max_distance) || (curr_iterations == iterations_ma
 assign iterations = curr_iterations;
 
 assign distributor_ready = (en_pixel_map && (x0_ == xpixel) && (y0_ == ypixel));
-
+assign engine_ready = ~full_queue;
 // ----------- STATE MACHINE ----------
 
 statemachine SM(

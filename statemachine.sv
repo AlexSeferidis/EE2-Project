@@ -32,7 +32,7 @@ always_comb begin
             next = CALC_STAGE_2;
             init = 0;
             en_pixel_map = 0;
-            en_stage_1 = 1;
+            en_stage_1 = ~full_queue;
             en_stage_2 = 0;
         end
         CALC_STAGE_2: begin
@@ -40,13 +40,13 @@ always_comb begin
             init = 0;
             en_pixel_map = 0;
             en_stage_1 = 0;
-            en_stage_2 = 1;
+            en_stage_2 = ~full_queue;
         end
         ESCAPE : begin
             next = finished ? INIT : CALC_STAGE_2;
             init = 0;
             en_pixel_map = 0;
-            en_stage_1 = 1;
+            en_stage_1 = ~full_queue;
             en_stage_2 = 0;
         end
     endcase

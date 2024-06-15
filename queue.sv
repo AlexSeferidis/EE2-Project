@@ -1,5 +1,6 @@
 module queue #(
-    parameter   DATA_WIDTH = 32,
+    parameter   PIXEL_DATA_WIDTH = 10,
+                DATA_WIDTH = 32,
                 QUEUE_SIZE = 10,
                 COUNTER_SIZE = 4,
                 RBG_SIZE = 24
@@ -9,12 +10,12 @@ module queue #(
     input logic                     fin_flag,
     // received from the engine
     input logic [RBG_SIZE-1:0]      colour_i,
-    input logic [DATA_WIDTH-1:0]    xpixel_i,
-    input logic [DATA_WIDTH-1:0]    ypixel_i,
+    input logic [PIXEL_DATA_WIDTH-1:0]    xpixel_i,
+    input logic [PIXEL_DATA_WIDTH-1:0]    ypixel_i,
 
     //received from the comibinator to check if front of queue is the next coord
-    input logic [DATA_WIDTH-1:0]    xpixel_check,
-    input logic [DATA_WIDTH-1:0]    ypixel_check,
+    input logic [PIXEL_DATA_WIDTH-1:0]    xpixel_check,
+    input logic [PIXEL_DATA_WIDTH-1:0]    ypixel_check,
 
     output logic [RBG_SIZE-1:0]     colour_o,
     output logic                    full_queue,      // this flag will go to the distributor
@@ -22,15 +23,15 @@ module queue #(
 );
 
 logic [RBG_SIZE-1:0] colour_queue [QUEUE_SIZE-1:0];
-logic [DATA_WIDTH-1:0] xqueue [QUEUE_SIZE-1:0];
-logic [DATA_WIDTH-1:0] yqueue [QUEUE_SIZE-1:0];
+logic [PIXEL_DATA_WIDTH-1:0] xqueue [QUEUE_SIZE-1:0];
+logic [PIXEL_DATA_WIDTH-1:0] yqueue [QUEUE_SIZE-1:0];
 logic [COUNTER_SIZE-1:0] counter;
 
-logic [DATA_WIDTH-1:0]  prev_xpixel;
+logic [PIXEL_DATA_WIDTH-1:0]  prev_xpixel;
 logic                   fin_wire;
 logic [RBG_SIZE-1:0]    colour_wire;
-logic [DATA_WIDTH-1:0]  xpixel_wire;
-logic [DATA_WIDTH-1:0]  ypixel_wire;
+logic [PIXEL_DATA_WIDTH-1:0]  xpixel_wire;
+logic [PIXEL_DATA_WIDTH-1:0]  ypixel_wire;
 
 initial begin
     prev_xpixel = -1;

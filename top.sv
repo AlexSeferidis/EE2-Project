@@ -1,8 +1,9 @@
 module top #(
     parameter   DATA_WIDTH = 10,
+                PIXEL_DATA_WIDTH = 10,
                 RBG_SIZE = 24,
-                NUM_ENGINES = 12,
-                ITERATIONS_WIDTH = 10
+                NUM_ENGINES = 30,
+                ITERATIONS_WIDTH = 6
 )(
     input logic                         clk,
     input logic                         reset,
@@ -24,19 +25,21 @@ module top #(
 
 logic [RBG_SIZE-1:0]            colour_o_wire;
 
-logic [DATA_WIDTH-1:0]          xpixel_wire;
-logic [DATA_WIDTH-1:0]          ypixel_wire;
+logic [PIXEL_DATA_WIDTH-1:0]          xpixel_wire;
+logic [PIXEL_DATA_WIDTH-1:0]          ypixel_wire;
 logic [RBG_SIZE-1:0]            colour_bus_o    [NUM_ENGINES-1:0];
 logic                           reset_engine;
 logic                           fin_wire;
 logic                           en_wire;
+logic                           engines_ready_wire;
 logic [NUM_ENGINES-1:0]         fin_bus;
-logic [DATA_WIDTH-1:0]          x               [NUM_ENGINES-1:0];
-logic [DATA_WIDTH-1:0]          y               [NUM_ENGINES-1:0];
+logic [PIXEL_DATA_WIDTH-1:0]          x               [NUM_ENGINES-1:0];
+logic [PIXEL_DATA_WIDTH-1:0]          y               [NUM_ENGINES-1:0];
 logic [ITERATIONS_WIDTH-1:0]    iterations_bus  [NUM_ENGINES-1:0];
-logic [DATA_WIDTH-1:0]          xpixel_bus      [NUM_ENGINES-1:0];
-logic [DATA_WIDTH-1:0]          ypixel_bus      [NUM_ENGINES-1:0];
+logic [PIXEL_DATA_WIDTH-1:0]          xpixel_bus      [NUM_ENGINES-1:0];
+logic [PIXEL_DATA_WIDTH-1:0]          ypixel_bus      [NUM_ENGINES-1:0];
 logic [NUM_ENGINES-1:0]         en_bus;
+logic [NUM_ENGINES-1:0]         engines_ready;
 logic [RBG_SIZE-1:0]            colour_bus_i      [NUM_ENGINES-1:0];
 logic [NUM_ENGINES-1:0]         full_queue_bus;
 logic [NUM_ENGINES-1:0]         match_bus;
@@ -48,7 +51,7 @@ int j;
 distributorN distributor(
     .clk(clk),
     .reset(reset),
-    .fin_flag(fin_wire),
+    .fin_flag(fin_wire & engines_ready_wire),
     .x(x),
     .y(y)
 );
@@ -67,6 +70,7 @@ generate
             .y_offset(y_offset),
             .full_queue(full_queue_bus[i]),
             .en_pixel_map(fin_bus[i]),
+            .engine_ready(engines_ready[i]),
             .iterations(iterations_bus[i]),
             .xpixel(xpixel_bus[i]),
             .ypixel(ypixel_bus[i])
@@ -121,12 +125,18 @@ always_comb begin
             j = k;
         end
     end
+    if (engines_ready == {NUM_ENGINES{1'b1}})begin
+        engines_ready_wire = 1;
+    end
+    else begin
+        engines_ready_wire = 0;
+    end
 
     if(fin_bus == {NUM_ENGINES{1'b1}})begin
-        fin_wire = 1;
+        fin_wire = engines_ready_wire;
     end
     else if (reset) begin
-        fin_wire = 1;
+        fin_wire = engines_ready_wire;
     end
     else begin
         fin_wire = 0;
