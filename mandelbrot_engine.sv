@@ -31,8 +31,6 @@ localparam ENGINE_INT_WIDTH = ENGINE_DATA_WIDTH - ENGINE_FRACT_WIDTH;
 logic signed [ENGINE_DATA_WIDTH-1:0] x, y;
 logic finished, distributor_ready;
 
-initial xpixel = -1;
-
 // ----------- MAP: PIXEL -> COMPLEX COORDS ----------
 
 pixel_map pixel_map
@@ -71,7 +69,7 @@ logic signed [ENGINE_DATA_WIDTH-1:0] max_distance = {5'd4, 20'b0};
 register #(
     .WIDTH(ITERATIONS_WIDTH)
 ) R0 (
-    .clk(clk), .rst((init & ~full_queue && ~distributor_ready)), .en(en_stage_2), .in(curr_iterations + 1), .out(curr_iterations)
+    .clk(clk), .rst((init & ~full_queue && ~distributor_ready)), .en(en_stage_2), .in(curr_iterations + 1'b1), .out(curr_iterations)
 );
 
 // Stage 1
@@ -117,8 +115,8 @@ assign finished = (distance > max_distance) || (curr_iterations == iterations_ma
 
 assign iterations = curr_iterations;
 
-assign distributor_ready = (en_pixel_map && (x0_ == xpixel) && (y0_ == ypixel));
-assign engine_ready = ~full_queue;
+assign distributor_ready = (en_pixel_map && (x0_ == xpixel) && (y0_ == ypixel)); //If we're in the INIT state, we are not ready to receive new data if x0_ and y0_ is still the same (maybe change if there is a simplification)
+assign engine_ready = ~full_queue; //If the queue is full, we are not ready to receive new data
 // ----------- STATE MACHINE ----------
 
 statemachine SM(

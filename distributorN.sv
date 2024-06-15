@@ -1,10 +1,8 @@
 module distributorN#(
     parameter   PIXEL_DATA_WIDTH = 10,
-                // SCREEN_WIDTH = 1280,
-                // SCREEN_HEIGHT = 720,
-                SCREEN_WIDTH = 640,
-                SCREEN_HEIGHT = 480,
-                NUM_ENGINES = 30
+    parameter   SCREEN_WIDTH = 10'd640,
+    parameter   SCREEN_HEIGHT = 10'd480,
+    parameter   NUM_ENGINES = 30
 )(
     input logic                         clk,
     input logic                         reset,
@@ -16,12 +14,13 @@ module distributorN#(
 
 logic [PIXEL_DATA_WIDTH-1:0] x0;
 logic [PIXEL_DATA_WIDTH-1:0] y0;
+logic [PIXEL_DATA_WIDTH-1:0] i;
 // starting from top left of screen - raster pattern
 initial x0 = 0;
 initial y0 = 0;
 
 always_comb begin 
-    for(int i = 0; i < NUM_ENGINES; i++) begin
+    for(i = 0; i < NUM_ENGINES; i++) begin
         x[i] = (x0 + i) % SCREEN_WIDTH;
         y[i] = ( (y0 + (x0+i)/SCREEN_WIDTH) % SCREEN_HEIGHT );
     end
@@ -34,8 +33,8 @@ always_ff @(posedge clk) begin
         y0 <= 0;
     end
     else if (fin_flag) begin
-    x0 <= (x0 + NUM_ENGINES) % SCREEN_WIDTH;
-    y0 <= ( (y0 + (x0+NUM_ENGINES)/SCREEN_WIDTH) % SCREEN_HEIGHT ) ;
+        x0 <= (x0 + NUM_ENGINES) % SCREEN_WIDTH;
+        y0 <= ( (y0 + (x0+NUM_ENGINES)/SCREEN_WIDTH) % SCREEN_HEIGHT ) ;
     end
     //end
 

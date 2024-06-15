@@ -9,7 +9,8 @@ module top #(
     input logic                         reset,
     input logic                         ready,
     input logic [ITERATIONS_WIDTH-1:0]  iterations_max,
-    input logic [DATA_WIDTH-1:0]        zoom, x_offset, y_offset,
+    input logic [2:0]                   zoom,
+    input logic [24:0]                  x_offset, y_offset,
 
     // output logic [RBG_SIZE-1:0]         colour_o,
     output logic [7:0]                  r, //for verilator test
@@ -28,7 +29,6 @@ logic [RBG_SIZE-1:0]            colour_o_wire;
 logic [PIXEL_DATA_WIDTH-1:0]          xpixel_wire;
 logic [PIXEL_DATA_WIDTH-1:0]          ypixel_wire;
 logic [RBG_SIZE-1:0]            colour_bus_o    [NUM_ENGINES-1:0];
-logic                           reset_engine;
 logic                           fin_wire;
 logic                           en_wire;
 logic                           engines_ready_wire;
@@ -61,7 +61,7 @@ generate
     for(i = 0; i < NUM_ENGINES; i++)begin
         mandelbrot_engine engine(
             .clk(clk),
-            .reset(1'b0),
+            .reset(reset),
             .iterations_max(iterations_max),
             .x0_(x[i]),
             .y0_(y[i]),
@@ -104,7 +104,6 @@ combinator combinator_block(
     .reset(reset),
     .colour_i(colour_bus_o[j]),
     .en(en_wire),
-    .fin_flag(fin_wire),
     .ready(ready),
     .next_xpixel(xpixel_wire),
     .next_ypixel(ypixel_wire),
@@ -114,17 +113,19 @@ combinator combinator_block(
     .last_y(last_y),
     .valid(valid)
 );
+assign r = colour_o_wire[7:0];
+assign g = colour_o_wire[15:8];
+assign b = colour_o_wire[23:16];
 
 always_comb begin
-    r = colour_o_wire[7:0];
-    g = colour_o_wire[15:8];
-    b = colour_o_wire[23:16];
 
     for(int k = 0; k < NUM_ENGINES; k++)begin
         if(match_bus[k])begin
             j = k;
         end
     end
+
+
     if (engines_ready == {NUM_ENGINES{1'b1}})begin
         engines_ready_wire = 1;
     end

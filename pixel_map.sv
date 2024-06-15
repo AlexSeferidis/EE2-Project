@@ -48,6 +48,8 @@ module pixel_map#(
         if (reset) begin
             real_x <= 0;
             imag_y <= 0;
+            pixel_x_out <= 0;
+            pixel_y_out <= 0;
         end
         else if ((en)&&(~full_queue)&&(~distributor_ready)) begin
             pixel_x_out <= pixel_x_in;

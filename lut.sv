@@ -1,10 +1,9 @@
 module lut #(
-    parameter   DATA_WIDTH = 10,
-                ITERATIONS_WIDTH = 6,
-                RBG_SIZE = 24,
-                MAX_ITERATION = 50,
-                NUM_ENGINES = 30,
-                LUT_SIZE = 256
+    parameter ITERATIONS_WIDTH = 6,
+    parameter RBG_SIZE = 24,
+    parameter MAX_ITERATION = 50,
+    parameter NUM_ENGINES = 30,
+    parameter LUT_SIZE = 256
 )(
     input logic [ITERATIONS_WIDTH-1:0]    iterations [NUM_ENGINES-1:0],
     // input logic                     clk,
@@ -14,6 +13,9 @@ module lut #(
     
 logic [RBG_SIZE-1:0] lut_array [LUT_SIZE-1:0];
 
+int step_size = (LUT_SIZE / NUM_ENGINES);
+
+
 initial begin
     $display("Loading rom.");
     $readmemh("lut.hex", lut_array); // need to create an lut.hex file with rgb values
@@ -21,7 +23,6 @@ initial begin
 end
 always_comb begin
 // always_ff @(posedge clk)begin
-    int step_size = (LUT_SIZE / NUM_ENGINES);
     for(int i = 0; i < NUM_ENGINES; i++)begin
         rgb_val[i] = lut_array[(iterations[i] == MAX_ITERATION) ? (LUT_SIZE - 1) : (iterations[i] * step_size)];
     end

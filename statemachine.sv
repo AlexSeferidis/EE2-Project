@@ -1,7 +1,6 @@
 // INIT, CALC STAGE 1, CALC STAGE 2
 
-module statemachine #(
-)(
+module statemachine (
     input logic clk,
     input logic rst,
     input logic finished,
@@ -17,7 +16,8 @@ localparam INIT = 0;
 localparam CALC_STAGE_1 = 1;
 localparam CALC_STAGE_2 = 2;
 localparam ESCAPE = 3;
-logic [1:0] state, next;
+logic [1:0] state;
+logic [1:0] next;
 
 always_comb begin
     case (state)
