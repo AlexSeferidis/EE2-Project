@@ -6,7 +6,7 @@ module pixgen_tb;
     localparam RANDOM_READY = 2;        //Ready signal is true 50% of the time according to pseudo-random sequence
     localparam READY_AFTER_VALID = 3;   //Ready signal goes true after valid is true, then goes false
     
-    parameter READY_MODE = READY_AFTER_VALID;
+    parameter READY_MODE = ALWAYS_READY;
 
 
     parameter TIMEOUT = 1000;           //Time to wait for valid to be true

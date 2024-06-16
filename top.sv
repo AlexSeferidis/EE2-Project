@@ -2,7 +2,7 @@ module top #(
     parameter   DATA_WIDTH = 10,
                 PIXEL_DATA_WIDTH = 10,
                 RBG_SIZE = 24,
-                NUM_ENGINES = 30,
+                NUM_ENGINES = 8,
                 ITERATIONS_WIDTH = 6
 )(
     input logic                         clk,
@@ -51,7 +51,7 @@ int j;
 distributorN distributor(
     .clk(clk),
     .reset(reset),
-    .fin_flag(fin_wire & engines_ready_wire),
+    .fin_flag(fin_wire),
     .x(x),
     .y(y)
 );

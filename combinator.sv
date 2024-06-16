@@ -45,15 +45,20 @@ always_ff @(posedge clk) begin
             first <= 0;
         end
         if(ypixel >= SCREEN_HEIGHT)begin
+            last_y <= 1;
             xpixel <= 0;
             ypixel <= 0;
         end
 
         else if((xpixel == SCREEN_WIDTH - 1))begin
+            last_x <= 1;
+            last_y <= 0;
             xpixel <= 0;
             ypixel <= ypixel + 1;
         end
         else begin
+            last_x <= 0;
+            last_y <= 0;
             xpixel <= xpixel + 1;
         end
         valid <= 1;
