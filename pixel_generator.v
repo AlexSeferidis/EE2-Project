@@ -192,10 +192,6 @@ assign s_axi_lite_bresp = (writeAddr < REG_FILE_SIZE) ? AXI_OK : AXI_ERR;
 
 
 
-wire [8:0] x;
-wire [7:0] y;
-reg [31:0] iterations_out;
-
 
 wire ready;
 wire valid_int;
