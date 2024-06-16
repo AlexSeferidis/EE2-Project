@@ -24,14 +24,10 @@ module combinator #(
 
 );
 
+initial valid = 0;
 
 logic [DATA_WIDTH-1:0] xpixel;
 logic [DATA_WIDTH-1:0] ypixel;
-
-assign first = (xpixel == 0) && (ypixel == 0);
-assign last_x = (xpixel == SCREEN_WIDTH - 1);
-assign last_y = (ypixel == SCREEN_HEIGHT - 1);
-assign valid = en;
 
 
 always_ff @(posedge clk) begin
@@ -39,11 +35,15 @@ always_ff @(posedge clk) begin
     if(reset)begin
         xpixel <= 0;
         ypixel <= 0;
-        next_xpixel <= 0;
-        next_ypixel <= 0;
     end
 
     if((en)&&(ready))begin
+        if (xpixel == 0 && ypixel == 0)begin
+            first <= 1;
+        end
+        else begin
+            first <= 0;
+        end
         if(ypixel >= SCREEN_HEIGHT)begin
             xpixel <= 0;
             ypixel <= 0;
@@ -56,11 +56,13 @@ always_ff @(posedge clk) begin
         else begin
             xpixel <= xpixel + 1;
         end
+        valid <= 1;
         colour_o <= colour_i;
         next_xpixel <= xpixel;
         next_ypixel <= ypixel;
     end
     else begin
+        valid <= 0;
     end   
 end
 
