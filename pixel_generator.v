@@ -60,8 +60,8 @@ input           s_axi_lite_wvalid
 
 );
 
-localparam X_SIZE = 1280;
-localparam Y_SIZE = 720;
+localparam X_SIZE = 640;
+localparam Y_SIZE = 480;
 parameter  REG_FILE_SIZE = 8;
 localparam REG_FILE_AWIDTH = $clog2(REG_FILE_SIZE);
 
