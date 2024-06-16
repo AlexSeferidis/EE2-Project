@@ -6,7 +6,7 @@ module mandelbrot_engine#(
     parameter PIXEL_DATA_WIDTH = 10,
     parameter ENGINE_DATA_WIDTH = 25,
     parameter ENGINE_FRACT_WIDTH = 20,
-    parameter ITERATIONS_WIDTH = 6
+    parameter ITERATIONS_WIDTH = 9
 )(
     input logic                                     clk,
     input logic                                     reset,

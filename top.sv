@@ -2,8 +2,8 @@ module top #(
     parameter   DATA_WIDTH = 10,
                 PIXEL_DATA_WIDTH = 10,
                 RBG_SIZE = 24,
-                NUM_ENGINES = 8,
-                ITERATIONS_WIDTH = 6
+                NUM_ENGINES = 12,
+                ITERATIONS_WIDTH = 9
 )(
     input logic                         clk,
     input logic                         reset,
