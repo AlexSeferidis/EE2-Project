@@ -1,7 +1,7 @@
 module lut #(
     parameter ITERATIONS_WIDTH = 9,
     parameter RBG_SIZE = 24,
-    parameter MAX_ITERATION = 50,
+    parameter MAX_ITERATION = 100,
     parameter NUM_ENGINES = 12,
     parameter LUT_SIZE = 256
 )(
@@ -13,7 +13,7 @@ module lut #(
     
 logic [RBG_SIZE-1:0] lut_array [LUT_SIZE-1:0];
 
-int step_size = (LUT_SIZE / NUM_ENGINES);
+int step_size = (LUT_SIZE / MAX_ITERATION);
 
 
 initial begin

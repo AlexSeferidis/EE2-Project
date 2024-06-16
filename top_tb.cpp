@@ -27,7 +27,7 @@ int main(int argc, char **argv, char **env){
     top->clk = 1;
     top->reset = 1;
     top->ready = 1;
-    top->iterations_max = 50;
+    top->iterations_max = 100;
     top->zoom = 1;
     top->x_offset = 0;
     top->y_offset = 0;
@@ -37,7 +37,7 @@ int main(int argc, char **argv, char **env){
     int i = 0;
     int index = 0;
 
-    for (i=0; i < 2000000; i++){
+    for (i=0; i < 3000000; i++){
         
         for(clk = 0; clk < 2; clk++){
             tfp->dump(2 * i + clk);
@@ -46,6 +46,7 @@ int main(int argc, char **argv, char **env){
         }
 
         top->reset = 0;
+        top->zoom = 1;
 
         if(top->valid){
             int tmp_index = (3 * index) % arr.size();
