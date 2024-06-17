@@ -4,20 +4,29 @@ import websockets
 import requests
 import urllib3
 import time
-# from pynq import Overlay
-# from pynq.lib.video import *
+from pynq import Overlay
+from pynq.lib.video import *
 
 # urllib3.disable_warnings() 
 
 # SERVER SIDE 
-URL = "http://ec2-18-130-114-167.eu-west-2.compute.amazonaws.com:8080/parameters"
+URL = "http://ec2-18-130-114-167.eu-west-2.compute.amazonaws.com:8080/parameters/"
 POLL_INTERVAL = 5 # Interval for polling of server
 
 
 # HARDWARE SIDE
-# overlay = Overlay("/home/xilinx/elec50015.bit")
 X_RES = 640
 Y_RES = 480
+overlay = Overlay("/home/xilinx/jupyter_notebooks/base_wrapper.bit")
+imgen_vdma = overlay.video.axi_vdma_0.readchannel
+videoMode = common.VideoMode(640, 480, 24)
+imgen_vdma.mode = videoMode
+imgen_vdma.start()
+hdmi_out = overlay.video.hdmi_out
+hdmi_out._vdma = overlay.video.axi_vdma 
+hdmi_out.configure(videoMode)
+hdmi_out.start()
+
 
 async def poll():
     while True:
@@ -25,7 +34,11 @@ async def poll():
             response = requests.get(URL, verify=False)
             if response.status_code == 200: # if request succeded
                 data = response.json()
-                x, y, zoom, maxitr = data['x_offset'], data['y_offset'], data['zoom'], data['max_iterations']
+                #x, y, zoom, maxitr = int(data['x_offset']), int(data['y_offset']), int(data['zoom']), int(data['max_iterations'])
+                x = int(data['x_offset'])
+                y = int(data['y_offset'])
+                zoom = int(data['zoom'])
+                maxitr = int(data['max_iterations'])
                 print("Received data from server:")
                 print(data)
                 print("x = " + str(x))
@@ -49,18 +62,16 @@ async def update_hw(x, y, zoom, maxitr):
 
     
 async def send_to_fpga(x, y, zoom, maxitr):
-    # pixgen = overlay.pixel_generator_0
-    # pixgen.register_map
+    pixgen = overlay.pixel_generator_0
     
-    # WILL UNCOMMENT
-    # pixgen.register_map.gp0 = x
-    # pixgen.register_map.gp1 = y
-    # pixgen.register_map.gp2 = zoom
-    # pixgen.register_map.gp3 = maxitr 
-    # print("gp0: " + str(pixgen.register_map.gp0))
-    # print("gp1: " + str(pixgen.register_map.gp1))
-    # print("gp2: " + str(pixgen.register_map.gp2))
-    # print("gp3: " + str(pixgen.register_map.gp3))
+    pixgen.register_map.gp0 = x
+    pixgen.register_map.gp1 = y
+    pixgen.register_map.gp2 = zoom
+    pixgen.register_map.gp3 = maxitr 
+    print("gp0: " + str(pixgen.register_map.gp0))
+    print("gp1: " + str(pixgen.register_map.gp1))
+    print("gp2: " + str(pixgen.register_map.gp2))
+    print("gp3: " + str(pixgen.register_map.gp3))
     
     #  FOR NOW
     print("sending x=" + str(x) + " to FPGA")
@@ -71,12 +82,8 @@ async def send_to_fpga(x, y, zoom, maxitr):
 
 
 async def hdmi_output():
-    # hdmi_out = overlay.video.hdmi_out
-    # hdmi_out._vdma = overlay.video.axi_vdma #Use the correct VDMA!
-    # hdmi_out.configure(videoMode)
-    # hdmi_out.start()
-    
-    # hdmi_out.writeframe(frame)
+    frame = imgen_vdma.readframe()
+    hdmi_out.writeframe(frame)    
     print("Outputting to HDMI")
     print("\n")
 
@@ -88,7 +95,6 @@ async def hdmi_output():
 if __name__ == "__main__":
     
     async def main():
-        
         await poll()
         
     asyncio.get_event_loop().run_until_complete(main())

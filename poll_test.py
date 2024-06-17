@@ -8,7 +8,7 @@ import time
 # urllib3.disable_warnings() 
 
 # SERVER SIDE 
-URL = "http://ec2-18-130-114-167.eu-west-2.compute.amazonaws.com:8080/parameters/"
+URL = "http://ec2-18-130-114-167.eu-west-2.compute.amazonaws.com:8080/parameters/6"
 POLL_INTERVAL = 5 # Interval for polling of server
 
 
