@@ -20,7 +20,7 @@ const MandelbrotViewer = ({ x, y, zoom, maxItr }) => {
     const aspect_ratio = canv.width / canv.height;
     const depth_step = maxItr / default_colors.length;
 
-    const within_radius_2 = (real, imag) => Math.sqrt(real ** 2 + imag ** 2) < 2;
+    const convergence = (real, imag) => Math.sqrt(real ** 2 + imag ** 2) < 2;
 
     const get_color = (depth) => {
       for (let index = 0; index < default_colors.length; index++) {
@@ -31,11 +31,11 @@ const MandelbrotViewer = ({ x, y, zoom, maxItr }) => {
       return default_colors[default_colors.length - 1];
     };
 
-    const get_divergence = (real, imag, depth) => {
+    const check_divergence = (real, imag, depth) => {
       let real_old = real;
       let imag_old = imag;
       for (let index = 0; index < depth; index++) {
-        if (within_radius_2(real_old, imag_old)) {
+        if (convergence(real_old, imag_old)) {
           let real_new = real_old ** 2 - imag_old ** 2 + real;
           let imag_new = 2 * real_old * imag_old + imag;
           real_old = real_new;
@@ -52,7 +52,7 @@ const MandelbrotViewer = ({ x, y, zoom, maxItr }) => {
       const top_imag = parseFloat(y) + zoom / (2 * aspect_ratio);
       for (let current_real = 0; current_real < canv.width; current_real++) {
         for (let current_imag = 0; current_imag < canv.height; current_imag++) {
-          const divergence_depth = get_divergence(
+          const divergence_depth = check_divergence(
             left_real + current_real * zoom / canv.width,
             top_imag - current_imag * zoom / (aspect_ratio * canv.height),
             maxItr
