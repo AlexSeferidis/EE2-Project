@@ -5,7 +5,7 @@ import time
 
 # Define the plot parameters
 xmin, xmax, ymin, ymax = -2.0, 1.0, -1.5, 1.5
-width, height = 800, 800
+width, height = 640, 480
 
 # Define the iteration steps you want to test
 iteration_steps = [50, 100, 150, 200, 250, 300, 350, 400, 450, 500]
@@ -31,3 +31,5 @@ df = pd.DataFrame(data)
 df.to_csv('mandelbrot_timing_cython.csv', index=False)
 
 print("Timing data saved to 'mandelbrot_timing_cython.csv'")
+
+
