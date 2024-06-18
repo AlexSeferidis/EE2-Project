@@ -7,7 +7,7 @@ module multiplier #(
     input logic rst,  // Reset signal
     output logic signed [ENGINE_DATA_WIDTH-1:0] result  // Fixed-point output result
 );
-localparam ENGINE_INT_WIDTH = ENGINE_DATA_WIDTH - ENGINE_FRACT_WIDTH;
+    localparam ENGINE_INT_WIDTH = ENGINE_DATA_WIDTH - ENGINE_FRACT_WIDTH;
 
     // Intermediate signal for the product
     logic signed [2*(ENGINE_DATA_WIDTH)-1:0] product;

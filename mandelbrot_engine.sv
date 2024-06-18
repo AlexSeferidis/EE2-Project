@@ -42,6 +42,7 @@ pixel_map pixel_map
     .full_queue(full_queue),
     .pixel_x_in(x0_),
     .pixel_y_in(y0_),
+    .zoom(zoom),
     .x_offset(x_offset),
     .y_offset(y_offset),
     .real_x(x),

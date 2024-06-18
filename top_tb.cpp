@@ -37,7 +37,7 @@ int main(int argc, char **argv, char **env){
     int i = 0;
     int index = 0;
 
-    for (i=0; i < 3000000; i++){
+    for (i=0; i < 1000; i++){
         
         for(clk = 0; clk < 2; clk++){
             tfp->dump(2 * i + clk);
