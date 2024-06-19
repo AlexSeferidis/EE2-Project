@@ -1,6 +1,7 @@
 import React, { useState, useEffect, useRef } from 'react';
 import { Pressable } from 'react-native-web';
 
+
 const GetPost = ({ x, y, zoom, maxItr, updateParameters }) => {
   const [data, setData] = useState([]);
   const [loading, setLoading] = useState(false);
@@ -93,10 +94,9 @@ const GetPost = ({ x, y, zoom, maxItr, updateParameters }) => {
     console.log("fanna");
     console.log((id));
 
-    fetch(`http://ec2-18-130-114-167.eu-west-2.compute.amazonaws.com:8080/parameter_id`, 
+    fetch(`http://ec2-18-130-114-167.eu-west-2.compute.amazonaws.com:8080/parameter_id?parameter_id=${String(id)}`, 
     { method: 'POST',
       headers: {'Content-Type': 'application/json'},
-      body: JSON.stringify({ parameter_id: id})
 
     })
       .then(response => {
@@ -106,7 +106,7 @@ const GetPost = ({ x, y, zoom, maxItr, updateParameters }) => {
       })
       .then(() => {
         setLoading(false);
-        setSuccessMessage(`Parameter ${id} selected successfully`);
+        setSuccessMessage(`Parameter ${id} sent to FPGA successfully`);
         clearHideMessageTimeout();
         hideMessageAfterDelay();
       })
