@@ -12,6 +12,8 @@ const MandelbrotViewer = ({ x, y, zoom, maxItr, key }) => {
 
     const canv = canvasRef.current;
     const ctx = canv.getContext('2d');
+    ctx.imageSmoothingEnabled = false;
+    ctx.globalCompositeOperation = 'source-over'; // Ensure this is set to source-over
 
     const handleMessage = (event) => {
       const imageData = event.data;

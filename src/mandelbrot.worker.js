@@ -9,7 +9,11 @@ self.addEventListener('message', (event) => {
   function renderMandelbrot(x, y, zoom, maxItr) {
     const canv = new OffscreenCanvas(640, 480);
     const ctx = canv.getContext('2d');
-  
+    console.log("Rendering:");
+    console.log("x = ", x);
+    console.log("y = ", y);
+    console.log("Zoom = ", zoom);
+    console.log("MaxItr = ", maxItr);
     const default_colours = [
         "#FF0000", "#FF0700", "#FF0E00", "#FF1500", "#FF1C00", "#FF2300", "#FF2A00", "#FF3100", "#FF3800", "#FF3F00",
         "#FF4600", "#FF4D00", "#FF5400", "#FF5B00", "#FF6200", "#FF6900", "#FF7000", "#FF7700", "#FF7E00", "#FF8500",
@@ -95,8 +99,12 @@ self.addEventListener('message', (event) => {
         }
       }
     };
+    console.log("Finished rendering");
+    setTimeout(function(){
+        render();
+    }, 100);
     
-    render();
   
-    return ctx.getImageData(0, 0, canv.width, canv.height);
+    const imageData = ctx.getImageData(0, 0, canv.width, canv.height);
+    return imageData;
   }

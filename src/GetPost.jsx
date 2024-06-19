@@ -32,7 +32,7 @@ const GetPost = ({ x, y, zoom, maxItr, updateParameters }) => {
         if (data && Array.isArray(data.parameter_id)) {
           setParameterIds(data.parameter_id);
           const fetchPromises = data.parameter_id.map(id => {
-            return fetch(`http://ec2-18-130-114-167.eu-west-2.compute.amazonaws.com:8080/parameters/${id}`)
+            return fetch(`http://ec2-18-130-114-167.eu-west-2.compute.amazonaws.com:8080/table/${id}`)
               .then(response => {
                 if (!response.ok) {
                   throw new Error(`Failed to fetch parameter ${id}`);
