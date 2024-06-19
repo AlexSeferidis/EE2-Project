@@ -1,2 +1,5 @@
 node_modules
 top.vcd
+top.vcd.fst
+top.vcd.fst.heir
+obj_dir

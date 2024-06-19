@@ -45,6 +45,7 @@ const MandelbrotViewer = ({ x, y, zoom, maxItr }) => {
     
     const aspect_ratio = canv.width / canv.height;
     const depth_step = maxItr / default_colours.length;
+    const real_zoom = 4.0 / (2**(zoom));
 
     const convergence = (real, imag) => Math.sqrt(real ** 2 + imag ** 2) < 2;
 
@@ -74,13 +75,13 @@ const MandelbrotViewer = ({ x, y, zoom, maxItr }) => {
     };
 
     const render = () => {
-      const left_real = parseFloat(x) - zoom / 2;
-      const top_imag = parseFloat(y) + zoom / (2 * aspect_ratio);
+      const left_real = parseFloat(x) - real_zoom / 2;
+      const top_imag = parseFloat(y) + real_zoom / (2 * aspect_ratio);
       for (let current_real = 0; current_real < canv.width; current_real++) {
         for (let current_imag = 0; current_imag < canv.height; current_imag++) {
           const divergence_depth = check_divergence(
-            left_real + current_real * zoom / canv.width,
-            top_imag - current_imag * zoom / (aspect_ratio * canv.height),
+            left_real + current_real * real_zoom / canv.width,
+            top_imag - current_imag * real_zoom / (aspect_ratio * canv.height),
             maxItr
           );
           ctx.fillStyle = get_colour(divergence_depth);
@@ -91,7 +92,8 @@ const MandelbrotViewer = ({ x, y, zoom, maxItr }) => {
 
     canv.width = 640;
     canv.height = 480;
-    render();
+    setTimeout(function() { render(); }, 100);
+    
   }, [x, y, zoom, maxItr]);
 
   return (

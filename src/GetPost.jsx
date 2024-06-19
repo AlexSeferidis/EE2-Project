@@ -87,6 +87,39 @@ const GetPost = ({ x, y, zoom, maxItr, updateParameters }) => {
     setTimeout(fetchData, refreshDelay);
   };
 
+  const sendToFPGA = (id) => {
+    setLoading(true);
+    setError(null);
+    console.log("fanna");
+    console.log((id));
+
+    fetch(`http://ec2-18-130-114-167.eu-west-2.compute.amazonaws.com:8080/parameter_id`, 
+    { method: 'POST',
+      headers: {'Content-Type': 'application/json'},
+      body: JSON.stringify({ parameter_id: id})
+
+    })
+      .then(response => {
+        if (!response.ok) {
+          throw new Error('Network response was not ok');
+        }
+      })
+      .then(() => {
+        setLoading(false);
+        setSuccessMessage(`Parameter ${id} selected successfully`);
+        clearHideMessageTimeout();
+        hideMessageAfterDelay();
+      })
+      .catch(error => {
+        setError(error);
+        setLoading(false);
+        clearHideMessageTimeout();
+        hideMessageAfterDelay();
+      });
+
+    setTimeout(fetchData, refreshDelay);
+  };
+
   const deleteAll = () => {
     setLoading(true);
     setError(null);
@@ -152,8 +185,9 @@ const GetPost = ({ x, y, zoom, maxItr, updateParameters }) => {
     }
   };
 
-  const handleClick = (params) => {
+  const handleClick = (params, id) => {
     updateParameters(params);
+    sendToFPGA(parseInt(id));
   };
 
   return (
@@ -167,6 +201,9 @@ const GetPost = ({ x, y, zoom, maxItr, updateParameters }) => {
         </div>
         <div className="dbButton">
           <Pressable onPress={deleteAll}>DELETE ALL</Pressable>
+        </div>
+        <div className="dbButton">
+          <Pressable onPress={deleteAll}>SEND TO FPGA</Pressable>
         </div>
       </div>
       <div>
@@ -200,10 +237,10 @@ const GetPost = ({ x, y, zoom, maxItr, updateParameters }) => {
                     <td onClick={() => handleClick(data[index])} style={{ cursor: 'pointer' }}>{id}</td>
                     {data && data[index] && (
                       <>
-                        <td onClick={() => handleClick(data[index])} style={{ cursor: 'pointer' }}>{data[index].x_offset}</td>
-                        <td onClick={() => handleClick(data[index])} style={{ cursor: 'pointer' }}>{data[index].y_offset}</td>
-                        <td onClick={() => handleClick(data[index])} style={{ cursor: 'pointer' }}>{data[index].zoom}</td>
-                        <td onClick={() => handleClick(data[index])} style={{ cursor: 'pointer' }}>{data[index].max_iterations}</td>
+                        <td onClick={() => handleClick(data[index], id)} style={{ cursor: 'pointer' }}>{data[index].x_offset}</td>
+                        <td onClick={() => handleClick(data[index], id)} style={{ cursor: 'pointer' }}>{data[index].y_offset}</td>
+                        <td onClick={() => handleClick(data[index], id)} style={{ cursor: 'pointer' }}>{data[index].zoom}</td>
+                        <td onClick={() => handleClick(data[index], id)} style={{ cursor: 'pointer' }}>{data[index].max_iterations}</td>
                         <td className="deleterCell">
                           <Pressable onPress={() => deleteId(id)}>X</Pressable>
                         </td>

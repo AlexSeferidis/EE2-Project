@@ -39,6 +39,9 @@ const App = () => {
             label="Zoom"
             value={zoom}
             onChange={e => setZoom(e.target.value)}
+            min={0}
+            max={8}
+            step={1}
           />
           <NumberInput
             label="Maximum Iterations"
