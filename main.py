@@ -68,6 +68,19 @@ async def read_selected_parameters():
                 'max_iterations': None
                 }
 
+@app.get('/table/{parameter_id}')
+async def read_parameters(parameter_id: int):
+    try:
+        fetch_parameters = db.get_parameters_by_id(parameter_id)
+        return {**SUCC_MESS, 'x_offset': fetch_parameters[0], 'y_offset': fetch_parameters[1], 'zoom': fetch_parameters[2], 'max_iterations': fetch_parameters[3]}
+    except:
+        return {**FAIL_MESS, 'x_offset': 'lol',}
+        return {**FAIL_MESS, 'x_offset': None,
+                'y_offset': None,
+                'zoom': None,
+                'max_iterations': None
+                }
+
 
 
 #Update 
