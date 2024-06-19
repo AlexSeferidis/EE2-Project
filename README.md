@@ -1,2 +1,3 @@
 # EE2-Project
-FPGA Mathematics Accelerator
+
+This branch contains all testing related files used for the evaluation of the final design.
