@@ -80,7 +80,7 @@ async def read_parameter_ids():
     except:
         return {**FAIL_MESS, 'parameter_id': None}
 
-@app.post('/parameter_id/{parameter_id}')
+@app.post('/parameter_id')
 async def select_parameter_id(parameter_id: int):
     try:
         current_id = db.select_parameter_id(parameter_id)
