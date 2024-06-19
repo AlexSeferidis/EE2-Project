@@ -3,14 +3,14 @@ module top #(
                 PIXEL_DATA_WIDTH = 10,
                 RBG_SIZE = 24,
                 NUM_ENGINES = 12,
-                ITERATIONS_WIDTH = 9
+                ITERATIONS_WIDTH = 32
 )(
     input logic                         clk,
     input logic                         reset,
     input logic                         ready,
     input logic [ITERATIONS_WIDTH-1:0]  iterations_max,
-    input logic [2:0]                   zoom,
-    input logic [24:0]                  x_offset, y_offset,
+    input logic [31:0]                   zoom,
+    input logic [31:0]                  x_offset, y_offset,
 
     // output logic [RBG_SIZE-1:0]         colour_o,
     output logic [7:0]                  r, //for verilator test

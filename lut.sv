@@ -1,5 +1,5 @@
 module lut #(
-    parameter ITERATIONS_WIDTH = 9,
+    parameter ITERATIONS_WIDTH = 32,
     parameter RBG_SIZE = 24,
     parameter MAX_ITERATION = 100,
     parameter NUM_ENGINES = 12,
