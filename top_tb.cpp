@@ -25,19 +25,18 @@ int main(int argc, char **argv, char **env){
 
     // Set initial simulation values
     top->clk = 1;
-    top->reset = 1;
     top->ready = 1;
     top->iterations_max = 200;
     top->zoom = 7;
     top->x_offset = 32505856;   //-1
-    top->y_offset = 33239859;     //-0.3
+    top->y_offset = -314573;     //-0.3
 
     std::vector<unsigned char> arr(3 * SCREEN_HEIGHT * SCREEN_WIDTH);
 
     int i = 0;
     int index = 0;
 
-    for (i=0; i < 10000000; i++){
+    for (i=0; i < 4000000; i++){
         
         for(clk = 0; clk < 2; clk++){
             tfp->dump(2 * i + clk);
@@ -45,7 +44,6 @@ int main(int argc, char **argv, char **env){
             top->eval(); // function to read variables. occurs on both edges of clk
         }
 
-        top->reset = 0;
 
         if(top->valid){
             int tmp_index = (3 * index) % arr.size();
