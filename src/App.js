@@ -29,11 +29,15 @@ const App = () => {
             label="x-Offset"
             value={x}
             onChange={e => setX(e.target.value)}
+            min={-3}
+            max={3}
           />
           <NumberInput
             label="y-Offset"
             value={y}
             onChange={e => setY(e.target.value)}
+            min={-2}
+            max={2}
           />
           <NumberInput
             label="Zoom"
@@ -47,6 +51,9 @@ const App = () => {
             label="Maximum Iterations"
             value={maxItr}
             onChange={e => setMaxItr(e.target.value)}
+            min={10}
+            max={255}
+            step={1}
           />
           <div>
             <GetPost x={x} y={y} zoom={zoom} maxItr={maxItr} updateParameters={updateParameters} />
