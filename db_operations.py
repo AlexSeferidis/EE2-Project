@@ -15,7 +15,7 @@ class FractalDB:
         self.conn.commit()
     def add_parameters(self, x_offset, y_offset, zoom, max_iterations):
         self.insert_parameters(x_offset, y_offset, zoom, max_iterations)
-        self.__select_parameter_id = self.c.lastrowid
+        self.__select_parameter_id = int(self.c.lastrowid)
         return self.c.lastrowid
 
     def import_parameters(self, csv_file):
@@ -34,11 +34,11 @@ class FractalDB:
                           WHERE parameter_id = ?''', (parameter_id,))
         return self.c.fetchone()
     def get_parameters(self):
-        return self.get_parameters_by_id(self.__select_parameter_id)
+        return self.get_parameters_by_id(int(self.__select_parameter_id))
     def delete_parameters(self, parameter_id):
         self.c.execute('''DELETE FROM parameters WHERE parameter_id = ?''', (parameter_id,))
         if parameter_id == self.__select_parameter_id:
-            self.__select_parameter_id = self.c.lastrowid
+            self.__select_parameter_id = int(self.c.lastrowid)
         self.conn.commit()
     def get_db(self):
         self.c.execute('''SELECT * FROM parameters''')
