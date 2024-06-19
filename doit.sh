@@ -1,6 +1,8 @@
 #cleanup
 rm -rf obj_dir
 rm -f top.vcd
+rm -f top.vcd.fst
+rm -f top.vcd.fst.hier
 
 # run Verilator to translate SV to C++, including tb
 verilator -Wall --cc --trace top.sv --exe top_tb.cpp
@@ -15,4 +17,4 @@ obj_dir/Vtop
 python3 img_gen.py
 
 # gtkwave
-# gtkwave top.vcd
+# gtkwave --optimize top.vcd

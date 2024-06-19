@@ -1,2 +1,6 @@
 top.vcd
+top.vcd.fst
+top.vcd.fst.hier
+test.vcd
 node_modules
+obj_dir
