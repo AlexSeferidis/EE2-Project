@@ -35,36 +35,6 @@ module pixel_map #(
     assign r_min = x_offset + r_min_fixed_offset;
     assign i_min = y_offset + i_min_fixed_offset;
 
-    // Multiplier for r_gradient
-    multiplier #() M1 (
-        .a(scale_factor),
-        .b(pixel_x_fixed),
-        .rst(1'b0),
-        .result(r_gradient)
-    );
-
-    // Multiplier for i_gradient
-    multiplier #() M2 (
-        .a(scale_factor),
-        .b(pixel_y_fixed),
-        .rst(1'b0),
-        .result(i_gradient)
-    );
-
-    always_ff @(posedge clk) begin
-        if (reset) begin
-            real_x <= 0;
-            imag_y <= 0;
-            pixel_x_out <= 0;
-            pixel_y_out <= 0;
-        end
-        else if (en && ~full_queue && ~distributor_ready) begin
-            pixel_x_out <= pixel_x_in;
-            pixel_y_out <= pixel_y_in;
-            real_x <= r_min + (r_gradient << 6);
-            imag_y <= i_min + (i_gradient << 6);
-        end
-    end
 
     always_comb begin
         case (zoom)
@@ -116,4 +86,38 @@ module pixel_map #(
         endcase
     end
 
+    // Multiplier for r_gradient
+    multiplier #() M1 (
+        .a(scale_factor),
+        .b(pixel_x_fixed),
+        .rst(1'b0),
+        .result(r_gradient)
+    );
+
+    // Multiplier for i_gradient
+    multiplier #() M2 (
+        .a(scale_factor),
+        .b(pixel_y_fixed),
+        .rst(1'b0),
+        .result(i_gradient)
+    );
+
+    always_ff @(posedge clk) begin
+        if (reset) begin
+            real_x <= 0;
+            imag_y <= 0;
+            pixel_x_out <= 0;
+            pixel_y_out <= 0;
+        end
+        else if (en && ~full_queue && ~distributor_ready) begin
+            pixel_x_out <= pixel_x_in;
+            pixel_y_out <= pixel_y_in;
+            real_x <= r_min + (r_gradient << 6);
+            imag_y <= i_min + (i_gradient << 6);
+        end
+    end
+
+    
+
 endmodule
+
