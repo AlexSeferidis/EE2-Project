@@ -78,7 +78,7 @@ generate
             .ypixel(ypixel_bus[i])
         ); 
 
-        queue_new queue_block(
+        queue queue_block(
             .clk(clk),
             .reset(reset),
             .fin_flag(fin_bus[i]),
