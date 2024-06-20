@@ -2,15 +2,16 @@ module top #(
     parameter   DATA_WIDTH = 10,
                 PIXEL_DATA_WIDTH = 10,
                 RBG_SIZE = 24,
-                NUM_ENGINES = 12,
+                NUM_ENGINES = 8,
                 ITERATIONS_WIDTH = 32
 )(
     input logic                         clk,
     input logic                         reset,
     input logic                         ready,
     input logic [ITERATIONS_WIDTH-1:0]  iterations_max,
-    input logic [31:0]                   zoom,
-    input logic [31:0]                  x_offset, y_offset,
+    input logic [2:0]                   zoom,
+    input logic [24:0]                  x_offset, 
+    input logic [24:0]                  y_offset,
 
     // output logic [RBG_SIZE-1:0]         colour_o,
     output logic [7:0]                  r, //for verilator test
@@ -43,13 +44,9 @@ logic [NUM_ENGINES-1:0]         engines_ready;
 logic [RBG_SIZE-1:0]            colour_bus_i      [NUM_ENGINES-1:0];
 logic [NUM_ENGINES-1:0]         full_queue_bus;
 logic [NUM_ENGINES-1:0]         match_bus;
-logic [2:0] zoom_bits;
-logic [24:0] x_offset_bits;
-logic [24:0] y_offset_bits;
+
 assign en_wire = &en_bus;
-assign zoom_bits = zoom[2:0];
-assign x_offset_bits = x_offset[24:0];
-assign y_offset_bits = y_offset[24:0];
+
 
 int j;
 
@@ -70,9 +67,9 @@ generate
             .iterations_max(iterations_max),
             .x0_(x[i]),
             .y0_(y[i]),
-            .zoom(zoom_bits),
-            .x_offset(x_offset_bits),
-            .y_offset(y_offset_bits),
+            .zoom(zoom),
+            .x_offset(x_offset),
+            .y_offset(y_offset),
             .full_queue(full_queue_bus[i]),
             .en_pixel_map(fin_bus[i]),
             .engine_ready(engines_ready[i]),

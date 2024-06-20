@@ -204,7 +204,7 @@ top top (
     .clk(out_stream_aclk),
     .reset(~periph_resetn),
     .ready(ready),
-    .iterations_max(regfile[3]),
+    .iterations_max(regfile[0]),
     .zoom(regfile[2]),
     .x_offset(regfile[0]),
     .y_offset(regfile[1]),

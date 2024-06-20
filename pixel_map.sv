@@ -19,76 +19,21 @@ module pixel_map #(
     output logic [PIXEL_DATA_WIDTH-1:0] pixel_y_out
 );
 
-    logic signed [ENGINE_DATA_WIDTH-1:0] zoom_scale = {12'b0, 13'b1100110011010};
-    logic signed [ENGINE_DATA_WIDTH-1:0] r_min_fixed_offset;
-    logic signed [ENGINE_DATA_WIDTH-1:0] i_min_fixed_offset;
-    logic signed [ENGINE_DATA_WIDTH-1:0] r_min_baseline_fixed_offset = {5'b11110, 20'b0};  //-2.0
-    logic signed [ENGINE_DATA_WIDTH-1:0] i_min_baseline_fixed_offset = {5'b11110, 20'b01111111111111111111};  //-1.5
-    logic signed [ENGINE_DATA_WIDTH-1:0] r_min;
-    logic signed [ENGINE_DATA_WIDTH-1:0] i_min;
-    logic signed [ENGINE_DATA_WIDTH-1:0] r_gradient, i_gradient;
-    logic signed [ENGINE_DATA_WIDTH-1:0] pixel_x_fixed, pixel_y_fixed;
-    logic signed [ENGINE_DATA_WIDTH-1:0] scale_factor;
+    logic signed [ENGINE_DATA_WIDTH-1:0] scale_factor = {9'b0, 16'b0001100110011010};
+    logic signed [ENGINE_DATA_WIDTH-1:0] zoom_scale;
+    logic signed [PIXEL_DATA_WIDTH-1:0] x_pixel_diff, y_pixel_diff;
+    logic signed [ENGINE_DATA_WIDTH-1:0] pixel_x_fixed, pixel_y_fixed, r_gradient, i_gradient;
 
-    assign pixel_x_fixed = {{ENGINE_DATA_WIDTH-PIXEL_DATA_WIDTH{1'b0}}, pixel_x_in} << 14;
-    assign pixel_y_fixed = {{ENGINE_DATA_WIDTH-PIXEL_DATA_WIDTH{1'b0}}, pixel_y_in} << 14;    
-    assign r_min = x_offset + r_min_fixed_offset;
-    assign i_min = y_offset + i_min_fixed_offset;
+    assign x_pixel_diff = pixel_x_in - 10'd320;
+    assign y_pixel_diff = pixel_y_in - 10'd240;
+    assign pixel_x_fixed = {x_pixel_diff, 15'b0};
+    assign pixel_y_fixed = {y_pixel_diff, 15'b0};
+    assign zoom_scale = scale_factor >> zoom;
 
-
-    always_comb begin
-        case (zoom)
-            3'b000: begin
-                scale_factor = zoom_scale;        // 1.0
-                r_min_fixed_offset = r_min_baseline_fixed_offset;  //-2.0
-                i_min_fixed_offset = i_min_baseline_fixed_offset;  //-1.5
-            end
-            3'b001: begin
-                scale_factor = zoom_scale >> 1;       // 0.5
-                r_min_fixed_offset = r_min_baseline_fixed_offset >>> 1;  //-1.0
-                i_min_fixed_offset = i_min_baseline_fixed_offset >>> 1;  //-0.75
-            end
-            3'b010: begin
-                scale_factor = zoom_scale >> 2;       // 0.25
-                r_min_fixed_offset = r_min_baseline_fixed_offset >>> 2;
-                i_min_fixed_offset = i_min_baseline_fixed_offset >>> 2;
-            end
-            3'b011: begin
-                scale_factor = zoom_scale >> 3;       // 0.125
-                r_min_fixed_offset = r_min_baseline_fixed_offset >>> 3;
-                i_min_fixed_offset = i_min_baseline_fixed_offset >>> 3;
-            end
-            3'b100: begin
-                scale_factor = zoom_scale >> 4;       // 0.0625
-                r_min_fixed_offset = r_min_baseline_fixed_offset >>> 4;
-                i_min_fixed_offset = i_min_baseline_fixed_offset >>> 4;
-            end
-            3'b101: begin
-                scale_factor = zoom_scale >> 5;       // 0.03125
-                r_min_fixed_offset = r_min_baseline_fixed_offset >>> 5;
-                i_min_fixed_offset = i_min_baseline_fixed_offset >>> 5;
-            end
-            3'b110: begin
-                scale_factor = zoom_scale >> 6;       // 0.015625
-                r_min_fixed_offset = r_min_baseline_fixed_offset >>> 6;
-                i_min_fixed_offset = i_min_baseline_fixed_offset >>> 6;
-            end
-            3'b111: begin
-                scale_factor = zoom_scale >> 7;       // 0.0078125
-                r_min_fixed_offset = r_min_baseline_fixed_offset >>> 7;
-                i_min_fixed_offset = i_min_baseline_fixed_offset >>> 7;
-            end
-            default: begin
-                scale_factor = zoom_scale;
-                r_min_fixed_offset = r_min_baseline_fixed_offset;
-                i_min_fixed_offset = i_min_baseline_fixed_offset;
-            end
-        endcase
-    end
 
     // Multiplier for r_gradient
     multiplier #() M1 (
-        .a(scale_factor),
+        .a(zoom_scale),
         .b(pixel_x_fixed),
         .rst(1'b0),
         .result(r_gradient)
@@ -96,11 +41,13 @@ module pixel_map #(
 
     // Multiplier for i_gradient
     multiplier #() M2 (
-        .a(scale_factor),
+        .a(zoom_scale),
         .b(pixel_y_fixed),
         .rst(1'b0),
         .result(i_gradient)
     );
+
+    
 
     always_ff @(posedge clk) begin
         if (reset) begin
@@ -112,8 +59,8 @@ module pixel_map #(
         else if (en && ~full_queue && ~distributor_ready) begin
             pixel_x_out <= pixel_x_in;
             pixel_y_out <= pixel_y_in;
-            real_x <= r_min + (r_gradient << 6);
-            imag_y <= i_min + (i_gradient << 6);
+            real_x <= (r_gradient << 5) + x_offset;
+            imag_y <= (i_gradient << 5) + y_offset;
         end
     end
 
