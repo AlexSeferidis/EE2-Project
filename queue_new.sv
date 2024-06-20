@@ -1,7 +1,7 @@
 module queue_new #(
     parameter   DATA_WIDTH = 10,
-                QUEUE_SIZE = 8,
-                POINTER_SIZE = 3,
+                QUEUE_SIZE = 16,
+                POINTER_SIZE = 4,
                 RBG_SIZE = 24
 )(
     input logic                     clk,
