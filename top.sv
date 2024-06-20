@@ -98,7 +98,6 @@ endgenerate
 lut lut_rom(
     //.clk(clk),
     .iterations(iterations_bus),
-    .max_iterations(iterations_max),
     .rgb_val(colour_bus_i)
 );
 

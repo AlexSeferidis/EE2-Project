@@ -27,7 +27,7 @@ int main(int argc, char **argv, char **env){
     top->clk = 1;
     top->ready = 1;
     top->iterations_max = 100;
-    top->zoom = 7;
+    top->zoom = 0;
     top->x_offset = 32505856;   //-1
     top->y_offset = -314573;     //-0.3
 
@@ -36,7 +36,7 @@ int main(int argc, char **argv, char **env){
     int i = 0;
     int index = 0;
 
-    for (i=0; i < 3000000; i++){
+    for (i=0; i < 2000000; i++){
         
         for(clk = 0; clk < 2; clk++){
             tfp->dump(2 * i + clk);
