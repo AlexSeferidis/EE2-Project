@@ -1,7 +1,8 @@
-# EE2-Project
+# EE2-Project - Imperial College London
 
 #### 2nd Year Design Engineering Design Project - ELEC50015
 
+![exampleimage](/Evaluation_and_Testing/src/exampleimage.jpg)
 
 ## Abstract
 
